@@ -22,7 +22,6 @@ public class CanvasVentana extends Canvas {
         this.alto = alto;
         this.ancho = ancho;
         this.raton = new Raton(this);
-
         setCursor(raton.obtenerCursor());
         setIgnoreRepaint(true);
         setPreferredSize(new Dimension(ancho, alto));

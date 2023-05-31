@@ -1,0 +1,25 @@
+
+N
+java:S2589–"7Remove this expression which always evaluates to "true"(““ÍŸ
+u	java:S116""`Rename this field "ALTO_COLISION_JUGADOR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ËŠÎ
+{	java:S116#"aRename this field "ANCHO_COLISION_JUGADOR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(êšØ¼ùÿÿÿÿ
+r	java:S116$"XRename this field "LIMITE_ARRIBA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ó”İöúÿÿÿÿ
+q	java:S116&"WRename this field "LIMITE_ABAJO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(…Äİèıÿÿÿÿ
+p	java:S116("[Rename this field "LIMITE_IZQUIERDA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰Øš
+s	java:S116*"YRename this field "LIMITE_DERECHA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ì‚ùçüÿÿÿÿ
+7
+java:S1170""!Make this final field static too.(—ËŠÎ
+<
+java:S1170#"!Make this final field static too.(êšØ¼ùÿÿÿÿ
+Q	java:S1253"<This block of commented-out lines of code should be removed.(äŒÿ²
+n
+java:S3776Œ"RRefactor this method to reduce its Cognitive Complexity from 35 to the 15 allowed.(ğöÜ¯ûÿÿÿÿ
+n
+java:S3776á"RRefactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed.(‚Ñ‚†ùÿÿÿÿ
+8	java:S131ñ""Add a default case to this switch.(©âşü
+=
+java:S1905"&Remove this unnecessary cast to "int".(Ş¥ë¤
+=
+java:S1905‘"&Remove this unnecessary cast to "int".(Âú¶Ê
+i
+java:S3776¡"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(ŞĞŠ×

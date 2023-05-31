@@ -1,6 +1,9 @@
 package tpfinal.vistas;
 
 import tpfinal.graficos.CanvasVentana;
+import tpfinal.login.loginpage.Loginpage;
+import tpfinal.login.registration.Registration;
+import tpfinal.login.welcome.Welcomepage;
 import tpfinal.objetos.Enemy;
 import tpfinal.objetos.Heroe;
 
@@ -19,7 +22,7 @@ public abstract class AdministrarVentanas {
     }
     public static void iniciarVentanas(CanvasVentana canvasVentana) {
         indice = 0;
-        ventanasJuegos = new VentanaJuego[7];
+        ventanasJuegos = new VentanaJuego[10];
         ventanasJuegos[0] = new Presentacion(canvasVentana);
         ventanasJuegos[1] = null;
         ventanasJuegos[2] = new Pausa();
@@ -27,6 +30,9 @@ public abstract class AdministrarVentanas {
         ventanasJuegos[4] = null;
         ventanasJuegos[5] = new GameOver();
         ventanasJuegos[6] = new FinJuego();
+        ventanasJuegos[7] = new Welcomepage();
+        ventanasJuegos[8] = null;
+        ventanasJuegos[9] = null;
     }
     public static void iniciarVentanaJuego(){
         ventanasJuegos[1] = new Juego();
@@ -35,8 +41,16 @@ public abstract class AdministrarVentanas {
     public static void iniciarVentanaBatalla(Heroe heroe, Enemy enemigo){
         ventanasJuegos[4] = new Batalla(heroe, enemigo);
     }
+
+    public static void iniciarVentanaRegistro(){
+        ventanasJuegos[8] = new Registration();
+    }
+
+    public static void iniciarVentanaLogin(){
+        ventanasJuegos[9] = new Loginpage();
+    }
     private static void iniciarVentanaActual() {
-        ventanaActual = ventanasJuegos[0];
+        ventanaActual = ventanasJuegos[7];
     }
 
     public static void actualizar(){

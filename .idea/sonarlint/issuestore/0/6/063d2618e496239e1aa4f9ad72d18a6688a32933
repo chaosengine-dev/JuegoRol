@@ -1,0 +1,13 @@
+
+‹
+java:S1319m"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÎÞ±‡þÿÿÿÿ
+‹
+java:S1319u"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÀñŽèýÿÿÿÿ
+m
+java:S3776!"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Ø¥Žšùÿÿÿÿ
+m
+java:S37765"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.( áïþûÿÿÿÿ
+R
+java:S11176"<Rename "pociones" which hides the field declared at line 12.(í¢ˆ™
+S
+java:S1117c"=Rename "colisiones" which hides the field declared at line 9.(ÈØáø

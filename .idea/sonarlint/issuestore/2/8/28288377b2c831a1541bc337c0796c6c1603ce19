@@ -1,0 +1,22 @@
+
+p	java:S116"VRename this field "ANCHO_JUEGO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“î££þÿÿÿÿ
+o	java:S116"URename this field "ALTO_JUEGO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÊÊ…¨ýÿÿÿÿ
+p	java:S116"VRename this field "LADO_SPRITE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µÞÝ¡úÿÿÿÿ
+h	java:S116"SRename this field "MARGEN_X" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(î‘ƒë
+h	java:S116"SRename this field "MARGEN_Y" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºÄêÔ
+<
+java:S1170"!Make this final field static too.(“î££þÿÿÿÿ
+<
+java:S1170"!Make this final field static too.(ÊÊ…¨ýÿÿÿÿ
+<
+java:S1170"!Make this final field static too.(µÞÝ¡úÿÿÿÿ
+7
+java:S1170"!Make this final field static too.(î‘ƒë
+7
+java:S1170"!Make this final field static too.(ºÄêÔ
+O
+java:S5993"9Change the visibility of this constructor to "protected".(ÚÏë‚
+V
+java:S1117;";Rename "paletas" which hides the field declared at line 17.(‡Ýÿ£ýÿÿÿÿ
+Q
+java:S1117G";Rename "sprites" which hides the field declared at line 18.(‡¯»‹

@@ -1,0 +1,13 @@
+
+
+java:S1186o"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(”´æ8È©åÑ†1
+£
+java:S1186u"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(…ú´­ÿÿÿÿÿ8Ë©åÑ†1
+f
+java:S3252"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¢¡´8è©åÑ†1
+{
+java:S1171+"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ8ø©åÑ†1
+o	java:S1009"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–­Œßúÿÿÿÿ8ù©åÑ†1
+R
+java:S1874B"0Remove this use of "setLabel"; it is deprecated.(ºöèíøÿÿÿÿ8íªåÑ†1
+o	java:S100j"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ ¨úúÿÿÿÿ8“«åÑ†1

@@ -1,0 +1,7 @@
+jorgekaz,1234,1234,jorgekaz@hotmail.com
+ADMIN,ADMIN,ADMIN,ADMIN@ADMIN.COM
+1,1,1,1
+cesar,1234,1234,cesar@gmail.com
+myp,1234,1234,myp@myp.com
+myp,1234,1234,myp@mypc
+myp,1234,1234,aa@aa.com

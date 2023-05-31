@@ -1,0 +1,11 @@
+
+‹
+java:S1319N"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÎŞ±‡şÿÿÿÿ
+‹
+java:S1319V"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(´¤ÕŒúÿÿÿÿ
+m
+java:S3776 "RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Ø¥šùÿÿÿÿ
+T
+java:S1117D">Rename "colisiones" which hides the field declared at line 11.(ÈØáø
+N
+java:S1128"3Remove this unused import 'tpfinal.objetos.Pocion'.(ŒåÄŠıÿÿÿÿ
