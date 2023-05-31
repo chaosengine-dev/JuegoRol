@@ -1,6 +1,8 @@
 package tpfinal.objetos;
 
 public class Mago implements Heroe{
+
+    private int tipo = 3;
     public int fuerzaMaxima = 400;
     public int resistenciaMaxima = 800;
     private int experienciaMaxima = 350;
@@ -44,4 +46,8 @@ public class Mago implements Heroe{
         this.resistenciaInicial = resistencia;
     }
 
+    @Override
+    public int getTipo() {
+        return tipo;
+    }
 }

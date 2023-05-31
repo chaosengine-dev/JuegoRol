@@ -1,7 +1,7 @@
 package tpfinal.objetos;
 
 public interface Heroe {
-
+    int getTipo();
     int getFuerzaMaxima();
 
     int getExperienciaMaxima();

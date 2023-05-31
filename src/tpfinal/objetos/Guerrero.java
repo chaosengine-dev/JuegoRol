@@ -1,6 +1,8 @@
 package tpfinal.objetos;
 
 public class Guerrero implements Heroe{
+
+    private int tipo = 1;
     public int fuerzaMaxima = 800;
     public int resistenciaMaxima = 700;
     public int experienciaMaxima = 150;
@@ -48,5 +50,13 @@ public class Guerrero implements Heroe{
     @Override
     public void setResistencia(int resistencia) {
         this.resistenciaInicial = resistencia;
+    }
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
     }
 }

@@ -1,6 +1,7 @@
 package tpfinal.objetos;
 
 public class Elfo implements Heroe{
+    private int tipo = 2;
     public int fuerzaMaxima = 600;
     public int resistenciaMaxima = 1000;
     public int experienciaMaxima = 250;
@@ -39,5 +40,13 @@ public class Elfo implements Heroe{
     @Override
     public void setResistencia(int resistencia) {
         this.resistenciaInicial = resistencia;
+    }
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
     }
 }

@@ -3,7 +3,7 @@ package tpfinal.objetos;
 import java.awt.image.BufferedImage;
 
 public class Enemy extends Objeto {
-    public BufferedImage imagen;
+
     private final boolean activa;
     private final int tipo;
     public int salud;
@@ -30,14 +30,6 @@ public class Enemy extends Objeto {
                 fuerza = 800;
                 resistencia = 300;
         }
-    }
-
-    public BufferedImage getImagen() {
-        return imagen;
-    }
-
-    public void setImagen(BufferedImage imagen) {
-        this.imagen = imagen;
     }
 
     public boolean isActiva() {

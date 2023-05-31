@@ -20,6 +20,7 @@ public class Teclado implements KeyListener {
     private boolean usarPocionTres;
     private boolean finBatalla;
     private int tipoPersonaje;
+    private boolean saveGame;
 
     public Teclado(){
         arriba = new Tecla();
@@ -35,6 +36,7 @@ public class Teclado implements KeyListener {
         usarPocionDos = false;
         usarPocionTres = false;
         finBatalla = false;
+        saveGame = false;
     }
 
     public void keyPressed(KeyEvent e) {
@@ -77,6 +79,9 @@ public class Teclado implements KeyListener {
                 break;
             case KeyEvent.VK_F1:
                 finBatalla = true;
+                break;
+            case KeyEvent.VK_F2:
+                saveGame = true;
                 break;
             case KeyEvent.VK_ESCAPE:
                 try {
@@ -123,6 +128,9 @@ public class Teclado implements KeyListener {
                 break;
             case KeyEvent.VK_3:
                 usarPocionTres = false;
+                break;
+            case KeyEvent.VK_F2:
+                saveGame = false;
                 break;
         }
     }
@@ -236,5 +244,12 @@ public class Teclado implements KeyListener {
 
     public void setFinBatalla(boolean finBatalla) {
         this.finBatalla = finBatalla;
+    }
+    public boolean isSaveGame() {
+        return saveGame;
+    }
+
+    public void setSaveGame(boolean saveGame) {
+        this.saveGame = saveGame;
     }
 }

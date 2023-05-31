@@ -1,11 +1,14 @@
 package tpfinal;
 
 import tpfinal.control.AdministrarControles;
+import tpfinal.login.models.User;
 import tpfinal.mapas.CapaEnemigos;
 import tpfinal.mapas.CapaObjetos;
 import tpfinal.mapas.CapaMapa;
 import tpfinal.graficos.SpritesSheet;
 import tpfinal.objetos.*;
+import tpfinal.persistencia.PersistenciaJson;
+import tpfinal.persistencia.SavedGame;
 import tpfinal.vistas.AdministrarVentanas;
 
 import java.awt.*;
@@ -122,8 +125,28 @@ public class Jugador {
             determinarDireccion();
             animar();
             usarPocion();
+            guardarPartida();
         }
     }
+    private void guardarPartida(){
+        if (AdministrarControles.teclado.isSaveGame()){
+            AdministrarControles.teclado.setSaveGame(false);
+            // Guardar juego en jackson
+            System.out.println("guardando");
+            PersistenciaJson serializar = new PersistenciaJson();
+            User usuario = new User("Cesar", "1223", "1223", "aa@aa.com");
+
+            SavedGame savedGame = new SavedGame(usuario, (int)this.getPosicionX(),
+                    (int)this.getPosicionY(), heroe.getTipo(), heroe.getFuerza(), heroe.getResistencia(),
+                    heroe.getExperiencia(), inventario[0], inventario[1], inventario[2],
+                    inventario[3] == 1,inventario[4] == 1, inventario[5] == 1,
+                    capaObjetos.getPociones(), capaEnemigos.getEnemigos());
+
+            serializar.serializar(savedGame, "game.json");
+
+        }
+    }
+
     private void cambiarAnimacionEstado(){
         if (animacion < 30) {
             animacion++;
