@@ -1,0 +1,78 @@
+[33mcommit 536856ffb5e580373b72570644c420df0f402f51[m[33m ([m[1;36mHEAD -> [m[1;32mJorge[m[33m, [m[1;31morigin/Jorge[m[33m)[m
+Author: Jorge <jorgekarp@gmail.com>
+Date:   Wed May 31 15:08:54 2023 -0300
+
+    Checkeo de usuario e ID incremental
+
+[33mcommit 2545dc17ebbbf7b428991a24b93c8c7c4749d150[m
+Author: Cesar Olivera <cesar_olivera_neco@hotmail.com>
+Date:   Wed May 31 12:47:09 2023 -0300
+
+    Salva la partida con F2
+
+[33mcommit d6cb5bd995f86df161441bde923f64e4d6b0da7c[m
+Author: Jorge <jorgekarp@gmail.com>
+Date:   Wed May 31 10:57:23 2023 -0300
+
+    JSON Funcional
+
+[33mcommit ab487eabcd965dfc09b64b33d04badbf66763582[m
+Author: Jorge <jorgekarp@gmail.com>
+Date:   Wed May 31 10:10:22 2023 -0300
+
+    Creacion JSON
+
+[33mcommit 3ac59dd203de559f080d5abc34558955e9d0a25f[m
+Author: Jorge <jorgekarp@gmail.com>
+Date:   Wed May 31 09:24:27 2023 -0300
+
+    Creando personaje
+
+[33mcommit 0711b13639fd904a719d50a3da75292c492b5acd[m
+Author: Jorge <jorgekarp@gmail.com>
+Date:   Wed May 31 09:06:26 2023 -0300
+
+    Formularios de registros
+
+[33mcommit 38a91e42f26951c8bf071169f361078488f7ec4b[m
+Author: Juan <103961920+JuanG-live@users.noreply.github.com>
+Date:   Mon May 29 20:38:20 2023 -0300
+
+    Update README.md
+
+[33mcommit 4a0aa3d2c89d486f4e2781a223f42a30f3c2b64f[m
+Author: Cesar Olivera <80920012+chaosengine-dev@users.noreply.github.com>
+Date:   Mon May 29 10:55:31 2023 -0300
+
+    Create README.md
+
+[33mcommit 17bd23d5cd7527d9644bf1cfdfeb13ae6b1cb20a[m
+Author: Cesar Olivera <cesar_olivera_neco@hotmail.com>
+Date:   Mon May 29 10:54:38 2023 -0300
+
+    Borre doc de mas
+
+[33mcommit d8caf85b17f6da29336a5221379ba51554c63e88[m
+Merge: 6a2204c 1b7d7ec
+Author: Cesar Olivera <cesar_olivera_neco@hotmail.com>
+Date:   Mon May 29 10:53:36 2023 -0300
+
+    Borre el archivo txt de mas
+
+[33mcommit 6a2204c023249c2eb8c61fa538490b7371cd5558[m
+Author: Cesar Olivera <cesar_olivera_neco@hotmail.com>
+Date:   Mon May 29 10:52:11 2023 -0300
+
+    Borre el archivo txt de mas
+
+[33mcommit 1b7d7ec18b6d263bb5669e4d0902fb394912bebd[m
+Author: Cesar Olivera <80920012+chaosengine-dev@users.noreply.github.com>
+Date:   Mon May 29 10:51:16 2023 -0300
+
+    Update usuarios.txt
+
+[33mcommit 8933c29952f813c628f9adebf0acc9e13db925d0[m
+Author: Cesar Olivera <cesar_olivera_neco@hotmail.com>
+Date:   Mon May 29 10:36:44 2023 -0300
+
+    TP Final Juego Sin login
