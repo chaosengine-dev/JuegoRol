@@ -1,5 +1,6 @@
 package tpfinal.persistencia.repositorios;
 
+import tpfinal.persistencia.UserExceptions;
 import tpfinal.login.models.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
@@ -43,7 +44,7 @@ public class UserRepo implements IRepository<User> {
     }
 
     @Override
-    public void agregar(User... objecto) throws Exception {
+    public void agregar(User... objecto) throws UserExceptions {
         cargar();
         try {
             for (User user : objecto) {
@@ -56,24 +57,23 @@ public class UserRepo implements IRepository<User> {
                     }
                 }
                 if (existe) {
-                    throw new Exception("El nombre de usuario " + user.getUsername() + " ya existe");
+                    throw new UserExceptions("El nombre de usuario " + user.getUsername() + " ya existe");
                 }
                 if (user.getUsername().length() < 6) {
-                    throw new Exception("El nombre de usuario debe tener al menos 6 caracteres");
+                    throw new UserExceptions("El nombre de usuario debe tener al menos 6 caracteres");
                 }
                 if (!user.getUsername().matches("[a-zA-Z0-9]+")) {
-                    throw new Exception("El nombre de usuario solo puede contener letras y numeros");
+                    throw new UserExceptions("El nombre de usuario solo puede contener letras y numeros");
                 }
                 if (user.getPassword().length() < 6) {
-                    throw new Exception("La contraseña debe tener al menos 6 caracteres");
-                }
-                if (!user.getEmail().contains("@")) {
-                    throw new Exception("El email debe contener un @");
+                    throw new UserExceptions("La contraseña debe tener al menos 6 caracteres");
                 }
                 if (!user.getPassword().equals(user.getSecondPassword())) {
-                    throw new Exception("Las contraseñas no coinciden");
+                    throw new UserExceptions("Las contraseñas no coinciden");
                 }
-
+                if (!user.getEmail().contains("@")) {
+                    throw new UserExceptions("El email debe contener un @");
+                }
                 int nextID = getNextID(); // OBTENER EL ID SIGUIENTE
                 user.setId(nextID); // ASIGNO EL ID AL USUARIO
                 this.users.addAll(Arrays.asList(objecto));
