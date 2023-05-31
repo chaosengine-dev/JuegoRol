@@ -5,6 +5,7 @@ import tpfinal.login.models.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 
+import javax.swing.*;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -44,10 +45,24 @@ public class UserRepo implements IRepository<User>{
     @Override
     public void agregar(User... objecto){
         cargar();
-        this.users.addAll(Arrays.asList(objecto));
-        guardar();
-    }
+        for(User user : objecto){
+            boolean existe = false;
 
+            for(User existingUser : this.users){
+                if(existingUser.getUsername().equalsIgnoreCase(user.getUsername())){
+                    existe = true;
+                    break;
+                }
+            }
+            if (existe){
+                JOptionPane.showMessageDialog(null, "El nombre " + user.getUsername() + " ya existe");
+            }else{
+                this.users.addAll(Arrays.asList(objecto));
+                guardar();
+                JOptionPane.showMessageDialog(null, "El nombre de usuario " + user.getUsername() + " se ha agregado correctamente");
+            }
+        }
+    }
     @Override
     public void eliminar(String userName){
         cargar();
@@ -78,5 +93,25 @@ public class UserRepo implements IRepository<User>{
             }
         }
         guardar();
+    }
+
+    public boolean existeUsername(String username) {
+        cargar();
+        for(User user : this.users){
+            if(Objects.equals(user.getUsername(), username)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean verificarCredenciales(String username, String password) {
+        cargar();
+        for(User user : this.users){
+            if(Objects.equals(user.getUsername(), username) && Objects.equals(user.getPassword(), password)){
+                return true;
+            }
+        }
+        return false;
     }
 }

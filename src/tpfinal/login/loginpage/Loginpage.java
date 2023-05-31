@@ -1,6 +1,9 @@
 package tpfinal.login.loginpage;
 
-import tpfinal.JuegoRol;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import tpfinal.login.models.User;
+import tpfinal.persistencia.repositorios.UserRepo;
 import tpfinal.vistas.AdministrarVentanas;
 import tpfinal.vistas.VentanaJuego;
 
@@ -11,9 +14,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Locale;
-import java.util.Scanner;
+
 
 public class Loginpage implements VentanaJuego {
     private JPasswordField passwordField1;
@@ -73,22 +76,24 @@ public class Loginpage implements VentanaJuego {
 
     //FUNCION DE COMPROBAR USUARIO
     private boolean checkCredentials(String username, String password) {
-        String archivo = "usuarios.txt";
+        UserRepo newLogin = new UserRepo();
+        newLogin.cargar();
 
-        try (Scanner scanner = new Scanner(new File(archivo))) {
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                String[] fields = line.split(",");
-                String storedUsername = fields[0];
-                String storedPassword = fields[1];
+        // Verificar si el username existe en el repositorio de usuarios
+        boolean usernameExists = newLogin.existeUsername(username);
 
-                if (storedUsername.equals(username) && storedPassword.equals(password)) {
-                    return true; // Credenciales válidas
-                }
+        if (usernameExists) {
+            // Verificar las credenciales para el username existente
+            boolean validCredentials = newLogin.verificarCredenciales(username, password);
+            if (validCredentials) {
+                return true; // Credenciales válidas
+            } else {
+                System.out.println("Credenciales incorrectas para el usuario: " + username);
             }
-        } catch (FileNotFoundException ex) {
-            System.out.println("Archivo no encontrado: " + ex.getMessage());
+        } else {
+            System.out.println("El usuario no existe: " + username);
         }
+
         return false; // Credenciales inválidas
     }
 

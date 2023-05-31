@@ -1,26 +1,19 @@
 [ {
+  "id" : 0,
   "username" : "ADMIN",
   "password" : "ADMIN",
   "secondPassword" : "ADMIN",
   "email" : "ADMIN"
 }, {
+  "id" : 1,
   "username" : "jorgekaz",
-  "password" : "12345",
-  "secondPassword" : "12345",
+  "password" : "1234",
+  "secondPassword" : "1234",
   "email" : "jorgekaz@hotmail.com"
 }, {
+  "id" : 1,
   "username" : "cesar",
-  "password" : "12345",
-  "secondPassword" : "12345",
-  "email" : "cesar@hotmail.com"
-}, {
-  "username" : "usuario2",
-  "password" : "123",
-  "secondPassword" : "123",
-  "email" : "123"
-}, {
-  "username" : "12",
-  "password" : "",
-  "secondPassword" : "",
-  "email" : ""
+  "password" : "1234",
+  "secondPassword" : "1234",
+  "email" : "cesar@gmail.com"
 } ]

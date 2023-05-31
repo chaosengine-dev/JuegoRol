@@ -49,7 +49,7 @@ public class Registration implements VentanaJuego {
                 frame.dispose();
                 newUser.agregar(new User(ussernameTextField.getText(), passwordField1.getText(), passwordField2.getText(), emailField.getText()));
                 System.out.println("Usuario creado exitosamente.");
-                AdministrarVentanas.cambiarEstadoActual(3);
+                AdministrarVentanas.cambiarEstadoActual(9);
             }
         });
 
@@ -57,7 +57,7 @@ public class Registration implements VentanaJuego {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                AdministrarVentanas.cambiarEstadoActual(7);
+                AdministrarVentanas.cambiarEstadoActual(9);
 
             }
         });
