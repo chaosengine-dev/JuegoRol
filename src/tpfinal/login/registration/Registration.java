@@ -1,20 +1,15 @@
 package tpfinal.login.registration;
 
 import tpfinal.login.models.User;
-import tpfinal.login.welcome.Welcomepage;
 import tpfinal.persistencia.repositorios.UserRepo;
 import tpfinal.vistas.AdministrarVentanas;
 import tpfinal.vistas.VentanaJuego;
-
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.text.StyleContext;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.Locale;
 
 public class Registration implements VentanaJuego {
@@ -48,11 +43,9 @@ public class Registration implements VentanaJuego {
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
                 newUser.agregar(new User(ussernameTextField.getText(), passwordField1.getText(), passwordField2.getText(), emailField.getText()));
-                System.out.println("Usuario creado exitosamente.");
                 AdministrarVentanas.cambiarEstadoActual(9);
             }
         });
-
         button2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -61,6 +54,12 @@ public class Registration implements VentanaJuego {
 
             }
         });
+    }
+    @Override
+    public void actualizar() {
+    }
+    @Override
+    public void dibujar(Graphics grafico) {
     }
 
     {
@@ -192,15 +191,5 @@ public class Registration implements VentanaJuego {
      */
     public JComponent $$$getRootComponent$$$() {
         return panelDos;
-    }
-
-    @Override
-    public void actualizar() {
-
-    }
-
-    @Override
-    public void dibujar(Graphics grafico) {
-
     }
 }

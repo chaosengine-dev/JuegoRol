@@ -1,10 +1,8 @@
 package tpfinal.persistencia.repositorios;
 
 import tpfinal.login.models.User;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
-
 import javax.swing.*;
 import java.io.File;
 import java.io.FileOutputStream;

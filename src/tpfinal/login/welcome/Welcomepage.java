@@ -1,14 +1,9 @@
 package tpfinal.login.welcome;
 
-import tpfinal.JuegoRol;
-import tpfinal.login.loginpage.Loginpage;
-import tpfinal.login.registration.Registration;
 import tpfinal.vistas.AdministrarVentanas;
 import tpfinal.vistas.VentanaJuego;
-
 import javax.swing.*;
 import java.awt.*;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Welcomepage implements VentanaJuego {
     private JPanel panel1;
@@ -37,6 +32,12 @@ public class Welcomepage implements VentanaJuego {
             AdministrarVentanas.iniciarVentanaLogin();
             AdministrarVentanas.cambiarEstadoActual(9);
         });
+    }
+    @Override
+    public void actualizar() {
+    }
+    @Override
+    public void dibujar(Graphics grafico) {
     }
 
 
@@ -107,14 +108,4 @@ public class Welcomepage implements VentanaJuego {
         return panel1;
     }
 
-    @Override
-    public void actualizar() {
-
-
-    }
-
-    @Override
-    public void dibujar(Graphics grafico) {
-
-    }
 }
