@@ -57,11 +57,23 @@ public class UserRepo implements IRepository<User>{
             if (existe){
                 JOptionPane.showMessageDialog(null, "El nombre " + user.getUsername() + " ya existe");
             }else{
+                int nextID = getNextID(); // OBTENER EL ID SIGUIENTE
+                user.setId(nextID); // ASIGNO EL ID AL USUARIO
                 this.users.addAll(Arrays.asList(objecto));
                 guardar();
                 JOptionPane.showMessageDialog(null, "El nombre de usuario " + user.getUsername() + " se ha agregado correctamente");
             }
         }
+    }
+
+    private int getNextID(){
+        int nextID = 0;
+        for(User user : this.users){
+            if(user.getId() > nextID){
+                nextID = user.getId();
+            }
+        }
+        return nextID + 1;
     }
     @Override
     public void eliminar(String userName){
