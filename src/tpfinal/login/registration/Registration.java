@@ -1,6 +1,8 @@
 package tpfinal.login.registration;
 
+import tpfinal.login.models.User;
 import tpfinal.login.welcome.Welcomepage;
+import tpfinal.persistencia.repositorios.UserRepo;
 import tpfinal.vistas.AdministrarVentanas;
 import tpfinal.vistas.VentanaJuego;
 
@@ -39,11 +41,13 @@ public class Registration implements VentanaJuego {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
+        UserRepo newUser = new UserRepo();
+
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                crearUsuario();
+                newUser.agregar(new User(ussernameTextField.getText(), passwordField1.getText(), passwordField2.getText(), emailField.getText()));
                 System.out.println("Usuario creado exitosamente.");
                 AdministrarVentanas.cambiarEstadoActual(3);
             }
@@ -53,30 +57,10 @@ public class Registration implements VentanaJuego {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
+                AdministrarVentanas.cambiarEstadoActual(7);
 
             }
         });
-    }
-
-    //FUNCION DE CREAR USUARIO
-    public void crearUsuario() {
-        String userName = ussernameTextField.getText();
-        String contraseña = passwordField1.getText();
-        String repetirContraseña = passwordField2.getText();
-        String email = emailField.getText();
-
-        String usuario = userName + "," + contraseña + "," + repetirContraseña + "," + email;
-        String archivo = "usuarios.txt"; // Nombre del archivo donde se guardarán los usuarios
-
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(archivo, true));
-            writer.write(usuario);
-            writer.newLine();
-            writer.close();
-        } catch (IOException e) {
-            System.out.println("Error al crear el usuario: " + e.getMessage());
-        }
-        //LoginPage loginPage = new LoginPage();
     }
 
     {
@@ -212,8 +196,6 @@ public class Registration implements VentanaJuego {
 
     @Override
     public void actualizar() {
-
-
 
     }
 

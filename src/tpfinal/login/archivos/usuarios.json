@@ -1,5 +1,4 @@
-[
-  {
+[ {
   "username" : "ADMIN",
   "password" : "ADMIN",
   "secondPassword" : "ADMIN",
@@ -9,10 +8,19 @@
   "password" : "12345",
   "secondPassword" : "12345",
   "email" : "jorgekaz@hotmail.com"
-} , {
+}, {
   "username" : "cesar",
   "password" : "1234",
   "secondPassword" : "1234",
   "email" : "cesar@hotmail.com"
-}
-]
+}, {
+  "username" : "usuario2",
+  "password" : "123",
+  "secondPassword" : "123",
+  "email" : "123"
+}, {
+  "username" : "12",
+  "password" : "",
+  "secondPassword" : "",
+  "email" : ""
+} ]
