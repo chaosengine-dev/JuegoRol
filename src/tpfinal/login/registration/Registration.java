@@ -42,7 +42,11 @@ public class Registration implements VentanaJuego {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                newUser.agregar(new User(ussernameTextField.getText(), passwordField1.getText(), passwordField2.getText(), emailField.getText()));
+                try {
+                    newUser.agregar(new User(ussernameTextField.getText(), passwordField1.getText(), passwordField2.getText(), emailField.getText()));
+                } catch (Exception ex) {
+                    throw new RuntimeException(ex);
+                }
                 AdministrarVentanas.cambiarEstadoActual(9);
             }
         });

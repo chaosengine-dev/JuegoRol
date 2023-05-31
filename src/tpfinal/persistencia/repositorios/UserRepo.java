@@ -9,7 +9,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.*;
 
-public class UserRepo implements IRepository<User>{
+public class UserRepo implements IRepository<User> {
     private final File archivo = new File("src/tpfinal/login/archivos/usuarios.json");
     private final ObjectMapper mapper = new ObjectMapper();
     private List<User> users;
@@ -18,7 +18,7 @@ public class UserRepo implements IRepository<User>{
     }
 
     @Override
-    public void cargar(){
+    public void cargar() {
         try {
             CollectionType listType = mapper.getTypeFactory().constructCollectionType(List.class, User.class);
             this.users = mapper.readValue(archivo, listType);
@@ -26,6 +26,7 @@ public class UserRepo implements IRepository<User>{
             this.users = new ArrayList<>();
         }
     }
+
     @Override
     public void guardar() {
         try {
@@ -34,34 +35,53 @@ public class UserRepo implements IRepository<User>{
             System.out.println("Error al guardar el archivo: " + e.getMessage());
         }
     }
+
     @Override
-    public List<User> listar(){
+    public List<User> listar() {
         cargar();
         return this.users;
     }
 
     @Override
-    public void agregar(User... objecto){
+    public void agregar(User... objecto) throws Exception {
         cargar();
-        for(User user : objecto){
-            boolean existe = false;
+        try {
+            for (User user : objecto) {
+                boolean existe = false;
 
-            for(User existingUser : this.users){
-                if(existingUser.getUsername().equalsIgnoreCase(user.getUsername())){
-                    existe = true;
-                    break;
+                for (User existingUser : this.users) {
+                    if (existingUser.getUsername().equalsIgnoreCase(user.getUsername())) {
+                        existe = true;
+                        break;
+                    }
                 }
-            }
-            if (existe){
-                JOptionPane.showMessageDialog(null, "El nombre " + user.getUsername() + " ya existe");
-            }else{
+                if (existe) {
+                    throw new Exception("El nombre de usuario " + user.getUsername() + " ya existe");
+                }
+                if (user.getUsername().length() < 6) {
+                    throw new Exception("El nombre de usuario debe tener al menos 6 caracteres");
+                }
+                if (!user.getUsername().matches("[a-zA-Z0-9]+")) {
+                    throw new Exception("El nombre de usuario solo puede contener letras y numeros");
+                }
+                if (user.getPassword().length() < 6) {
+                    throw new Exception("La contraseña debe tener al menos 6 caracteres");
+                }
+                if (!user.getEmail().contains("@")) {
+                    throw new Exception("El email debe contener un @");
+                }
+                if (!user.getPassword().equals(user.getSecondPassword())) {
+                    throw new Exception("Las contraseñas no coinciden");
+                }
+
                 int nextID = getNextID(); // OBTENER EL ID SIGUIENTE
                 user.setId(nextID); // ASIGNO EL ID AL USUARIO
                 this.users.addAll(Arrays.asList(objecto));
                 guardar();
                 JOptionPane.showMessageDialog(null, "El nombre de usuario " + user.getUsername() + " se ha agregado correctamente");
             }
-        }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, e.getMessage());}
     }
 
     private int getNextID(){

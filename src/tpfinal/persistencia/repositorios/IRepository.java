@@ -7,7 +7,7 @@ public interface IRepository<T> {
     void guardar();
 
     List<T> listar();
-    void agregar(T... objecto);
+    void agregar(T... objecto) throws Exception;
 
     void eliminar(String userName);
 
