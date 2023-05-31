@@ -54,6 +54,8 @@ public class Loginpage implements VentanaJuego {
                 boolean validCredentials = checkCredentials(user, pass);
                 if (validCredentials) {
                     frame.dispose();
+                    AdministrarVentanas.iniciarVentanaBienvenida();
+                    AdministrarVentanas.setUserRegistered(user);
                     AdministrarVentanas.cambiarEstadoActual(0);
                 } else {
                     JOptionPane.showMessageDialog(null, "Invalid Username or Password");

@@ -10,15 +10,15 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="file://$MODULE_DIR$/../../jar_files" />
+          <root url="file://C:/jar" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/../../jar_files" recursive="false" />
+        <jarDirectory url="file://C:/jar" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="jackson-databind-2.15.1" level="project" />
-    <orderEntry type="library" name="jackson-core-2.15.1" level="project" />
-    <orderEntry type="library" name="jackson-annotations-2.15.1" level="project" />
+    <orderEntry type="library" exported="" name="jackson-databind-2.15.1" level="project" />
+    <orderEntry type="library" exported="" name="jackson-core-2.15.1" level="project" />
+    <orderEntry type="library" exported="" name="jackson-annotations-2.15.1" level="project" />
   </component>
 </module>

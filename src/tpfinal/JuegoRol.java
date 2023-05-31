@@ -4,6 +4,7 @@ import tpfinal.control.AdministrarControles;
 import tpfinal.control.Musica;
 import tpfinal.graficos.CanvasVentana;
 import tpfinal.graficos.VentanaJFrame;
+import tpfinal.login.models.User;
 import tpfinal.login.welcome.Welcomepage;
 import tpfinal.vistas.AdministrarVentanas;
 
@@ -15,6 +16,7 @@ public class JuegoRol {
     private CanvasVentana canvasVentana;
     private VentanaJFrame ventanaJFrame;
 
+    private User user;
     public JuegoRol(int ancho, int alto, String nombre){
         Musica.fondo();
         this.alto = alto;
@@ -23,6 +25,8 @@ public class JuegoRol {
 
     }
     public void iniciarJuego() {
+        User user = new User();
+        this.user = user;
         enFuncionamiento = true;
         canvasVentana = new CanvasVentana(ancho, alto);
         ventanaJFrame = new VentanaJFrame(nombre, canvasVentana);

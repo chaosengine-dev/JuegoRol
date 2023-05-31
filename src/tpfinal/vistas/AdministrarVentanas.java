@@ -13,10 +13,13 @@ public abstract class AdministrarVentanas {
 
     private static VentanaJuego[] ventanasJuegos;
     private static VentanaJuego ventanaActual;
-    private static CanvasVentana canvasVentana;
+    private static CanvasVentana canvasVentanaGlobal;
     private static int indice;
+    private static String userRegistered;
+
 
     public static void gestorVentanas(CanvasVentana canvasVentana){
+        canvasVentanaGlobal = canvasVentana;
         iniciarVentanas(canvasVentana);
         iniciarVentanaActual();
     }
@@ -34,6 +37,7 @@ public abstract class AdministrarVentanas {
         ventanasJuegos[8] = null;
         ventanasJuegos[9] = null;
     }
+
     public static void iniciarVentanaJuego(){
         ventanasJuegos[1] = new Juego();
     }
@@ -41,11 +45,12 @@ public abstract class AdministrarVentanas {
     public static void iniciarVentanaBatalla(Heroe heroe, Enemy enemigo){
         ventanasJuegos[4] = new Batalla(heroe, enemigo);
     }
-
+    public static void iniciarVentanaBienvenida(){
+        ventanasJuegos[0] = new Presentacion(canvasVentanaGlobal);
+    }
     public static void iniciarVentanaRegistro(){
         ventanasJuegos[8] = new Registration();
     }
-
     public static void iniciarVentanaLogin(){
         ventanasJuegos[9] = new Loginpage();
     }
@@ -55,14 +60,14 @@ public abstract class AdministrarVentanas {
 
     public static void actualizar(){
         if (ventanaActual == null){
-            gestorVentanas(canvasVentana);
+            gestorVentanas(canvasVentanaGlobal);
         }
         ventanaActual.actualizar();
     }
 
     public static void dibujar(Graphics grafico){
         if (ventanaActual == null){
-            gestorVentanas(canvasVentana);
+            gestorVentanas(canvasVentanaGlobal);
         }
         ventanaActual.dibujar(grafico);
 
@@ -77,4 +82,9 @@ public abstract class AdministrarVentanas {
         return indice;
     }
 
+    public static void setUserRegistered(String userRegistered) {
+        AdministrarVentanas.userRegistered = userRegistered;
+        ventanasJuegos[0].setUser(userRegistered);
+
+    }
 }

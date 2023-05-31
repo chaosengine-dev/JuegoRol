@@ -2,6 +2,7 @@ package tpfinal.graficos;
 
 import tpfinal.control.AdministrarControles;
 import tpfinal.control.Raton;
+import tpfinal.login.models.User;
 import tpfinal.persistencia.LeerArchivos;
 import tpfinal.vistas.AdministrarVentanas;
 
