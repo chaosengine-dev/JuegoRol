@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class UserRepo implements IRepository<User>{
-    private final File archivo = new File("D:\\OneDrive - UTN FRMDP\\3er Cuatrimestre\\Programacion y Laboratorio III\\Proyecto\\EnchantedLands\\JuegoRol\\src\\tpfinal\\login\\archivos\\usuarios.json");
+    private final File archivo = new File("src/tpfinal/login/archivos/usuarios.json");
     private final ObjectMapper mapper = new ObjectMapper();
     private List<User> users;
 

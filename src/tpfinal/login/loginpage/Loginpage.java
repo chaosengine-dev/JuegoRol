@@ -60,6 +60,8 @@ public class Loginpage implements VentanaJuego {
                 boolean validCredentials = checkCredentials(user, pass);
                 if (validCredentials) {
                     frame.dispose();
+                    AdministrarVentanas.iniciarVentanaBienvenida();
+                    AdministrarVentanas.setUserRegistered(user);
                     AdministrarVentanas.cambiarEstadoActual(0);
                     //JOptionPane.showMessageDialog(null, "Ingreso exitoso");
                 } else {
