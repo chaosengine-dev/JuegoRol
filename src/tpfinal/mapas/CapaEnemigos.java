@@ -87,6 +87,10 @@ public class CapaEnemigos extends Capa{
         return enemigos;
     }
 
+    public void setEnemigos(ArrayList<Enemy> enemigos) {
+        this.enemigos = enemigos;
+    }
+
     public void actualizarObjetos(Enemy enemyCollision) {
         for (Enemy enemy: enemigos
         ) {

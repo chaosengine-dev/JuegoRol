@@ -5,6 +5,7 @@ import tpfinal.control.Musica;
 import tpfinal.graficos.CanvasVentana;
 import tpfinal.graficos.SpritesSheet;
 import tpfinal.login.models.User;
+import tpfinal.persistencia.PersistenciaJson;
 
 import javax.sound.sampled.*;
 import java.awt.*;
@@ -23,6 +24,7 @@ public class Presentacion implements VentanaJuego {
     private String user;
 
     public Presentacion(CanvasVentana canvasVentana){
+
         this.hojaSprite = new SpritesSheet("Recursos/Presentacion/presentacion.png",alto, ancho, false);
         imagen = hojaSprite.obtenerSprite(0).obtenerImagen();
         botonCargar = new Rectangle(210,500,120,40);
@@ -44,11 +46,14 @@ public class Presentacion implements VentanaJuego {
             Rectangle mouseRelativo = new Rectangle(MouseInfo.getPointerInfo().getLocation().x - ubicacionVentana.x, MouseInfo.getPointerInfo().getLocation().y - ubicacionVentana.y, 1, 1);
             if (mouseRelativo.intersects(botonCargar)){
                 // TODO: Cargar partida desde archivo y mostrar
-                System.out.println(user);
+                AdministrarVentanas.iniciarVentanaJuegoSalvado();
+                AdministrarVentanas.cambiarEstadoActual(10);
+
             }
             if (mouseRelativo.intersects(botonEntrar)){
                 // TODO: Hacer opcion si hacemos click en el boton nuevo juego.
-                AdministrarControles.teclado.setNuevoJuego(true);
+                AdministrarVentanas.iniciarVentanaNuevo();
+                AdministrarVentanas.cambiarEstadoActual(3);
             }
             Musica.clickBoton();
 
@@ -56,7 +61,7 @@ public class Presentacion implements VentanaJuego {
         canvasVentana.getRaton().resetClick();
     }
 
-    public void setUser(String user){
-        this.user = user;
-    };
+    //public void setUser(String user){
+    //    this.user = user;
+    //};
 }

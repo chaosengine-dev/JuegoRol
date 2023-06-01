@@ -63,7 +63,6 @@ public class Loginpage implements VentanaJuego {
                     AdministrarVentanas.iniciarVentanaBienvenida();
                     AdministrarVentanas.setUserRegistered(user);
                     AdministrarVentanas.cambiarEstadoActual(0);
-                    //JOptionPane.showMessageDialog(null, "Ingreso exitoso");
                 } else {
                     JOptionPane.showMessageDialog(null, "Invalid Username or Password");
                 }

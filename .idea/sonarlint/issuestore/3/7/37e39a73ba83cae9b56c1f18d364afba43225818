@@ -3,6 +3,8 @@
 java:S1319N"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÎÞ±‡þÿÿÿÿ
 ‹
 java:S1319V"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(´¤ÕŒúÿÿÿÿ
+Š
+java:S1319Z"hThe type of "enemigos" should be an interface such as "List" rather than the implementation "ArrayList".(ŽêüËùÿÿÿÿ8›èÙ¤‡1
 m
 java:S3776 "RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Ø¥Žšùÿÿÿÿ
 T

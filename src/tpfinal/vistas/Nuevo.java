@@ -32,6 +32,7 @@ public class Nuevo implements VentanaJuego{
     private Rectangle botonFlechaDerecha;
     private CanvasVentana canvasVentana;
     int playerSelected = 0;
+    private String user;
     public Nuevo(CanvasVentana canvasVentana){
         this.hojaSprite = new SpritesSheet("Recursos/NewGame/arrowleft128.png",18, 47, false);
         flechaIzquierda = hojaSprite.obtenerSprite(0).obtenerImagen();
@@ -125,6 +126,9 @@ public class Nuevo implements VentanaJuego{
 
 
     }
+    public void setUser(String user){
+        this.user = user;
+    };
 
     public int getPlayerSelected() {
         return playerSelected;

@@ -25,28 +25,36 @@ public abstract class AdministrarVentanas {
     }
     public static void iniciarVentanas(CanvasVentana canvasVentana) {
         indice = 0;
-        ventanasJuegos = new VentanaJuego[10];
-        ventanasJuegos[0] = new Presentacion(canvasVentana);
+        ventanasJuegos = new VentanaJuego[11];
+        ventanasJuegos[0] = null;
         ventanasJuegos[1] = null;
         ventanasJuegos[2] = new Pausa();
-        ventanasJuegos[3] = new Nuevo(canvasVentana);
+        ventanasJuegos[3] = null;
         ventanasJuegos[4] = null;
         ventanasJuegos[5] = new GameOver();
         ventanasJuegos[6] = new FinJuego();
         ventanasJuegos[7] = new Welcomepage();
         ventanasJuegos[8] = null;
         ventanasJuegos[9] = null;
+        ventanasJuegos[10] = null;
     }
 
     public static void iniciarVentanaJuego(){
-        ventanasJuegos[1] = new Juego();
+        ventanasJuegos[1] = new IniciarJuegoNuevo();
     }
 
-    public static void iniciarVentanaBatalla(Heroe heroe, Enemy enemigo){
-        ventanasJuegos[4] = new Batalla(heroe, enemigo);
+    public static void iniciarVentanaJuegoSalvado(){
+        ventanasJuegos[10] = new IniciarJuegoSalvado();
+    }
+    public static void iniciarVentanaBatalla(Heroe heroe, Enemy enemigo, int ventanaOrigen){
+        ventanasJuegos[4] = new Batalla(heroe, enemigo, ventanaOrigen);
     }
     public static void iniciarVentanaBienvenida(){
         ventanasJuegos[0] = new Presentacion(canvasVentanaGlobal);
+    }
+
+    public static void iniciarVentanaNuevo(){
+        ventanasJuegos[3] = new Nuevo(canvasVentanaGlobal);
     }
     public static void iniciarVentanaRegistro(){
         ventanasJuegos[8] = new Registration();
@@ -82,9 +90,10 @@ public abstract class AdministrarVentanas {
         return indice;
     }
 
-    public static void setUserRegistered(String userRegistered) {
-        AdministrarVentanas.userRegistered = userRegistered;
-        ventanasJuegos[0].setUser(userRegistered);
-
+    public static void setUserRegistered(String user) {
+        userRegistered = user;
+    }
+    public static String getUserRegistered() {
+        return userRegistered;
     }
 }

@@ -1,16 +1,16 @@
 
-V
-java:S2184…"@Cast one of the operands of this integer division to a "double".(Ä’Ñ'
-V
-java:S2184…"@Cast one of the operands of this integer division to a "double".(Ä’Ñ'
-\
-java:S2184"@Cast one of the operands of this integer division to a "double".(Ñôøûúÿÿÿÿ
-\
-java:S2184"@Cast one of the operands of this integer division to a "double".(Ñôøûúÿÿÿÿ
-<	java:S1314""Add a default case to this switch.(´ÔÂŞıÿÿÿÿ
-m
-java:S3776y"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(—ê«èşÿÿÿÿ
-^
-java:S1117{"CRename "mensajesBatalla" which hides the field declared at line 16.(ÁÆñ²ùÿÿÿÿ
-4
-java:S2119~"Save and re-use this "Random".(Ù¦ğ¿
+]
+java:S2184ˆ"@Cast one of the operands of this integer division to a "double".(Ä’Ñ'8€¨¦¦‡1
+]
+java:S2184ˆ"@Cast one of the operands of this integer division to a "double".(Ä’Ñ'8¨¦¦‡1
+c
+java:S2184 "@Cast one of the operands of this integer division to a "double".(Ñôøûúÿÿÿÿ8¨¦¦‡1
+c
+java:S2184 "@Cast one of the operands of this integer division to a "double".(Ñôøûúÿÿÿÿ8¨¦¦‡1
+C	java:S1317""Add a default case to this switch.(´ÔÂŞıÿÿÿÿ8‰«¦¦‡1
+t
+java:S3776|"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(—ê«èşÿÿÿÿ8–«¦¦‡1
+e
+java:S1117~"CRename "mensajesBatalla" which hides the field declared at line 16.(ÁÆñ²ùÿÿÿÿ8—«¦¦‡1
+<
+java:S2119"Save and re-use this "Random".(Ù¦ğ¿8š«¦¦‡1

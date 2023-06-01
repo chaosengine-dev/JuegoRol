@@ -28,9 +28,12 @@ public class Batalla implements VentanaJuego {
     private BufferedImage mensajeHeroe;
     private int saludMaximaEnemigo;
 
-    public Batalla(Heroe heroe, Enemy enemigo){
+    private int ventanaOrigen;
+
+    public Batalla(Heroe heroe, Enemy enemigo, int ventanaOrigen){
         this.heroe = heroe;
         this.enemy = enemigo;
+        this.ventanaOrigen = ventanaOrigen;
         saludMaximaEnemigo = enemigo.getSalud();
 
         mensajesBatalla = batalla();
@@ -89,7 +92,7 @@ public class Batalla implements VentanaJuego {
             } else {
                 if (heroe.getFuerza() > 0){
                     // Volvemos al juego con Heroe como ganador
-                    AdministrarVentanas.cambiarEstadoActual(1);
+                    AdministrarVentanas.cambiarEstadoActual(ventanaOrigen);
                 } else {
                     // Game Over
                     AdministrarVentanas.cambiarEstadoActual(5);

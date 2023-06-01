@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public class SavedGame implements Serializable {
 
-    private User usuario;
+    private String usuario;
     private int posicionJugadorX;
     private int posicionJugadorY;
     private int tipo;
@@ -23,14 +23,13 @@ public class SavedGame implements Serializable {
     private boolean key1;
     private boolean key2;
     private boolean key3;
-
     private ArrayList<Pocion> pociones = new ArrayList<>();
     private ArrayList<Enemy> enemigos = new ArrayList<>();
 
     public SavedGame(){
 
     }
-    public SavedGame(User usuario, int posicionJugadorX, int posicionJugadorY,
+    public SavedGame(String usuario, int posicionJugadorX, int posicionJugadorY,
                      int tipo, int fuerza, int resistencia, int experiencia,
                      int cantidadPocion1, int cantidadPocion2, int cantidadPocion3,
                      boolean key1, boolean key2, boolean key3,
@@ -53,11 +52,11 @@ public class SavedGame implements Serializable {
         this.enemigos = enemigos;
     }
 
-    public User getUsuario() {
+    public String getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(User usuario) {
+    public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
 

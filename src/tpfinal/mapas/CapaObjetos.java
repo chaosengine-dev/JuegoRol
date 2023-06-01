@@ -118,6 +118,10 @@ public class CapaObjetos extends Capa{
         return pociones;
     }
 
+    public void setPociones(ArrayList<Pocion> pociones) {
+        this.pociones = pociones;
+    }
+
     public void actualizarObjetos(Pocion pocionColision) {
         for (Pocion pocion: pociones
              ) {
@@ -130,4 +134,6 @@ public class CapaObjetos extends Capa{
         }
 
     }
+
+
 }

@@ -1,7 +1,7 @@
 package tpfinal.objetos;
 
 public class Elfo implements Heroe{
-    private int tipo = 2;
+    private int tipo = 1;
     public int fuerzaMaxima = 600;
     public int resistenciaMaxima = 1000;
     public int experienciaMaxima = 250;

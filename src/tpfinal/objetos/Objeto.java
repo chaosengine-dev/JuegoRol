@@ -6,6 +6,9 @@ public class Objeto {
     private int posicionX;
     private int posicionY;
 
+    public Objeto(){
+
+    }
     public Objeto(int id, int posicionX, int posicionY){
         this.id = id;
         this.posicionX = posicionX;
