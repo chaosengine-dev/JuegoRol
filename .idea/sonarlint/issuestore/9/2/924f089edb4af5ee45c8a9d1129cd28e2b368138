@@ -1,7 +1,2 @@
 
-Q	java:S125
-"<This block of commented-out lines of code should be removed.(ù—Ì
-V
-java:S1128";Remove this unused import 'tpfinal.graficos.VentanaJFrame'.(¬ü¤­þÿÿÿÿ
-Y
-java:S1128">Remove this unused import 'tpfinal.login.welcome.Welcomepage'.(ã†ãžýÿÿÿÿ
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ï†öµÿÿÿÿÿ8›€”£‡1

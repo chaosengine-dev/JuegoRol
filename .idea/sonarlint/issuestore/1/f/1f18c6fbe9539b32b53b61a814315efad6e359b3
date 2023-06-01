@@ -1,14 +1,22 @@
 
+u
+java:S1450#"SRemove the "user" field and declare it as a local variable in the relevant methods.(‡ÏÇ³øÿÿÿÿ8œ¢Ï£‡1
 H
-java:S1135H"2Complete the task associated to this TODO comment.(Ò¥Õ¹
+java:S1135I"2Complete the task associated to this TODO comment.(Ò¥Õ¹
 H
-java:S1135P"2Complete the task associated to this TODO comment.(Ò¥Õ¹
+java:S1135Q"2Complete the task associated to this TODO comment.(Ò¥Õ¹
 H
-java:S1135X"2Complete the task associated to this TODO comment.(Œ•¢½
-7	java:S131c""Add a default case to this switch.(¼úü‹
+java:S1135Y"2Complete the task associated to this TODO comment.(Œ•¢½
+7	java:S131d""Add a default case to this switch.(¼úü‹
+X
+java:S1161":Add the "@Override" annotation above this method signature(´õ 8­‘§£‡1
+?
+java:S1116ƒ"Remove this empty statement.(ôŸìúÿÿÿÿ8®‘§£‡1
 J
-java:S1128"(Remove this unused import 'javax.swing'.(Ìí¿Üüÿÿÿÿ8ï˜È†1
+java:S1128"(Remove this unused import 'javax.swing'.(Ìí¿Üüÿÿÿÿ8µ¹™¤‡1
 g
-java:S1128"JRemove this unused import 'javax.swing.text.StyleConstants.getBackground'.(îó¶Ù8ï˜È†1
+java:S1128"JRemove this unused import 'javax.swing.text.StyleConstants.getBackground'.(îó¶Ù8µ¹™¤‡1
 f
-java:S1128"JRemove this unused import 'javax.swing.text.StyleConstants.getForeground'.(´ı€8‘ï˜È†1
+java:S1128"JRemove this unused import 'javax.swing.text.StyleConstants.getForeground'.(´ı€8µ¹™¤‡1
+J
+java:S1068#"(Remove this unused "user" private field.(‡ÏÇ³øÿÿÿÿ8³¢Ï£‡1

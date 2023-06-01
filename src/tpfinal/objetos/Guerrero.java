@@ -2,7 +2,7 @@ package tpfinal.objetos;
 
 public class Guerrero implements Heroe{
 
-    private int tipo = 1;
+    private int tipo = 0;
     public int fuerzaMaxima = 800;
     public int resistenciaMaxima = 700;
     public int experienciaMaxima = 150;

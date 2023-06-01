@@ -1,0 +1,20 @@
+
+~
+java:S1319$"hThe type of "pociones" should be an interface such as "List" rather than the implementation "ArrayList".(î¾¤¯
+~
+java:S1319$"hThe type of "enemigos" should be an interface such as "List" rather than the implementation "ArrayList".(î¾¤¯
+Œ
+java:S1319Ÿ"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(Àñèıÿÿÿÿ
+„
+java:S1319£"hThe type of "pociones" should be an interface such as "List" rather than the implementation "ArrayList".(³ı¦¤şÿÿÿÿ
+Œ
+java:S1319§"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(´¤ÕŒúÿÿÿÿ
+„
+java:S1319«"hThe type of "enemigos" should be an interface such as "List" rather than the implementation "ArrayList".(êüËùÿÿÿÿ
+@
+java:S1948"*Make "pociones" transient or serializable.(Œ¨÷
+?
+java:S1948"*Make "enemigos" transient or serializable.(¬ññi
+\	java:S107 "BConstructor has 15 parameters, which is greater than 7 authorized.(Ÿ´Ï¿úÿÿÿÿ
+X
+java:S1128"6Remove this unused import 'tpfinal.login.models.User'.(Íâ‘ßüÿÿÿÿ8€“ò£‡1

@@ -4,8 +4,12 @@ import java.awt.image.BufferedImage;
 
 public class Pocion extends Objeto{
 
-    private final boolean activa;
-    private final int tipo;
+    private boolean activa;
+    private int tipo;
+
+    public Pocion(){
+
+    }
     public Pocion(int id, int posicionX, int posicionY, int tipo){
         super(id, posicionX, posicionY);
         this.activa = true;
@@ -14,6 +18,10 @@ public class Pocion extends Objeto{
 
     public boolean isActiva() {
         return activa;
+    }
+
+    public void setActiva(boolean activa) {
+        this.activa = activa;
     }
 
     public int getTipo() {

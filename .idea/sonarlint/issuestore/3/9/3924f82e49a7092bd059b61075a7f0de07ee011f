@@ -1,16 +1,22 @@
 
 X
-java:S2184&"BCast one of the operands of this division operation to a "double".(€Ö¢­
+java:S2184*"BCast one of the operands of this division operation to a "double".(€Ö¢­
+u
+java:S1450"SRemove the "user" field and declare it as a local variable in the relevant methods.(’Ø¾ıÿÿÿÿ8’ı»£‡1
 <
-java:S3010"!Remove this assignment of "alto".(óÖêâıÿÿÿÿ
+java:S3010"!Remove this assignment of "alto".(óÖêâıÿÿÿÿ
 8
-java:S3010""Remove this assignment of "ancho".(‹øŠ
+java:S3010""Remove this assignment of "ancho".(‹øŠ
 P
-java:S2209"5Change this instance-reference to a static reference.(óÖêâıÿÿÿÿ
+java:S2209"5Change this instance-reference to a static reference.(óÖêâıÿÿÿÿ
 K
-java:S2209"5Change this instance-reference to a static reference.(‹øŠ
+java:S2209"5Change this instance-reference to a static reference.(‹øŠ
+U
+java:S1117"8Rename "user" which hides the field declared at line 19.(Ç­‚û8¨ı»£‡1
 D
-java:S19053")Remove this unnecessary cast to "double".(ü×Å†ıÿÿÿÿ
-Q	java:S125@"<This block of commented-out lines of code should be removed.(Î­ÿ¬
+java:S19057")Remove this unnecessary cast to "double".(ü×Å†ıÿÿÿÿ
+Q	java:S125D"<This block of commented-out lines of code should be removed.(Î­ÿ¬
 Y
-java:S1128">Remove this unused import 'tpfinal.login.welcome.Welcomepage'.(ã†ãıÿÿÿÿ
+java:S1128">Remove this unused import 'tpfinal.login.welcome.Welcomepage'.(ã†ãıÿÿÿÿ
+J
+java:S1068"(Remove this unused "user" private field.(’Ø¾ıÿÿÿÿ8¾ı»£‡1

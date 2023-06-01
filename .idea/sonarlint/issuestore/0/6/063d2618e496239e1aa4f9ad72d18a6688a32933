@@ -3,6 +3,8 @@
 java:S1319m"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÎÞ±‡þÿÿÿÿ
 ‹
 java:S1319u"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ÀñŽèýÿÿÿÿ
+Š
+java:S1319y"hThe type of "pociones" should be an interface such as "List" rather than the implementation "ArrayList".(³ý¦¤þÿÿÿÿ8ÒµÖ¤‡1
 m
 java:S3776!"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(Ø¥Žšùÿÿÿÿ
 m

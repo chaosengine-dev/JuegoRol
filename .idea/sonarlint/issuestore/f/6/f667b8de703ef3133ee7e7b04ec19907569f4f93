@@ -1,11 +1,8 @@
 
-M
-java:S1135,"2Complete the task associated to this TODO comment.(»Õö‹úÿÿÿÿ
-H
-java:S11350"2Complete the task associated to this TODO comment.(ÎÆãŸ
-R
-java:S1128"0Remove this unused import 'javax.sound.sampled'.(û‹‡¼úÿÿÿÿ8äô˜È†1
-F
-java:S1128")Remove this unused import 'java.io.File'.(†Ğ¥Å8äô˜È†1
-R
-java:S1128"0Remove this unused import 'java.io.IOException'.(ªº»Úıÿÿÿÿ8åô˜È†1
+T
+java:S11350"2Complete the task associated to this TODO comment.(»Õö‹úÿÿÿÿ8ƒşß£‡1
+O
+java:S11356"2Complete the task associated to this TODO comment.(ÎÆãŸ8„şß£‡1
+]	java:S125@"<This block of commented-out lines of code should be removed.(«¬ùúÿÿÿÿ8†şß£‡1
+J
+java:S1068"(Remove this unused "user" private field.(‡ÏÇ³øÿÿÿÿ8ÀÒã£‡1

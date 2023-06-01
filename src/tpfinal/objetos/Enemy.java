@@ -4,11 +4,15 @@ import java.awt.image.BufferedImage;
 
 public class Enemy extends Objeto {
 
-    private final boolean activa;
-    private final int tipo;
+    private boolean activa;
+    private int tipo;
     public int salud;
     private int fuerza;
     private int resistencia;
+
+    public Enemy(){
+
+    }
 
     public Enemy(int id, int posicionX, int posicionY, int tipo) {
         super(id, posicionX, posicionY);

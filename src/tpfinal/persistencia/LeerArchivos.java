@@ -1,7 +1,5 @@
 package tpfinal.persistencia;
 
-import tpfinal.vistas.Juego;
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;

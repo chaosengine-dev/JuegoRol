@@ -11,9 +11,24 @@
   "secondPassword" : "1234",
   "email" : "cesar@gmail.com"
 }, {
+<<<<<<< HEAD
   "id" : 3,
   "username" : "AgusPro",
   "password" : "123456",
   "secondPassword" : "123456",
   "email" : "aguspro@gmail.com"
+=======
+  "id" : 0,
+  "username" : "cesarito",
+  "password" : "1234",
+  "secondPassword" : "1234",
+  "email" : "aaaa"
+},{
+  "id" : 3,
+  "username" : "jorgekaz",
+  "password" : "1234",
+  "secondPassword" : "1234",
+  "email" : "jorgekaz@hotmail.com"
+
+>>>>>>> 383bddd57260efcc27048a0faf90061e1c67498d
 } ]

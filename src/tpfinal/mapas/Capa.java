@@ -90,4 +90,20 @@ public abstract class Capa {
         }
         return vectorSprites;
     }
+
+    public int[] getSprites() {
+        return sprites;
+    }
+
+    public void setSprites(int[] sprites) {
+        this.sprites = sprites;
+    }
+
+    public int getAncho() {
+        return ancho;
+    }
+
+    public int getAlto() {
+        return alto;
+    }
 }

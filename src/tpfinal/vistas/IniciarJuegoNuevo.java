@@ -11,7 +11,7 @@ import tpfinal.mapas.CapaMapa;
 
 import java.awt.*;
 
-public class Juego implements VentanaJuego {
+public class IniciarJuegoNuevo implements VentanaJuego {
 
     private final int ladoSpriteChico = 32;
     private final int ladoSpriteGrande = 64;
@@ -22,7 +22,7 @@ public class Juego implements VentanaJuego {
     MenuEstadistica menuEstadistica;
     Jugador jugador;
 
-    public Juego(){
+    public IniciarJuegoNuevo(){
 
         capaMapa = new CapaMapa("Recursos/Mapas/mapa.txt", ladoSpriteChico);
         capaAmbiente = new CapaAmbiente("Recursos/Objetos/ambiente.txt", ladoSpriteGrande);
@@ -30,21 +30,21 @@ public class Juego implements VentanaJuego {
         capaEnemigos = new CapaEnemigos("Recursos/Objetos/enemigos.txt", ladoSpriteGrande);
 
         int tipoPersonaje = AdministrarControles.teclado.getTipoPersonaje();
+        Heroe heroe;
 
         switch (tipoPersonaje){
-            case 0:
-                Heroe heroe = new Guerrero();
-                jugador = new Jugador(capaMapa.getPosicionJugador().x, capaMapa.getPosicionJugador().y, capaMapa, capaObjetos, capaEnemigos,  heroe);
-                break;
             case 1:
                 heroe = new Elfo();
-                jugador = new Jugador(capaMapa.getPosicionJugador().x, capaMapa.getPosicionJugador().y, capaMapa, capaObjetos, capaEnemigos,  heroe);
+
                 break;
             case 2:
                 heroe = new Mago();
-                jugador = new Jugador(capaMapa.getPosicionJugador().x, capaMapa.getPosicionJugador().y, capaMapa, capaObjetos, capaEnemigos,  heroe);
+                break;
+            default:
+                heroe = new Guerrero();
 
         }
+        jugador = new Jugador(capaMapa.getPosicionJugador().x, capaMapa.getPosicionJugador().y, capaMapa, capaObjetos, capaEnemigos,  heroe, 1);
         menuEstadistica = new MenuEstadistica(jugador);
     }
 

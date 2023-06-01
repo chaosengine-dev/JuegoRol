@@ -70,11 +70,14 @@ public class Jugador {
     private int fuerzaMaxima;
     private boolean enBatalla = false;
 
+    private int ventanaOrigen;
+
     private Heroe heroe;
     public Jugador(){
 
     }
-    public Jugador(int posicionX, int posicionY, CapaMapa capaMapa, CapaObjetos capaObjetos, CapaEnemigos capaEnemigos, Heroe heroe){
+    public Jugador(int posicionX, int posicionY, CapaMapa capaMapa, CapaObjetos capaObjetos, CapaEnemigos capaEnemigos, Heroe heroe, int ventanaOrigen){
+        this.ventanaOrigen = ventanaOrigen;
         this.inventario = new int[]{0,0,0,0,0,0};
         this.posicionX = posicionX;
         this.posicionY = posicionY;
@@ -107,13 +110,13 @@ public class Jugador {
             final int centroY = (alto / 2) - (ladoSprite /2);
             grafico.drawImage(imagen, centroX, centroY, null);
         } else {
-            crearVentanaBatalla();
+            crearVentanaBatalla(ventanaOrigen);
             enBatalla = false;
             desactivarEnemigo();
         }
     }
-    private void crearVentanaBatalla(){
-        AdministrarVentanas.iniciarVentanaBatalla(heroe, enemyEnColision);
+    private void crearVentanaBatalla(int ventanaOrigen){
+        AdministrarVentanas.iniciarVentanaBatalla(heroe, enemyEnColision, ventanaOrigen);
         AdministrarVentanas.cambiarEstadoActual(4);
     }
 
@@ -132,9 +135,8 @@ public class Jugador {
         if (AdministrarControles.teclado.isSaveGame()){
             AdministrarControles.teclado.setSaveGame(false);
             // Guardar juego en jackson
-            System.out.println("guardando");
             PersistenciaJson serializar = new PersistenciaJson();
-            User usuario = new User("Cesar", "1223", "1223", "aa@aa.com");
+            String usuario = AdministrarVentanas.getUserRegistered();
 
             SavedGame savedGame = new SavedGame(usuario, (int)this.getPosicionX(),
                     (int)this.getPosicionY(), heroe.getTipo(), heroe.getFuerza(), heroe.getResistencia(),
@@ -142,7 +144,8 @@ public class Jugador {
                     inventario[3] == 1,inventario[4] == 1, inventario[5] == 1,
                     capaObjetos.getPociones(), capaEnemigos.getEnemigos());
 
-            serializar.serializar(savedGame, "game.json");
+            String path = "Recursos/SavedGames/" + usuario + ".json";
+            serializar.serializar(savedGame, path);
 
         }
     }
@@ -504,6 +507,10 @@ public class Jugador {
     }
     public int[] getInventario() {
         return inventario;
+    }
+
+    public void setInventario(int[] inventario) {
+        this.inventario = inventario;
     }
 
     public int getRecuperacionMaxima() {
