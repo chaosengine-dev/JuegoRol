@@ -40,7 +40,9 @@ public abstract class AdministrarVentanas {
     }
 
     public static void iniciarVentanaJuego(){
-        ventanasJuegos[1] = new IniciarJuegoNuevo();
+        if (ventanasJuegos[1] == null){
+            ventanasJuegos[1] = new IniciarJuegoNuevo();
+        }
     }
 
     public static void iniciarVentanaJuegoSalvado(){

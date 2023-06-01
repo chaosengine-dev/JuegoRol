@@ -11,6 +11,7 @@ import tpfinal.objetos.*;
 import tpfinal.persistencia.PersistenciaJson;
 import tpfinal.persistencia.SavedGame;
 
+import javax.swing.*;
 import java.awt.*;
 
 public class IniciarJuegoSalvado implements VentanaJuego {
@@ -35,7 +36,10 @@ public class IniciarJuegoSalvado implements VentanaJuego {
         PersistenciaJson leerSavedGame = new PersistenciaJson();
         String path = "Recursos/SavedGames/" + AdministrarVentanas.getUserRegistered() + ".json";
         SavedGame partida = leerSavedGame.deserializar(path, SavedGame.class);
+        if (partida == null){
+            JOptionPane.showMessageDialog(null, "No tiene partes guardadas, iniciando juego nuevo.");
 
+        }
 
         int tipoPersonaje = partida.getTipo();
 
@@ -71,31 +75,6 @@ public class IniciarJuegoSalvado implements VentanaJuego {
         }
         capaObjetos.setSprites(spritesPociones);
         capaEnemigos.setSprites(spritesEnemigos);
-
-        /*
-                for (int y = 0; y < capaObjetos.getAlto(); y++) {
-            for (int x = 0; x < capaObjetos.getAncho(); x++) {
-                int indice = sprites[x + y * capaObjetos.getAncho()];
-            }
-        }
-
-
-
-        for (Pocion pocion: capaObjetos.getPociones()) {
-            boolean exist = false;
-            for (Pocion pocionActiva: partida.getPociones()) {
-                if (pocionActiva.getId() == pocion.getId()){
-                    exist = true;
-                    break;
-                }
-            }
-            if (!exist){
-                pocion.setActiva(false);
-                capaObjetos.getPociones().set(capaObjetos.getPociones().indexOf(pocion), pocion);
-                sprites[(pocion.getPosicionX()/ ladoSpriteChico) + (pocion.getPosicionY() / ladoSpriteChico) * capaObjetos.getAncho()] = 0;
-            }
-        }*/
-
 
         Heroe heroe;
 

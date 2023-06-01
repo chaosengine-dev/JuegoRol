@@ -6,8 +6,10 @@ import tpfinal.graficos.CanvasVentana;
 import tpfinal.graficos.SpritesSheet;
 import tpfinal.login.models.User;
 import tpfinal.persistencia.PersistenciaJson;
+import tpfinal.persistencia.SavedGame;
 
 import javax.sound.sampled.*;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -46,8 +48,14 @@ public class Presentacion implements VentanaJuego {
             Rectangle mouseRelativo = new Rectangle(MouseInfo.getPointerInfo().getLocation().x - ubicacionVentana.x, MouseInfo.getPointerInfo().getLocation().y - ubicacionVentana.y, 1, 1);
             if (mouseRelativo.intersects(botonCargar)){
                 // TODO: Cargar partida desde archivo y mostrar
-                AdministrarVentanas.iniciarVentanaJuegoSalvado();
-                AdministrarVentanas.cambiarEstadoActual(10);
+                if (existeSavedGame()){
+                    AdministrarVentanas.iniciarVentanaJuegoSalvado();
+                    AdministrarVentanas.cambiarEstadoActual(10);
+                } else {
+                    // Si no existe una parte salvada creo juego nuevo
+                    AdministrarVentanas.iniciarVentanaNuevo();
+                    AdministrarVentanas.cambiarEstadoActual(3);
+                }
 
             }
             if (mouseRelativo.intersects(botonEntrar)){
@@ -61,7 +69,15 @@ public class Presentacion implements VentanaJuego {
         canvasVentana.getRaton().resetClick();
     }
 
-    //public void setUser(String user){
-    //    this.user = user;
-    //};
+     private boolean existeSavedGame(){
+         // Leer json
+         PersistenciaJson leerSavedGame = new PersistenciaJson();
+         String path = "Recursos/SavedGames/" + AdministrarVentanas.getUserRegistered() + ".json";
+         SavedGame partida = leerSavedGame.deserializar(path, SavedGame.class);
+         if (partida == null){
+             JOptionPane.showMessageDialog(null, "No tiene partes guardadas, iniciando juego nuevo.");
+             return false;
+         }
+         return true;
+     }
 }

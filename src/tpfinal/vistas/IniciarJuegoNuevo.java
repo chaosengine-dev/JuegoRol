@@ -8,6 +8,7 @@ import tpfinal.mapas.CapaObjetos;
 import tpfinal.objetos.*;
 import tpfinal.interfaz_usuario.MenuEstadistica;
 import tpfinal.mapas.CapaMapa;
+import tpfinal.persistencia.PersistenciaJson;
 
 import java.awt.*;
 
@@ -46,6 +47,7 @@ public class IniciarJuegoNuevo implements VentanaJuego {
         }
         jugador = new Jugador(capaMapa.getPosicionJugador().x, capaMapa.getPosicionJugador().y, capaMapa, capaObjetos, capaEnemigos,  heroe, 1);
         menuEstadistica = new MenuEstadistica(jugador);
+
     }
 
     @Override

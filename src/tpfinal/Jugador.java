@@ -55,10 +55,8 @@ public class Jugador {
     //private int experiencia = 50;
 
     private CapaMapa capaMapa;
-
     private CapaObjetos capaObjetos;
     private Enemy enemyEnColision;
-
     private Pocion pocionEnColision;
     private CapaEnemigos capaEnemigos;
     private int[] inventario;
