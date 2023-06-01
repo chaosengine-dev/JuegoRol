@@ -10,12 +10,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.*;
 
-public class UserRepo implements IRepository<User> {
+public class GestionRepo implements IRepository<User> {
     private final File archivo = new File("src/tpfinal/login/archivos/usuarios.json");
     private final ObjectMapper mapper = new ObjectMapper();
     private List<User> users;
 
-    public UserRepo() {
+    public GestionRepo() {
     }
 
     @Override

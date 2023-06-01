@@ -1,7 +1,7 @@
 package tpfinal.login.registration;
 
 import tpfinal.login.models.User;
-import tpfinal.persistencia.repositorios.UserRepo;
+import tpfinal.persistencia.repositorios.GestionRepo;
 import tpfinal.vistas.AdministrarVentanas;
 import tpfinal.vistas.VentanaJuego;
 import javax.swing.*;
@@ -36,7 +36,7 @@ public class Registration implements VentanaJuego {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
-        UserRepo newUser = new UserRepo();
+        GestionRepo newUser = new GestionRepo();
 
         button1.addActionListener(new ActionListener() {
             @Override

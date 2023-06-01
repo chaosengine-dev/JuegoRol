@@ -1,6 +1,6 @@
 package tpfinal.login.loginpage;
 
-import tpfinal.persistencia.repositorios.UserRepo;
+import tpfinal.persistencia.repositorios.GestionRepo;
 import tpfinal.vistas.AdministrarVentanas;
 import tpfinal.vistas.VentanaJuego;
 import javax.swing.*;
@@ -71,7 +71,7 @@ public class Loginpage implements VentanaJuego {
 
     //FUNCION DE COMPROBAR USUARIO
     private boolean checkCredentials(String username, String password) {
-        UserRepo newLogin = new UserRepo();
+        GestionRepo newLogin = new GestionRepo();
         newLogin.cargar();
 
         // Verificar si el username existe en el repositorio de usuarios
