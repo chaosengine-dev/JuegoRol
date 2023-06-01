@@ -7,8 +7,8 @@ public interface IRepository<T> {
     void guardar();
     List<T> listar();
     void agregar(T... objecto) throws Exception;
-
     void eliminar(String userName);
-
     void modificar(String userName);
+    boolean existeUsername(String username);
+    boolean verificarCredenciales(String username, String password);
 }
