@@ -68,6 +68,7 @@ public abstract class AdministrarVentanas {
         ventanaActual = ventanasJuegos[7];
     }
 
+
     public static void actualizar(){
         if (ventanaActual == null){
             gestorVentanas(canvasVentanaGlobal);
