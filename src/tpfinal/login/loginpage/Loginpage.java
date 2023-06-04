@@ -54,9 +54,15 @@ public class Loginpage implements VentanaJuego {
                 boolean validCredentials = checkCredentials(user, pass);
                 if (validCredentials) {
                     frame.dispose();
-                    AdministrarVentanas.iniciarVentanaBienvenida();
-                    AdministrarVentanas.setUserRegistered(user);
-                    AdministrarVentanas.cambiarEstadoActual(0);
+                    if (checkAdmin(user)) {
+                        AdministrarVentanas.iniciarVentanaAdmin();
+                        AdministrarVentanas.setUserRegistered(user);
+                        AdministrarVentanas.cambiarEstadoActual(11);
+                    } else {
+                        AdministrarVentanas.iniciarVentanaBienvenida();
+                        AdministrarVentanas.setUserRegistered(user);
+                        AdministrarVentanas.cambiarEstadoActual(0);
+                    }
                 } else {
                     JOptionPane.showMessageDialog(null, "Invalid Username or Password");
                 }
@@ -90,6 +96,16 @@ public class Loginpage implements VentanaJuego {
         }
 
         return false; // Credenciales inválidas
+    }
+
+    // FUNCION PARA COMPROBAR SI EL USUARIO ES ADMIN
+    private boolean checkAdmin(String username) {
+        GestionRepo newLogin = new GestionRepo();
+        newLogin.cargar();
+        if (newLogin.isAdmin(username)) {
+            return true;//es admin
+        }
+        return false;//no es admin
     }
 
     @Override

@@ -3,17 +3,20 @@
   "username" : "ADMIN",
   "password" : "ADMIN",
   "secondPassword" : "ADMIN",
-  "email" : "ADMIN"
+  "email" : "ADMIN",
+    "isAdmin" : true
 }, {
   "id" : 2,
   "username" : "cesar",
   "password" : "1234",
   "secondPassword" : "1234",
-  "email" : "cesar@gmail.com"
+  "email" : "cesar@gmail.com",
+  "isAdmin" : false
 }, {
   "id" : 3,
   "username" : "jorgekaz",
   "password" : "123456",
   "secondPassword" : "123456",
-  "email" : "jorgekaz@hotmail.com"
+  "email" : "jorgekaz@hotmail.com",
+  "isAdmin" : false
 } ]

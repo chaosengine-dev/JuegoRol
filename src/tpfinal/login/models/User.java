@@ -8,6 +8,7 @@ public class User implements Serializable {
     private String password;
     private String secondPassword;
     private String email;
+    private boolean isAdmin = false;
 
     public User(){}
     public User(String username, String password, String secondPassword, String email) {
@@ -22,7 +23,7 @@ public class User implements Serializable {
         return lastId++;
     }
 
-    //GETTERS AND SETTERS
+    //region GETTERS AND SETTERS
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
@@ -34,8 +35,9 @@ public class User implements Serializable {
     public void setSecondPassword(String secondPassword) { this.secondPassword = secondPassword; }
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
-
-    //END GETTERS AND SETTERS
+    public boolean getisAdmin() {return isAdmin;}
+    public void setAdmin(boolean admin) {isAdmin = admin;}
+    //endregion
 
     @Override
     public String toString() {

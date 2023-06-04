@@ -1,5 +1,7 @@
 package tpfinal.vistas;
 
+import tpfinal.admin.adminpage.AdminPage;
+import tpfinal.admin.manageusers.ManageUsers;
 import tpfinal.graficos.CanvasVentana;
 import tpfinal.login.loginpage.Loginpage;
 import tpfinal.login.registration.Registration;
@@ -25,7 +27,7 @@ public abstract class AdministrarVentanas {
     }
     public static void iniciarVentanas(CanvasVentana canvasVentana) {
         indice = 0;
-        ventanasJuegos = new VentanaJuego[11];
+        ventanasJuegos = new VentanaJuego[13];
         ventanasJuegos[0] = null;
         ventanasJuegos[1] = null;
         ventanasJuegos[2] = new Pausa();
@@ -37,6 +39,8 @@ public abstract class AdministrarVentanas {
         ventanasJuegos[8] = null;
         ventanasJuegos[9] = null;
         ventanasJuegos[10] = null;
+        ventanasJuegos[11] = null;
+        ventanasJuegos[12] = null;
     }
 
     public static void iniciarVentanaJuego(){
@@ -67,7 +71,8 @@ public abstract class AdministrarVentanas {
     private static void iniciarVentanaActual() {
         ventanaActual = ventanasJuegos[7];
     }
-
+    public static void iniciarVentanaAdmin(){ventanasJuegos[11] = new AdminPage();}
+    public static void iniciarVentanaGestionUsuarios(){ventanasJuegos[12] = new ManageUsers();}
 
     public static void actualizar(){
         if (ventanaActual == null){

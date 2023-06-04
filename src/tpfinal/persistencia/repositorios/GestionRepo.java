@@ -135,6 +135,16 @@ public class GestionRepo implements IRepository<User> {
         return false;
     }
 
+    public boolean isAdmin(String username) {
+        cargar();
+        for(User user : this.users){
+            if(Objects.equals(user.getUsername(), username)){
+                return user.getisAdmin();
+            }
+        }
+        return false;
+    }
+
     public boolean verificarCredenciales(String username, String password) {
         cargar();
         for(User user : this.users){
