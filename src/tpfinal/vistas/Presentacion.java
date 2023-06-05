@@ -1,19 +1,14 @@
 package tpfinal.vistas;
 
-import tpfinal.control.AdministrarControles;
 import tpfinal.control.Musica;
 import tpfinal.graficos.CanvasVentana;
 import tpfinal.graficos.SpritesSheet;
-import tpfinal.login.models.User;
 import tpfinal.persistencia.PersistenciaJson;
 import tpfinal.persistencia.SavedGame;
 
-import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
 public class Presentacion implements VentanaJuego {
     private int ancho = 800;
@@ -23,7 +18,6 @@ public class Presentacion implements VentanaJuego {
     private Rectangle botonEntrar;
     private Rectangle botonCargar;
     private CanvasVentana canvasVentana;
-    private String user;
 
     public Presentacion(CanvasVentana canvasVentana){
 
@@ -47,7 +41,7 @@ public class Presentacion implements VentanaJuego {
             Point ubicacionVentana = canvasVentana.getPosicionVentana();
             Rectangle mouseRelativo = new Rectangle(MouseInfo.getPointerInfo().getLocation().x - ubicacionVentana.x, MouseInfo.getPointerInfo().getLocation().y - ubicacionVentana.y, 1, 1);
             if (mouseRelativo.intersects(botonCargar)){
-                // TODO: Cargar partida desde archivo y mostrar
+                // Cargar partida desde archivo y mostrar
                 if (existeSavedGame()){
                     AdministrarVentanas.iniciarVentanaJuegoSalvado();
                     AdministrarVentanas.cambiarEstadoActual(10);
@@ -59,7 +53,6 @@ public class Presentacion implements VentanaJuego {
 
             }
             if (mouseRelativo.intersects(botonEntrar)){
-                // TODO: Hacer opcion si hacemos click en el boton nuevo juego.
                 AdministrarVentanas.iniciarVentanaNuevo();
                 AdministrarVentanas.cambiarEstadoActual(3);
             }

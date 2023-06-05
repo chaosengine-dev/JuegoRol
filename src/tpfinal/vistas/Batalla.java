@@ -1,6 +1,6 @@
 package tpfinal.vistas;
 
-import tpfinal.control.AdministrarControles;
+import tpfinal.control.Controles;
 import tpfinal.graficos.SpritesSheet;
 import tpfinal.interfaz_usuario.MensajeBatalla;
 import tpfinal.objetos.*;
@@ -27,7 +27,6 @@ public class Batalla implements VentanaJuego {
     private BufferedImage mensajeEnemigo;
     private BufferedImage mensajeHeroe;
     private int saludMaximaEnemigo;
-
     private int ventanaOrigen;
 
     public Batalla(Heroe heroe, Enemy enemigo, int ventanaOrigen){
@@ -82,9 +81,9 @@ public class Batalla implements VentanaJuego {
                 dibujoFuerzaHeroe.width = ((fuerzaHeroe * 200) / heroe.getFuerzaMaxima());
                 dibujoFuerzaEnemigo.width = ((fuerzaEnemigo * 200) / saludMaximaEnemigo);
                 indice++;
-                if (AdministrarControles.teclado.isFinBatalla()){
+                if (Controles.teclado.isFinBatalla()){
                     indice = mensajesBatalla.size() + 1;
-                    AdministrarControles.teclado.setFinBatalla(false);
+                    Controles.teclado.setFinBatalla(false);
                 }
             } else if (indice == mensajesBatalla.size()){
                 mensaje = "Fin Batalla";

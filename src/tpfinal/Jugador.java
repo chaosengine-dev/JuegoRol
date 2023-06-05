@@ -1,7 +1,6 @@
 package tpfinal;
 
-import tpfinal.control.AdministrarControles;
-import tpfinal.login.models.User;
+import tpfinal.control.Controles;
 import tpfinal.mapas.CapaEnemigos;
 import tpfinal.mapas.CapaObjetos;
 import tpfinal.mapas.CapaMapa;
@@ -130,8 +129,8 @@ public class Jugador {
         }
     }
     private void guardarPartida(){
-        if (AdministrarControles.teclado.isSaveGame()){
-            AdministrarControles.teclado.setSaveGame(false);
+        if (Controles.teclado.isSaveGame()){
+            Controles.teclado.setSaveGame(false);
             // Guardar juego en jackson
             PersistenciaJson serializar = new PersistenciaJson();
             String usuario = AdministrarVentanas.getUserRegistered();
@@ -176,7 +175,7 @@ public class Jugador {
         } else {
             // izquierda y arriba
             if (direccionX == -1 && direccionY == -1) {
-                if (AdministrarControles.teclado.getIzquierda().obtenerUltimaPulsacion() > AdministrarControles.teclado.getArriba()
+                if (Controles.teclado.getIzquierda().obtenerUltimaPulsacion() > Controles.teclado.getArriba()
                         .obtenerUltimaPulsacion()) {
                     mover(direccionX, 0);
                 } else {
@@ -185,7 +184,7 @@ public class Jugador {
             }
             // izquierda y abajo
             if (direccionX == -1 && direccionY == 1) {
-                if (AdministrarControles.teclado.getIzquierda().obtenerUltimaPulsacion() > AdministrarControles.teclado.getAbajo()
+                if (Controles.teclado.getIzquierda().obtenerUltimaPulsacion() > Controles.teclado.getAbajo()
                         .obtenerUltimaPulsacion()) {
                     mover(direccionX, 0);
                 } else {
@@ -194,7 +193,7 @@ public class Jugador {
             }
             // derecha y arriba
             if (direccionX == 1 && direccionY == -1) {
-                if (AdministrarControles.teclado.getDerecha().obtenerUltimaPulsacion() > AdministrarControles.teclado.getArriba()
+                if (Controles.teclado.getDerecha().obtenerUltimaPulsacion() > Controles.teclado.getArriba()
                         .obtenerUltimaPulsacion()) {
                     mover(direccionX, 0);
                 } else {
@@ -203,7 +202,7 @@ public class Jugador {
             }
             // derecha y abajo
             if (direccionX == 1 && direccionY == 1) {
-                if (AdministrarControles.teclado.getDerecha().obtenerUltimaPulsacion() > AdministrarControles.teclado.getAbajo()
+                if (Controles.teclado.getDerecha().obtenerUltimaPulsacion() > Controles.teclado.getAbajo()
                         .obtenerUltimaPulsacion()) {
                     mover(direccionX, 0);
                 } else {
@@ -213,7 +212,7 @@ public class Jugador {
         }
     }
     private void evaluarVelocidadYResistencia(){ // Si tiene resistencia va a poder aumentar la velocidad
-        if (AdministrarControles.teclado.isCorriendo() && heroe.getResistencia() > 0){
+        if (Controles.teclado.isCorriendo() && heroe.getResistencia() > 0){
             velocidad = 2;
             resistenciaFull = false;
             tiempoRecuperacion = 0;
@@ -229,19 +228,19 @@ public class Jugador {
     }
     private int indicarDireccionX() {
         int direccionX = 0;
-        if (AdministrarControles.teclado.getIzquierda().estaPulsada()) {
+        if (Controles.teclado.getIzquierda().estaPulsada()) {
             direccionX = -1;
-        } else if (AdministrarControles.teclado.getDerecha().estaPulsada()) {
+        } else if (Controles.teclado.getDerecha().estaPulsada()) {
             direccionX = 1;
         }
         return direccionX;
     }
     private int indicarDireccionY() {
         int direccionY = 0;
-        if (AdministrarControles.teclado.getArriba().estaPulsada() ) {
+        if (Controles.teclado.getArriba().estaPulsada() ) {
             direccionY = -1;
 
-        } else if (AdministrarControles.teclado.getAbajo().estaPulsada() ) {
+        } else if (Controles.teclado.getAbajo().estaPulsada() ) {
             direccionY = 1;
         }
         return direccionY;
@@ -263,7 +262,7 @@ public class Jugador {
             if (direccionY == 1 && !enColisionAbajo(direccionY)) {
                 posicionY += direccionY * velocidad;
             }
-            if (AdministrarControles.teclado.isCorriendo() && heroe.getResistencia() > 0){
+            if (Controles.teclado.isCorriendo() && heroe.getResistencia() > 0){
                 heroe.setResistencia(heroe.getResistencia() - 1);
                 heroe.setResistencia(heroe.getResistencia() - 1);
             }
@@ -439,7 +438,7 @@ public class Jugador {
     }
 
     private void usarPocion(){
-        if (AdministrarControles.teclado.isUsarPocionUno() && inventario[0] > 0) {
+        if (Controles.teclado.isUsarPocionUno() && inventario[0] > 0) {
             if (heroe.getExperiencia() < experienciaMaxima){
                 heroe.setExperiencia(heroe.getExperiencia() + 20);
                 inventario[0]--;
@@ -447,9 +446,9 @@ public class Jugador {
                     heroe.setExperiencia(experienciaMaxima);
                 }
             }
-            AdministrarControles.teclado.setUsarPocionUno(false);
+            Controles.teclado.setUsarPocionUno(false);
         }
-        if (AdministrarControles.teclado.isUsarPocionDos() && inventario[1] > 0) {
+        if (Controles.teclado.isUsarPocionDos() && inventario[1] > 0) {
             if (heroe.getFuerza() < fuerzaMaxima){
                 heroe.setFuerza(heroe.getFuerza() + 30);
                 inventario[1]--;
@@ -457,9 +456,9 @@ public class Jugador {
                     heroe.setFuerza(fuerzaMaxima);
                 }
             }
-            AdministrarControles.teclado.setUsarPocionDos(false);
+            Controles.teclado.setUsarPocionDos(false);
         }
-        if (AdministrarControles.teclado.isUsarPocionTres() && inventario[2] > 0) {
+        if (Controles.teclado.isUsarPocionTres() && inventario[2] > 0) {
             boolean seUso = false;
             if (heroe.getExperiencia() < experienciaMaxima){
                 heroe.setExperiencia(heroe.getExperiencia() + 20);
@@ -478,7 +477,7 @@ public class Jugador {
             if (seUso) {
                 inventario[2]--;
             }
-            AdministrarControles.teclado.setUsarPocionTres(false);
+            Controles.teclado.setUsarPocionTres(false);
         }
     }
     public void setPosicionX(int posicionX) {

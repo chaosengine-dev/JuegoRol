@@ -14,10 +14,4 @@ public class Sprite {
     public BufferedImage obtenerImagen(){
         return imagen;
     }
-    public int obtenerAncho(){
-        return ancho;
-    }
-    public int obtenerAlto(){
-        return alto;
-    }
 }

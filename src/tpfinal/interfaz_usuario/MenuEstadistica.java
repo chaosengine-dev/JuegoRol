@@ -9,24 +9,19 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 public class MenuEstadistica {
-    public int anchoJuego = 800;
-    public int altoJuego = 600;
-    public Rectangle areaMenu;
-    public Rectangle contenedorMenu;
-    public Rectangle boxInventario1;
-    public Rectangle boxInventario2;
-    public Rectangle boxInventario3;
+    private int anchoJuego = 800;
+    private int altoJuego = 600;
+    private Rectangle areaMenu;
+    private Rectangle contenedorMenu;
+    private Rectangle boxInventario1;
+    private Rectangle boxInventario2;
+    private Rectangle boxInventario3;
     private Rectangle boxInventario4;
     private Rectangle boxInventario5;
     private Rectangle boxInventario6;
     private Color colorVida = new Color(12,49,93);
     private Color colorResistencia = new Color(212,7,11);
     private Color colorExperiencia = new Color(101, 212, 7);
-
-    // Variables que luego debo pasar por parametro
-    private int resistenciaMaxima;
-    private int experienciaMaxima;
-    private int saludMaxima;
 
     public MenuEstadistica(Jugador jugador) {
         int altoMenu = 64;
@@ -39,9 +34,6 @@ public class MenuEstadistica {
         boxInventario4 = new Rectangle(boxInventario3.x + 50, areaMenu.y + 5, ladoBoxInventario, ladoBoxInventario );
         boxInventario5 = new Rectangle(boxInventario4.x + 50, areaMenu.y + 5, ladoBoxInventario, ladoBoxInventario );
         boxInventario6 = new Rectangle(boxInventario5.x + 50, areaMenu.y + 5, ladoBoxInventario, ladoBoxInventario );
-        resistenciaMaxima = jugador.getResistenciaMaxima();
-        experienciaMaxima = jugador.getExperienciaMaxima();
-        saludMaxima = jugador.getFuerzaMaxima();
     }
 
     public void dibujar(Graphics grafico, Jugador jugador){
@@ -100,7 +92,6 @@ public class MenuEstadistica {
         grafico.setColor(Color.WHITE);
         grafico.drawRect(box.x-1, box.y-1, box.width+1, box.height+1);
     }
-
     private void dibujarObjetos(Graphics grafico){
         SpritesSheet hoja = new SpritesSheet("Recursos/Objetos/pociones.png", 32, false);
         Sprite[] pociones = new Sprite[6];
@@ -122,10 +113,5 @@ public class MenuEstadistica {
         grafico.drawImage(imagen, boxInventario5.x, boxInventario5.y, null);
         imagen = pociones[5].obtenerImagen();
         grafico.drawImage(imagen, boxInventario6.x, boxInventario6.y, null);
-    }
-
-    private void areaTexto(Graphics grafico, String texto, int linea){
-        grafico.setColor(Color.WHITE);
-        grafico.drawString(texto, 520, 560 + linea);
     }
 }

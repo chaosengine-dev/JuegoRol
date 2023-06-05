@@ -5,17 +5,13 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 
-public class LeerArchivos {
-    private LeerArchivos(){
+public abstract class LeerArchivos {
 
-    }
-    public static BufferedImage cargarImagenOpaca(final String ruta){
+    public static BufferedImage cargarImagenOpaca(String ruta){
         Image imagen = null;
         try {
             File file = new File(ruta);
-            //imagen = ImageIO.read(Juego.class.getResource(ruta));
             imagen = ImageIO.read(file);
-
         } catch (IOException e){
             System.out.println(e);
         }
@@ -35,12 +31,11 @@ public class LeerArchivos {
         return imagenCompatible;
     }
 
-    public static BufferedImage cargarImagenTransparente(final String ruta){
+    public static BufferedImage cargarImagenTransparente(String ruta){
 
         Image imagen = null;
         try {
             File file = new File(ruta);
-            //imagen = ImageIO.read(Juego.class.getResource(ruta));
             imagen = ImageIO.read(file);
 
         } catch (IOException e){
@@ -63,7 +58,7 @@ public class LeerArchivos {
     }
 
     // Leer mapa desde archivo txt
-    public static String leerArchivoTexto(final String ruta){
+    public static String leerArchivoTexto(String ruta){
         String contenido = "";
         String linea = "";
         try{
@@ -90,7 +85,6 @@ public class LeerArchivos {
     public static Font leerFuente(String ruta){
         Font fuente = null;
         try{
-            //InputStream entradaFuente = Juego.class.getResourceAsStream(ruta);
             InputStream entradaFuente = new FileInputStream(ruta);
             fuente = Font.createFont(Font.TRUETYPE_FONT, entradaFuente);
         } catch (IOException | FontFormatException e) {

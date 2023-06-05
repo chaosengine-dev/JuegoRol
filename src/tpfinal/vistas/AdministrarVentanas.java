@@ -19,7 +19,6 @@ public abstract class AdministrarVentanas {
     private static int indice;
     private static String userRegistered;
 
-
     public static void gestorVentanas(CanvasVentana canvasVentana){
         canvasVentanaGlobal = canvasVentana;
         iniciarVentanas(canvasVentana);
@@ -28,11 +27,25 @@ public abstract class AdministrarVentanas {
     public static void iniciarVentanas(CanvasVentana canvasVentana) {
         indice = 0;
         ventanasJuegos = new VentanaJuego[13];
+        /* Solo construimos las ventanas que no necesitan informacion extra durante la ejecucion
+        las otras se construyen durante la ejecucion usando los metodos de abajo.
+            0 - Ventana Cargar o Jugar
+            1 - Opcion Jugar de la Ventana 0
+            2 - Pausa
+            3 - Nuevo Personaje
+            4 - Batalla
+            5 - Game Over
+            6 - Fin Juego Ganador
+            7 - Formulario Bienvenida
+            8 - Registro
+            9 - Login
+            10 - Iniciar Juego Guardado - Opcion Cargar de Ventana 0
+            11 - Ventana Admin
+            12 - Gestionar Usuarios
+         */
         ventanasJuegos[0] = null;
         ventanasJuegos[1] = null;
         ventanasJuegos[2] = new Pausa();
-        ventanasJuegos[3] = null;
-        ventanasJuegos[4] = null;
         ventanasJuegos[5] = new GameOver();
         ventanasJuegos[6] = new FinJuego();
         ventanasJuegos[7] = new Welcomepage();
@@ -41,26 +54,22 @@ public abstract class AdministrarVentanas {
         ventanasJuegos[10] = null;
         ventanasJuegos[11] = null;
         ventanasJuegos[12] = null;
+
     }
 
+    public static void iniciarVentanaBienvenida(){
+        ventanasJuegos[0] = new Presentacion(canvasVentanaGlobal);
+    }
     public static void iniciarVentanaJuego(){
         if (ventanasJuegos[1] == null){
             ventanasJuegos[1] = new IniciarJuegoNuevo();
         }
     }
-
-    public static void iniciarVentanaJuegoSalvado(){
-        ventanasJuegos[10] = new IniciarJuegoSalvado();
+    public static void iniciarVentanaNuevo(){
+        ventanasJuegos[3] = new Nuevo(canvasVentanaGlobal);
     }
     public static void iniciarVentanaBatalla(Heroe heroe, Enemy enemigo, int ventanaOrigen){
         ventanasJuegos[4] = new Batalla(heroe, enemigo, ventanaOrigen);
-    }
-    public static void iniciarVentanaBienvenida(){
-        ventanasJuegos[0] = new Presentacion(canvasVentanaGlobal);
-    }
-
-    public static void iniciarVentanaNuevo(){
-        ventanasJuegos[3] = new Nuevo(canvasVentanaGlobal);
     }
     public static void iniciarVentanaRegistro(){
         ventanasJuegos[8] = new Registration();
@@ -68,6 +77,11 @@ public abstract class AdministrarVentanas {
     public static void iniciarVentanaLogin(){
         ventanasJuegos[9] = new Loginpage();
     }
+    public static void iniciarVentanaJuegoSalvado(){
+        ventanasJuegos[10] = new IniciarJuegoSalvado();
+    }
+
+    // Indico que ventana arranca en vista
     private static void iniciarVentanaActual() {
         ventanaActual = ventanasJuegos[7];
     }
@@ -97,11 +111,14 @@ public abstract class AdministrarVentanas {
     public static int getIndice(){
         return indice;
     }
-
     public static void setUserRegistered(String user) {
         userRegistered = user;
     }
     public static String getUserRegistered() {
         return userRegistered;
+    }
+
+    public static VentanaJuego[] getVentanasJuegos() {
+        return ventanasJuegos;
     }
 }

@@ -39,31 +39,24 @@ public class Enemy extends Objeto {
     public boolean isActiva() {
         return activa;
     }
-
     public int getTipo() {
         return tipo;
     }
-
     public int getSalud() {
         return salud;
     }
-
     public void setSalud(int salud) {
         this.salud = salud;
     }
-
     public int getFuerza() {
         return fuerza;
     }
-
     public void setFuerza(int fuerza) {
         this.fuerza = fuerza;
     }
-
     public int getResistencia() {
         return resistencia;
     }
-
     public void setResistencia(int resistencia) {
         this.resistencia = resistencia;
     }

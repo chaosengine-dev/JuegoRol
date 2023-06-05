@@ -9,10 +9,6 @@ public class Main {
         // Iniciamos el juego
         juegoRol.iniciarJuego();
         // Generamos el bucle donde logramos que se dibuje durante tantos fps
-        try {
-            juegoRol.iniciarBuclePrincipal();
-        } catch (Exception exe) {
-            System.out.println("Salir");
-        }
+        juegoRol.iniciarBuclePrincipal();
     }
 }

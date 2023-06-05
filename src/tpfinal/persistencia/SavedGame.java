@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class SavedGame implements Serializable {
 
+    private static final long serialVersionUID = 1234567123456L;
     private String usuario;
     private int posicionJugadorX;
     private int posicionJugadorY;
@@ -16,7 +17,6 @@ public class SavedGame implements Serializable {
     private int fuerza;
     private int resistencia;
     private int experiencia;
-
     private int cantidadPocion1;
     private int cantidadPocion2;
     private int cantidadPocion3;
