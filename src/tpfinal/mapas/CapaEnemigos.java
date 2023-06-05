@@ -78,19 +78,12 @@ public class CapaEnemigos extends Capa{
     public ArrayList<Rectangle> getAreasColision() {
         return areasColision;
     }
-
-    public Point getPosicionJugador() {
-        return posicionJugador;
-    }
-
     public ArrayList<Enemy> getEnemigos() {
         return enemigos;
     }
-
     public void setEnemigos(ArrayList<Enemy> enemigos) {
         this.enemigos = enemigos;
     }
-
     public void actualizarObjetos(Enemy enemyCollision) {
         for (Enemy enemy: enemigos
         ) {
@@ -101,6 +94,5 @@ public class CapaEnemigos extends Capa{
             }
 
         }
-
     }
 }

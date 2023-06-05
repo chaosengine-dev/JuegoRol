@@ -9,15 +9,14 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 
-public class Raton extends MouseAdapter {
+public class Mouse extends MouseAdapter {
     private Cursor cursor;
     private Point posicionCursor;
     private boolean click;
-
-    public Raton(){
+    public Mouse(){
 
     }
-    public Raton(final CanvasVentana canvasVentana){
+    public Mouse(CanvasVentana canvasVentana){
         Toolkit configuracion = Toolkit.getDefaultToolkit();
         BufferedImage iconoCursor = LeerArchivos.cargarImagenTransparente("Recursos/Cursor/cursor.png");
         Point punto = new Point(0,0);
@@ -30,7 +29,7 @@ public class Raton extends MouseAdapter {
     public Cursor obtenerCursor(){
         return cursor;
     }
-    public void actualizar(final CanvasVentana canvasVentana){
+    public void actualizar(CanvasVentana canvasVentana){
         actualizarPosicion(canvasVentana);
     }
     public Point retornarPuntoPosicion(){
@@ -56,7 +55,7 @@ public class Raton extends MouseAdapter {
 
     }
 
-    private void actualizarPosicion(final CanvasVentana canvasVentana){
+    private void actualizarPosicion(CanvasVentana canvasVentana){
         final Point posicionInicial = MouseInfo.getPointerInfo().getLocation();
         SwingUtilities.convertPointFromScreen(posicionInicial, canvasVentana);
         posicionInicial.setLocation(posicionInicial);

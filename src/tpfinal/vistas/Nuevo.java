@@ -1,16 +1,12 @@
 package tpfinal.vistas;
 
-import tpfinal.control.AdministrarControles;
+import tpfinal.control.Controles;
 import tpfinal.control.Musica;
 import tpfinal.graficos.CanvasVentana;
 import tpfinal.graficos.SpritesSheet;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-
-import static javax.swing.text.StyleConstants.getBackground;
-import static javax.swing.text.StyleConstants.getForeground;
 
 
 public class Nuevo implements VentanaJuego{
@@ -31,8 +27,7 @@ public class Nuevo implements VentanaJuego{
     private Rectangle botonFlechaIzquierda;
     private Rectangle botonFlechaDerecha;
     private CanvasVentana canvasVentana;
-    int playerSelected = 0;
-    private String user;
+    int playerSelected;
     public Nuevo(CanvasVentana canvasVentana){
         this.hojaSprite = new SpritesSheet("Recursos/NewGame/arrowleft128.png",18, 47, false);
         flechaIzquierda = hojaSprite.obtenerSprite(0).obtenerImagen();
@@ -70,7 +65,6 @@ public class Nuevo implements VentanaJuego{
             Point ubicacionVentana = canvasVentana.getPosicionVentana();
             Rectangle mouseRelativo = new Rectangle(MouseInfo.getPointerInfo().getLocation().x - ubicacionVentana.x, MouseInfo.getPointerInfo().getLocation().y - ubicacionVentana.y, 1, 1);
             if (mouseRelativo.intersects(botonFlechaIzquierda)){
-                // TODO: Cambiar Jugador
                 if (playerSelected > 0){
                     playerSelected--;
                 } else {
@@ -78,7 +72,6 @@ public class Nuevo implements VentanaJuego{
                 }
             }
             if (mouseRelativo.intersects(botonFlechaDerecha)){
-                // TODO: Cambiar Jugador
                 if (playerSelected < 2){
                     playerSelected++;
                 } else {
@@ -86,8 +79,7 @@ public class Nuevo implements VentanaJuego{
                 }
             }
             if (mouseRelativo.intersects(botonJugar)){
-                // TODO: Jugar nuevo juego
-                AdministrarControles.teclado.setEntrarJuego(true, playerSelected);
+                Controles.teclado.setEntrarJuego(true, playerSelected);
             }
             cambiarPersonaje(playerSelected);
             Musica.clickBoton();
@@ -123,14 +115,6 @@ public class Nuevo implements VentanaJuego{
         // Rectangulos Caras Jugadores
         grafico.setColor(Color.WHITE);
         grafico.drawRect(326,30, 147, 159);
-
-
     }
-    public void setUser(String user){
-        this.user = user;
-    };
 
-    public int getPlayerSelected() {
-        return playerSelected;
-    }
 }

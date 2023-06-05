@@ -19,11 +19,6 @@ public class Pocion extends Objeto{
     public boolean isActiva() {
         return activa;
     }
-
-    public void setActiva(boolean activa) {
-        this.activa = activa;
-    }
-
     public int getTipo() {
         return tipo;
     }

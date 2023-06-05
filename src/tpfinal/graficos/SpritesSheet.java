@@ -5,16 +5,12 @@ import tpfinal.persistencia.LeerArchivos;
 import java.awt.image.BufferedImage;
 
 public class SpritesSheet {
-
     final private int anchoHojaPixeles;
     final private int altoHojaPixeles;
-
     final private int anchoHojaSprites;
     final private int altoHojaSprites;
-
     final private int anchoSprites;
     final private int altoSprites;
-
     final private Sprite[] sprites;
 
     public SpritesSheet(final String ruta, final int spriteSize, final boolean hojaOpaca){
@@ -55,7 +51,6 @@ public class SpritesSheet {
         sprites = new Sprite[anchoHojaSprites * altoHojaSprites];
         generarSpritesDesdeImagen(imagen);
     }
-
     private void generarSpritesDesdeImagen(final BufferedImage imagen){
         for (int y = 0; y < altoHojaSprites; y++){
             for (int x = 0; x < anchoHojaSprites; x++){
@@ -66,11 +61,10 @@ public class SpritesSheet {
             }
         }
     }
-
-    public Sprite obtenerSprite(final int indice){
+    public Sprite obtenerSprite(int indice){
         return sprites[indice];
     }
-    public Sprite obtenerSprite(final int x, final int y){
+    public Sprite obtenerSprite(int x,int y){
         return sprites[x + y * anchoHojaSprites];
     }
 }

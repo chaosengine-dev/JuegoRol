@@ -1,11 +1,9 @@
 package tpfinal;
 
-import tpfinal.control.AdministrarControles;
+import tpfinal.control.Controles;
 import tpfinal.control.Musica;
 import tpfinal.graficos.CanvasVentana;
 import tpfinal.graficos.VentanaJFrame;
-import tpfinal.login.models.User;
-import tpfinal.login.welcome.Welcomepage;
 import tpfinal.vistas.AdministrarVentanas;
 
 public class JuegoRol {
@@ -16,17 +14,13 @@ public class JuegoRol {
     private CanvasVentana canvasVentana;
     private VentanaJFrame ventanaJFrame;
 
-    private User user;
     public JuegoRol(int ancho, int alto, String nombre){
         Musica.fondo();
         this.alto = alto;
         this.ancho = ancho;
         this.nombre = nombre;
-
     }
     public void iniciarJuego() {
-        User user = new User();
-        this.user = user;
         enFuncionamiento = true;
         canvasVentana = new CanvasVentana(ancho, alto);
         ventanaJFrame = new VentanaJFrame(nombre, canvasVentana);
@@ -64,41 +58,32 @@ public class JuegoRol {
             }
             dibujar();
 
-        }
-        /*double retraso = 1;
-        int velocidad = 4;
-
-        while (enFuncionamiento){
-            retraso = retraso + Math.random();
-            while (retraso >= velocidad) {
-                actualizar();
-                retraso = 1;
-                System.out.println("retraso");
+            if(Controles.teclado.isFinJuego()){
+                enFuncionamiento = false;
+                System.exit(0);
             }
-            System.out.println("dibujo");
-            dibujar();
-        }*/
+        }
     }
     private void dibujar() {
         canvasVentana.dibujar();
     }
     private void actualizar() {
-        if (AdministrarControles.teclado.isEntrarJuego() && AdministrarVentanas.getIndice() == 0) {
+        if (Controles.teclado.isEntrarJuego() && AdministrarVentanas.getIndice() == 0) {
             // Cargar juego grabado
-            AdministrarControles.teclado.setPausaActiva(false);
+            Controles.teclado.setPausaActiva(false);
             AdministrarVentanas.cambiarEstadoActual(1);
         }
-        if (AdministrarControles.teclado.isPausaActiva() && AdministrarVentanas.getIndice() == 1){
+        if (Controles.teclado.isPausaActiva() && AdministrarVentanas.getIndice() == 1){
             AdministrarVentanas.cambiarEstadoActual(2);
         }
-        if (!AdministrarControles.teclado.isPausaActiva() && AdministrarVentanas.getIndice() == 2){
+        if (!Controles.teclado.isPausaActiva() && AdministrarVentanas.getIndice() == 2){
             AdministrarVentanas.cambiarEstadoActual(1);
         }
-        if (AdministrarControles.teclado.isNuevoJuego() && AdministrarVentanas.getIndice() == 0){
+        if (Controles.teclado.isNuevoJuego() && AdministrarVentanas.getIndice() == 0){
             AdministrarVentanas.cambiarEstadoActual(3);
         }
-        if (AdministrarControles.teclado.isEntrarJuego() && AdministrarVentanas.getIndice() == 3) {
-            AdministrarControles.teclado.setPausaActiva(false);
+        if (Controles.teclado.isEntrarJuego() && AdministrarVentanas.getIndice() == 3) {
+            Controles.teclado.setPausaActiva(false);
             // Crear juego nuevo
             AdministrarVentanas.iniciarVentanaJuego(); // inicio la ventana juego teniendo el player elegido
             AdministrarVentanas.cambiarEstadoActual(1);

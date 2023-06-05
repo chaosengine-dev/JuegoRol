@@ -2,11 +2,11 @@ package tpfinal.objetos;
 
 public class Elfo implements Heroe{
     private int tipo = 1;
-    public int fuerzaMaxima = 600;
-    public int resistenciaMaxima = 1000;
-    public int experienciaMaxima = 250;
-    public int fuerzaInicial = 350;
-    public int resistenciaInicial = 1000;
+    private int fuerzaMaxima = 600;
+    private int resistenciaMaxima = 1000;
+    private int experienciaMaxima = 250;
+    private int fuerzaInicial = 350;
+    private int resistenciaInicial = 1000;
     private int experienciaInicial = 100;
     public int getFuerzaMaxima() {
         return fuerzaMaxima;
@@ -41,12 +41,8 @@ public class Elfo implements Heroe{
     public void setResistencia(int resistencia) {
         this.resistenciaInicial = resistencia;
     }
-
     public int getTipo() {
         return tipo;
     }
 
-    public void setTipo(int tipo) {
-        this.tipo = tipo;
-    }
 }

@@ -114,7 +114,7 @@
           <font name="Enchanted Land" size="28"/>
           <foreground color="-1"/>
           <labelFor value="13a3"/>
-          <text value="Ussername"/>
+          <text value="Username"/>
         </properties>
       </component>
       <hspacer id="65a2c">

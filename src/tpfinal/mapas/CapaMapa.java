@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 
 public class CapaMapa extends Capa {
-
     private boolean[] colisiones;
     private ArrayList<Rectangle> areasColision = new ArrayList<>();
     private final Point posicionJugador;

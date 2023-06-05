@@ -1,8 +1,7 @@
 package tpfinal.graficos;
 
-import tpfinal.control.AdministrarControles;
-import tpfinal.control.Raton;
-import tpfinal.login.models.User;
+import tpfinal.control.Controles;
+import tpfinal.control.Mouse;
 import tpfinal.persistencia.LeerArchivos;
 import tpfinal.vistas.AdministrarVentanas;
 
@@ -10,10 +9,9 @@ import java.awt.*;
 import java.awt.image.BufferStrategy;
 
 public class CanvasVentana extends Canvas {
-
     private int alto;
     private int ancho;
-    private Raton raton;
+    private Mouse mouse;
     private Point posicionVentana;
 
     // Public para poder usar la fuente en otra clase sin tener que leerla de nuevo
@@ -22,12 +20,12 @@ public class CanvasVentana extends Canvas {
     public CanvasVentana(int ancho, int alto) {
         this.alto = alto;
         this.ancho = ancho;
-        this.raton = new Raton(this);
-        setCursor(raton.obtenerCursor());
+        this.mouse = new Mouse(this);
+        setCursor(mouse.obtenerCursor());
         setIgnoreRepaint(true);
         setPreferredSize(new Dimension(ancho, alto));
-        addKeyListener(AdministrarControles.teclado);
-        addMouseListener(raton);
+        addKeyListener(Controles.teclado);
+        addMouseListener(mouse);
         setFocusable(true);
         requestFocus();
     }
@@ -48,12 +46,12 @@ public class CanvasVentana extends Canvas {
         buffer.show();
     }
 
-    public void actualizar(final CanvasVentana canvasVentana){
-        raton.actualizar(canvasVentana);
+    public void actualizar(CanvasVentana canvasVentana){
+        mouse.actualizar(canvasVentana);
     }
 
-    public Raton getRaton(){
-        return this.raton;
+    public Mouse getRaton(){
+        return this.mouse;
     }
 
     public Point getPosicionVentana() {

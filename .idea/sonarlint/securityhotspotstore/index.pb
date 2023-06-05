@@ -23,22 +23,12 @@ V
 &src/tpfinal/graficos/SpritesSheet.java,c\c\ccd9e6746dbb83778423ec2b6ddf661b7d6f5995
 Z
 *src/tpfinal/persistencia/LeerArchivos.java,0\2\02297e0071dc8189ee75e407cdc6750b616e6794
-b
-2src/tpfinal/interfaz_usuario/BarraEstadistica.java,9\a\9ab51003f26e7ba629cb0cb25a224457b104c3ec
-W
-'src/tpfinal/graficos/VentanaJFrame.java,0\0\00edfeacead91d451635c690d642b5b30e03335c
 Z
 *src/tpfinal/login/welcome/Welcomepage.java,6\3\6354775e3a4cb3b40404c1c96acedd53e374c395
-`
-0src/tpfinal/login/registration/Registration.java,4\c\4c6303bbd4d927575bfc5c3d66913394634ab752
 N
 src/tpfinal/control/Raton.java,b\8\b8ec4ab12886bd8a3addcf66034ec719f807b393
 P
  src/tpfinal/control/Teclado.java,e\a\ea7cd00d2217a212d603fd75a75319f3bbc210da
-I
-src/tpfinal/JuegoRol.java,3\9\3924f82e49a7092bd059b61075a7f0de07ee011f
-Z
-*src/tpfinal/login/loginpage/Loginpage.java,f\3\f3c1c06721f710abdfe0dd54eacfdc9418f3b900
 Q
 !Recursos/SavedGames/cesarito.json,3\d\3db08160f3f4abd4fba14c68c5d477fe29d1af30
 M
@@ -53,8 +43,6 @@ M
 src/tpfinal/objetos/Elfo.java,e\7\e793f41b10a733d93fb6aac312a0cd4a30855c55
 S
 #src/tpfinal/mapas/CapaEnemigos.java,3\7\37e39a73ba83cae9b56c1f18d364afba43225818
-=
-src/Main.java,9\2\924f089edb4af5ee45c8a9d1129cd28e2b368138
 M
 src/tpfinal/objetos/Mago.java,7\9\79d1df97950124622734540c22ad2dab2eda7d6a
 N
@@ -65,16 +53,12 @@ O
 src/tpfinal/objetos/Objeto.java,0\d\0d411d0131c49ca27124953ff84de04ff19f4553
 N
 src/tpfinal/objetos/Enemy.java,1\b\1ba71bd2411ade755ca722f1183e79a50515e8a1
-K
-src/tpfinal/mapas/Capa.java,2\8\28288377b2c831a1541bc337c0796c6c1603ce19
 R
 "src/tpfinal/mapas/CapaObjetos.java,0\6\063d2618e496239e1aa4f9ad72d18a6688a32933
 O
 src/tpfinal/objetos/Pocion.java,2\0\204790b569f13bbb24ae29195f048dd6fe8bd656
 O
 src/tpfinal/vistas/Batalla.java,5\b\5b14bd1fd0059236238d79cbb2a7d7c02ec096b3
-[
-+src/tpfinal/vistas/AdministrarVentanas.java,7\3\73925ba7df066eaa36a93f697671feec95450560
 H
 src/tpfinal/Jugador.java,f\0\f0478d66db08f3b008ce2efde0be47d2481580b6
 Y

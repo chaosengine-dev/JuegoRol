@@ -15,7 +15,6 @@ public class GameOver implements VentanaJuego {
     private SpritesSheet hojaSprite;
     private BufferedImage imagen;
 
-
     public GameOver(){
         COLOR_BARRA_ESTADO = new Color(240,63,63);
         COLOR_DETALLE = new Color(206,217,193);

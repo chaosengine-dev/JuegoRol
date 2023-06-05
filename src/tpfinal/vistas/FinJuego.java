@@ -16,7 +16,6 @@ public class FinJuego implements VentanaJuego {
     private SpritesSheet hojaSprite;
     private BufferedImage imagen;
 
-
     public FinJuego(){
         COLOR_BARRA_ESTADO = new Color(240,63,63);
         COLOR_DETALLE = new Color(206,217,193);

@@ -1,7 +1,6 @@
 package tpfinal.vistas;
 
 import tpfinal.Jugador;
-import tpfinal.control.AdministrarControles;
 import tpfinal.interfaz_usuario.MenuEstadistica;
 import tpfinal.mapas.CapaAmbiente;
 import tpfinal.mapas.CapaEnemigos;
@@ -18,12 +17,12 @@ public class IniciarJuegoSalvado implements VentanaJuego {
 
     private final int ladoSpriteChico = 32;
     private final int ladoSpriteGrande = 64;
-    CapaMapa capaMapa;
-    CapaAmbiente capaAmbiente;
-    CapaObjetos capaObjetos;
-    CapaEnemigos capaEnemigos;
-    MenuEstadistica menuEstadistica;
-    Jugador jugador;
+    private CapaMapa capaMapa;
+    private CapaAmbiente capaAmbiente;
+    private CapaObjetos capaObjetos;
+    private CapaEnemigos capaEnemigos;
+    private MenuEstadistica menuEstadistica;
+    private Jugador jugador;
 
     public IniciarJuegoSalvado(){
 
@@ -36,10 +35,7 @@ public class IniciarJuegoSalvado implements VentanaJuego {
         PersistenciaJson leerSavedGame = new PersistenciaJson();
         String path = "Recursos/SavedGames/" + AdministrarVentanas.getUserRegistered() + ".json";
         SavedGame partida = leerSavedGame.deserializar(path, SavedGame.class);
-        if (partida == null){
-            JOptionPane.showMessageDialog(null, "No tiene partes guardadas, iniciando juego nuevo.");
-
-        }
+        // Ya se verifico que existe el archivo, no puede fallar.
 
         int tipoPersonaje = partida.getTipo();
 

@@ -1,14 +1,13 @@
 package tpfinal.vistas;
 
 import tpfinal.Jugador;
-import tpfinal.control.AdministrarControles;
+import tpfinal.control.Controles;
 import tpfinal.mapas.CapaAmbiente;
 import tpfinal.mapas.CapaEnemigos;
 import tpfinal.mapas.CapaObjetos;
 import tpfinal.objetos.*;
 import tpfinal.interfaz_usuario.MenuEstadistica;
 import tpfinal.mapas.CapaMapa;
-import tpfinal.persistencia.PersistenciaJson;
 
 import java.awt.*;
 
@@ -16,12 +15,12 @@ public class IniciarJuegoNuevo implements VentanaJuego {
 
     private final int ladoSpriteChico = 32;
     private final int ladoSpriteGrande = 64;
-    CapaMapa capaMapa;
-    CapaAmbiente capaAmbiente;
-    CapaObjetos capaObjetos;
-    CapaEnemigos capaEnemigos;
-    MenuEstadistica menuEstadistica;
-    Jugador jugador;
+    private CapaMapa capaMapa;
+    private CapaAmbiente capaAmbiente;
+    private CapaObjetos capaObjetos;
+    private CapaEnemigos capaEnemigos;
+    private MenuEstadistica menuEstadistica;
+    private Jugador jugador;
 
     public IniciarJuegoNuevo(){
 
@@ -30,20 +29,19 @@ public class IniciarJuegoNuevo implements VentanaJuego {
         capaObjetos = new CapaObjetos("Recursos/Objetos/pociones.txt", ladoSpriteChico);
         capaEnemigos = new CapaEnemigos("Recursos/Objetos/enemigos.txt", ladoSpriteGrande);
 
-        int tipoPersonaje = AdministrarControles.teclado.getTipoPersonaje();
+        int tipoPersonaje = Controles.teclado.getTipoPersonaje();
         Heroe heroe;
 
         switch (tipoPersonaje){
             case 1:
                 heroe = new Elfo();
-
                 break;
             case 2:
                 heroe = new Mago();
                 break;
             default:
                 heroe = new Guerrero();
-
+                break;
         }
         jugador = new Jugador(capaMapa.getPosicionJugador().x, capaMapa.getPosicionJugador().y, capaMapa, capaObjetos, capaEnemigos,  heroe, 1);
         menuEstadistica = new MenuEstadistica(jugador);

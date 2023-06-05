@@ -16,4 +16,10 @@
   "password" : "123456",
   "secondPassword" : "123456",
   "email" : "jorgekaz@hotmail.com"
+}, {
+  "id" : 4,
+  "username" : "cesarito",
+  "password" : "123456",
+  "secondPassword" : "123456",
+  "email" : "cesar@cesar.com"
 } ]

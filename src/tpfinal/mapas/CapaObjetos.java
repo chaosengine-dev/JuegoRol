@@ -9,7 +9,7 @@ public class CapaObjetos extends Capa{
     private boolean[] colisiones;
     private ArrayList<Rectangle> areasColision = new ArrayList<>();
     private final Point posicionJugador;
-    private ArrayList<Pocion> pociones = new ArrayList<>();
+    private ArrayList<Pocion> pociones;
 
     public CapaObjetos(String ruta, int ladoSprite){
         super(ruta, ladoSprite);
@@ -29,7 +29,6 @@ public class CapaObjetos extends Capa{
     public void actualizar(final int posicionX, final int posicionY){
         actualizarAreasColision(posicionX, posicionY);
     }
-
     private void actualizarAreasColision(final int posicionXJugador, final int posicionYJugador){
         if (!areasColision.isEmpty()){
             areasColision.clear();
@@ -109,19 +108,12 @@ public class CapaObjetos extends Capa{
     public ArrayList<Rectangle> getAreasColision() {
         return areasColision;
     }
-
-    public Point getPosicionJugador() {
-        return posicionJugador;
-    }
-
     public ArrayList<Pocion> getPociones() {
         return pociones;
     }
-
     public void setPociones(ArrayList<Pocion> pociones) {
         this.pociones = pociones;
     }
-
     public void actualizarObjetos(Pocion pocionColision) {
         for (Pocion pocion: pociones
              ) {
@@ -130,10 +122,6 @@ public class CapaObjetos extends Capa{
                 sprites[(pocionColision.getPosicionX()/ LADO_SPRITE) + (pocionColision.getPosicionY() / LADO_SPRITE) * this.ancho] = 0;
                 break;
             }
-
         }
-
     }
-
-
 }

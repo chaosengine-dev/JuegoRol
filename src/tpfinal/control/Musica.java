@@ -5,7 +5,7 @@ import javax.sound.sampled.*;
 import java.io.File;
 import java.io.IOException;
 
-public class Musica {
+public abstract class Musica {
     public static void fondo() {
         reproducirAudio("Recursos/Sonidos/onGameOne.wav", 0);
     }

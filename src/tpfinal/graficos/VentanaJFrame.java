@@ -11,10 +11,9 @@ public class VentanaJFrame extends JFrame {
     private String nombre;
     private final ImageIcon icon;
 
-    public VentanaJFrame(final String nombre, final CanvasVentana canvasVentana){
+    public VentanaJFrame(String nombre, CanvasVentana canvasVentana){
         this.nombre = nombre;
-        BufferedImage imagen = LeerArchivos.cargarImagenTransparente("Recursos/Mapas/logo.png");
-        this.icon = new ImageIcon(imagen);
+        this.icon = Icono.crearIcono();
         configurarVentana(canvasVentana);
         canvasVentana.setPosicionVentana(posicionVentana());
     }

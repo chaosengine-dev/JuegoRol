@@ -2,6 +2,7 @@ package tpfinal.login.models;
 
 import java.io.Serializable;
 public class User implements Serializable {
+    private static final long serialVersionUID = 1234567L;
     private static int lastId = 0;
     private int id;
     private String username;
