@@ -22,7 +22,7 @@ public class AdminPage extends JFrame implements VentanaJuego {
 
     public AdminPage() {
         add(ventana);
-        setSize(800, 600); //tamaño de la ventana
+        setSize(815, 615); //tamaño de la ventana
         setLocationRelativeTo(null); // centra la ventana en la pantalla
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // cierra el programa al cerrar la ventana
         setVisible(true); // hace visible la ventana
@@ -82,7 +82,9 @@ public class AdminPage extends JFrame implements VentanaJuego {
         jugarButton.setBackground(new Color(-16777216));
         jugarButton.setBorderPainted(false);
         jugarButton.setContentAreaFilled(false);
+        jugarButton.setDefaultCapable(true);
         jugarButton.setEnabled(true);
+        jugarButton.setFocusPainted(false);
         Font jugarButtonFont = this.$$$getFont$$$("Enchanted Land", -1, 24, jugarButton.getFont());
         if (jugarButtonFont != null) jugarButton.setFont(jugarButtonFont);
         jugarButton.setForeground(new Color(-1));
