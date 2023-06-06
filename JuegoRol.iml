@@ -34,5 +34,15 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://C:/jar" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://C:/jar" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>

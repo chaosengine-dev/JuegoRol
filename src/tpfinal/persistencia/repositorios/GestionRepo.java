@@ -94,15 +94,25 @@ public class GestionRepo implements IRepository<User> {
         return nextID + 1;
     }
     @Override
-    public void eliminar(String userName){
+    public void eliminar(String userName) {
         cargar();
-        for(User user : this.users){
-            if(Objects.equals(user.getUsername(), userName)){
+        for (User user : this.users) {
+            if (Objects.equals(user.getUsername(), userName)) {
                 this.users.remove(user);
                 break;
             }
         }
         guardar();
+    }
+
+    public User obtenerUsuario(String nombre){
+        for (User user: users
+             ) {
+            if (user.getUsername().equals(nombre)){
+                return user;
+            }
+        }
+        return null;
     }
 
     @Override
