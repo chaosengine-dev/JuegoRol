@@ -10,7 +10,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../jar_files/jackson-annotations-2.15.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/Recursos/Libraries/jar_files/jackson-annotations-2.15.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -19,7 +19,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../jar_files/jackson-core-2.15.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/Recursos/Libraries/jar_files/jackson-core-2.15.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -28,7 +28,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../jar_files/jackson-databind-2.15.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/Recursos/Libraries/jar_files/jackson-databind-2.15.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -37,11 +37,10 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="file://C:/jar" />
+          <root url="jar://$MODULE_DIR$/Recursos/Libraries/jar_files/forms_rt-142.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
-        <jarDirectory url="file://C:/jar" recursive="false" />
       </library>
     </orderEntry>
   </component>
