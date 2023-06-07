@@ -71,6 +71,7 @@ public class Welcomepage implements VentanaJuego {
         button2 = new JButton();
         button2.setBorderPainted(false);
         button2.setContentAreaFilled(false);
+        button2.setFocusPainted(false);
         button2.setHorizontalTextPosition(0);
         button2.setIcon(new ImageIcon(getClass().getResource("/tpfinal/login/imagenes/botonRegister.png")));
         button2.setLabel("");
@@ -88,6 +89,7 @@ public class Welcomepage implements VentanaJuego {
         button1.setBorderPainted(false);
         button1.setContentAreaFilled(false);
         button1.setEnabled(true);
+        button1.setFocusPainted(false);
         button1.setHorizontalTextPosition(0);
         button1.setIcon(new ImageIcon(getClass().getResource("/tpfinal/login/imagenes/botonEnter.png")));
         button1.setText("");
