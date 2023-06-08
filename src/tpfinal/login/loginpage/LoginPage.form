@@ -87,6 +87,7 @@
         <properties>
           <borderPainted value="false"/>
           <contentAreaFilled value="false"/>
+          <focusPainted value="false"/>
           <icon value="tpfinal/login/imagenes/botonLogin.png"/>
           <text value=""/>
         </properties>

@@ -97,6 +97,7 @@ public class AdminPage extends JFrame implements VentanaJuego {
         gestionarUsuariosButton.setBackground(new Color(-16777216));
         gestionarUsuariosButton.setBorderPainted(false);
         gestionarUsuariosButton.setContentAreaFilled(false);
+        gestionarUsuariosButton.setFocusPainted(false);
         Font gestionarUsuariosButtonFont = this.$$$getFont$$$("Enchanted Land", -1, 24, gestionarUsuariosButton.getFont());
         if (gestionarUsuariosButtonFont != null) gestionarUsuariosButton.setFont(gestionarUsuariosButtonFont);
         gestionarUsuariosButton.setForeground(new Color(-1));
