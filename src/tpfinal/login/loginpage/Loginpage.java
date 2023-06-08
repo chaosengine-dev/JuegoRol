@@ -168,6 +168,7 @@ public class Loginpage implements VentanaJuego {
         button1 = new JButton();
         button1.setBorderPainted(false);
         button1.setContentAreaFilled(false);
+        button1.setFocusPainted(false);
         button1.setIcon(new ImageIcon(getClass().getResource("/tpfinal/login/imagenes/botonLogin.png")));
         button1.setText("");
         panel1.add(button1, new GridConstraints(6, 5, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));

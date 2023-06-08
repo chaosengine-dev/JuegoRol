@@ -6,6 +6,7 @@ import javax.swing.text.StyleContext;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
+import tpfinal.graficos.CanvasVentana;
 import tpfinal.login.models.User;
 import tpfinal.persistencia.repositorios.GestionRepo;
 import tpfinal.vistas.VentanaJuego;
@@ -24,6 +25,8 @@ public class ManageUsers extends JFrame implements VentanaJuego {
     private JPasswordField password2;
     private JCheckBox soyAdministradorCheckBox;
     private JTextField email;
+    private JButton button1;
+    private Font fuente = new Font("Enchanted Lands", Font.BOLD, 20);
 
     private ArrayList<User> usuariosRegistrados = new ArrayList<>();
 
@@ -33,6 +36,8 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         setLocationRelativeTo(null); // centra la ventana en la pantalla
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // cierra el programa al cerrar la ventana
         setVisible(true); // hace visible la ventana
+
+
 
         setTitle("ADMINISTRAR USUARIOS"); // titulo de la ventana
         GestionRepo gestion = new GestionRepo();
@@ -96,39 +101,77 @@ public class ManageUsers extends JFrame implements VentanaJuego {
      */
     private void $$$setupUI$$$() {
         ventana = new JPanel();
-        ventana.setLayout(new GridLayoutManager(7, 5, new Insets(0, 0, 0, 0), -1, -1));
+        ventana.setLayout(new GridLayoutManager(7, 4, new Insets(0, 0, 0, 0), -1, -1));
         ventana.setBackground(new Color(-16777216));
         final Spacer spacer1 = new Spacer();
         ventana.add(spacer1, new GridConstraints(0, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         final Spacer spacer2 = new Spacer();
-        ventana.add(spacer2, new GridConstraints(0, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, new Dimension(27, 11), null, 0, false));
-        final Spacer spacer3 = new Spacer();
-        ventana.add(spacer3, new GridConstraints(0, 4, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
-        final Spacer spacer4 = new Spacer();
-        ventana.add(spacer4, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
-        comboUsers = new JComboBox();
-        ventana.add(comboUsers, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(112, 30), null, 0, false));
+        ventana.add(spacer2, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         usuario = new JTextField();
         ventana.add(usuario, new GridConstraints(2, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         password1 = new JPasswordField();
         ventana.add(password1, new GridConstraints(3, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
-        soyAdministradorCheckBox = new JCheckBox();
-        Font soyAdministradorCheckBoxFont = this.$$$getFont$$$("Enchanted Land", -1, -1, soyAdministradorCheckBox.getFont());
-        if (soyAdministradorCheckBoxFont != null) soyAdministradorCheckBox.setFont(soyAdministradorCheckBoxFont);
-        soyAdministradorCheckBox.setText("Soy Administrador");
-        ventana.add(soyAdministradorCheckBox, new GridConstraints(6, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         email = new JTextField();
         ventana.add(email, new GridConstraints(5, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         password2 = new JPasswordField();
+        password2.setEnabled(true);
         password2.setText("");
-        ventana.add(password2, new GridConstraints(4, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        ventana.add(password2, new GridConstraints(4, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JLabel label1 = new JLabel();
         label1.setBackground(new Color(-16777216));
         Font label1Font = this.$$$getFont$$$("Enchanted Land", -1, 36, label1.getFont());
         if (label1Font != null) label1.setFont(label1Font);
         label1.setForeground(new Color(-394241));
         label1.setText("Administrar usuarios");
-        ventana.add(label1, new GridConstraints(0, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        ventana.add(label1, new GridConstraints(0, 1, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final JLabel label2 = new JLabel();
+        label2.setBackground(new Color(-16777216));
+        Font label2Font = this.$$$getFont$$$("Enchanted Land", -1, 28, label2.getFont());
+        if (label2Font != null) label2.setFont(label2Font);
+        label2.setForeground(new Color(-394241));
+        label2.setText("Username");
+        ventana.add(label2, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final JLabel label3 = new JLabel();
+        label3.setBackground(new Color(-16777216));
+        Font label3Font = this.$$$getFont$$$("Enchanted Land", -1, 28, label3.getFont());
+        if (label3Font != null) label3.setFont(label3Font);
+        label3.setForeground(new Color(-394241));
+        label3.setText("Password");
+        ventana.add(label3, new GridConstraints(3, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final JLabel label4 = new JLabel();
+        label4.setBackground(new Color(-16777216));
+        Font label4Font = this.$$$getFont$$$("Enchanted Land", -1, 28, label4.getFont());
+        if (label4Font != null) label4.setFont(label4Font);
+        label4.setForeground(new Color(-394241));
+        label4.setText("Repeat password");
+        ventana.add(label4, new GridConstraints(4, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final JLabel label5 = new JLabel();
+        label5.setBackground(new Color(-16777216));
+        Font label5Font = this.$$$getFont$$$("Enchanted Land", -1, 28, label5.getFont());
+        if (label5Font != null) label5.setFont(label5Font);
+        label5.setForeground(new Color(-394241));
+        label5.setText("E-mail");
+        ventana.add(label5, new GridConstraints(5, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        soyAdministradorCheckBox = new JCheckBox();
+        soyAdministradorCheckBox.setBackground(new Color(-16777216));
+        soyAdministradorCheckBox.setFocusPainted(false);
+        Font soyAdministradorCheckBoxFont = this.$$$getFont$$$("Enchanted Land", -1, 16, soyAdministradorCheckBox.getFont());
+        if (soyAdministradorCheckBoxFont != null) soyAdministradorCheckBox.setFont(soyAdministradorCheckBoxFont);
+        soyAdministradorCheckBox.setForeground(new Color(-394241));
+        soyAdministradorCheckBox.setText("Soy Administrador");
+        ventana.add(soyAdministradorCheckBox, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        comboUsers = new JComboBox();
+        comboUsers.setEditable(true);
+        comboUsers.setEnabled(true);
+        final DefaultComboBoxModel defaultComboBoxModel1 = new DefaultComboBoxModel();
+        comboUsers.setModel(defaultComboBoxModel1);
+        ventana.add(comboUsers, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(200, 30), null, 0, false));
+        button1 = new JButton();
+        button1.setBackground(new Color(-16777216));
+        button1.setFocusPainted(false);
+        button1.setForeground(new Color(-394241));
+        button1.setText("Button");
+        ventana.add(button1, new GridConstraints(6, 1, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(200, -1), null, 0, false));
     }
 
     /**
