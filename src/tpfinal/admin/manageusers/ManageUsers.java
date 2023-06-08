@@ -26,6 +26,10 @@ public class ManageUsers extends JFrame implements VentanaJuego {
     private JCheckBox soyAdministradorCheckBox;
     private JTextField email;
     private JButton button1;
+    private JLabel textoUsername;
+    private JLabel textoPassword;
+    private JLabel textoRepeatpassword;
+    private JLabel textoEmail;
     private Font fuente = new Font("Enchanted Lands", Font.BOLD, 20);
 
     private ArrayList<User> usuariosRegistrados = new ArrayList<>();
@@ -36,7 +40,11 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         setLocationRelativeTo(null); // centra la ventana en la pantalla
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // cierra el programa al cerrar la ventana
         setVisible(true); // hace visible la ventana
-
+        button1.setFont(CanvasVentana.FUENTE_MEDIEVAL);
+        textoUsername.setFont(CanvasVentana.FUENTE_MEDIEVAL);
+        textoEmail.setFont(CanvasVentana.FUENTE_MEDIEVAL);
+        textoPassword.setFont(CanvasVentana.FUENTE_MEDIEVAL);
+        textoRepeatpassword.setFont(CanvasVentana.FUENTE_MEDIEVAL);
 
 
         setTitle("ADMINISTRAR USUARIOS"); // titulo de la ventana

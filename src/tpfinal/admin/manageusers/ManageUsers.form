@@ -64,7 +64,7 @@
           <text value="Administrar usuarios"/>
         </properties>
       </component>
-      <component id="3d913" class="javax.swing.JLabel">
+      <component id="3d913" class="javax.swing.JLabel" binding="textoUsername">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -75,7 +75,7 @@
           <text value="Username"/>
         </properties>
       </component>
-      <component id="ce1a4" class="javax.swing.JLabel">
+      <component id="ce1a4" class="javax.swing.JLabel" binding="textoPassword">
         <constraints>
           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -86,7 +86,7 @@
           <text value="Password"/>
         </properties>
       </component>
-      <component id="34fa1" class="javax.swing.JLabel">
+      <component id="34fa1" class="javax.swing.JLabel" binding="textoRepeatpassword">
         <constraints>
           <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -97,7 +97,7 @@
           <text value="Repeat password"/>
         </properties>
       </component>
-      <component id="4e55d" class="javax.swing.JLabel">
+      <component id="4e55d" class="javax.swing.JLabel" binding="textoEmail">
         <constraints>
           <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
