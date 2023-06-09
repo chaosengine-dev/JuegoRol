@@ -8,6 +8,7 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
 import tpfinal.graficos.CanvasVentana;
 import tpfinal.login.models.User;
+import tpfinal.persistencia.LeerArchivos;
 import tpfinal.persistencia.repositorios.GestionRepo;
 import tpfinal.vistas.VentanaJuego;
 
@@ -30,7 +31,8 @@ public class ManageUsers extends JFrame implements VentanaJuego {
     private JLabel textoPassword;
     private JLabel textoRepeatpassword;
     private JLabel textoEmail;
-    private Font fuente = new Font("Enchanted Lands", Font.BOLD, 20);
+    private JLabel textoAdministrarUsuario;
+    private Font fuente = LeerArchivos.leerFuente("Recursos/Fuentes/Enchanted Land.otf");
 
     private ArrayList<User> usuariosRegistrados = new ArrayList<>();
 
@@ -40,11 +42,12 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         setLocationRelativeTo(null); // centra la ventana en la pantalla
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // cierra el programa al cerrar la ventana
         setVisible(true); // hace visible la ventana
-        button1.setFont(CanvasVentana.FUENTE_MEDIEVAL);
-        textoUsername.setFont(CanvasVentana.FUENTE_MEDIEVAL);
-        textoEmail.setFont(CanvasVentana.FUENTE_MEDIEVAL);
-        textoPassword.setFont(CanvasVentana.FUENTE_MEDIEVAL);
-        textoRepeatpassword.setFont(CanvasVentana.FUENTE_MEDIEVAL);
+        textoAdministrarUsuario.setFont(fuente.deriveFont(72f));
+        button1.setFont(fuente.deriveFont(36f));
+        textoUsername.setFont(fuente.deriveFont(28f));
+        textoEmail.setFont(fuente.deriveFont(28f));
+        textoPassword.setFont(fuente.deriveFont(28f));
+        textoRepeatpassword.setFont(fuente.deriveFont(28f));
 
 
         setTitle("ADMINISTRAR USUARIOS"); // titulo de la ventana
@@ -125,41 +128,41 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         password2.setEnabled(true);
         password2.setText("");
         ventana.add(password2, new GridConstraints(4, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        final JLabel label1 = new JLabel();
-        label1.setBackground(new Color(-16777216));
-        Font label1Font = this.$$$getFont$$$("Enchanted Land", -1, 36, label1.getFont());
-        if (label1Font != null) label1.setFont(label1Font);
-        label1.setForeground(new Color(-394241));
-        label1.setText("Administrar usuarios");
-        ventana.add(label1, new GridConstraints(0, 1, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        final JLabel label2 = new JLabel();
-        label2.setBackground(new Color(-16777216));
-        Font label2Font = this.$$$getFont$$$("Enchanted Land", -1, 28, label2.getFont());
-        if (label2Font != null) label2.setFont(label2Font);
-        label2.setForeground(new Color(-394241));
-        label2.setText("Username");
-        ventana.add(label2, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        final JLabel label3 = new JLabel();
-        label3.setBackground(new Color(-16777216));
-        Font label3Font = this.$$$getFont$$$("Enchanted Land", -1, 28, label3.getFont());
-        if (label3Font != null) label3.setFont(label3Font);
-        label3.setForeground(new Color(-394241));
-        label3.setText("Password");
-        ventana.add(label3, new GridConstraints(3, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        final JLabel label4 = new JLabel();
-        label4.setBackground(new Color(-16777216));
-        Font label4Font = this.$$$getFont$$$("Enchanted Land", -1, 28, label4.getFont());
-        if (label4Font != null) label4.setFont(label4Font);
-        label4.setForeground(new Color(-394241));
-        label4.setText("Repeat password");
-        ventana.add(label4, new GridConstraints(4, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        final JLabel label5 = new JLabel();
-        label5.setBackground(new Color(-16777216));
-        Font label5Font = this.$$$getFont$$$("Enchanted Land", -1, 28, label5.getFont());
-        if (label5Font != null) label5.setFont(label5Font);
-        label5.setForeground(new Color(-394241));
-        label5.setText("E-mail");
-        ventana.add(label5, new GridConstraints(5, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        textoAdministrarUsuario = new JLabel();
+        textoAdministrarUsuario.setBackground(new Color(-16777216));
+        Font textoAdministrarUsuarioFont = this.$$$getFont$$$("Enchanted Land", -1, 48, textoAdministrarUsuario.getFont());
+        if (textoAdministrarUsuarioFont != null) textoAdministrarUsuario.setFont(textoAdministrarUsuarioFont);
+        textoAdministrarUsuario.setForeground(new Color(-394241));
+        textoAdministrarUsuario.setText("Administrar usuarios");
+        ventana.add(textoAdministrarUsuario, new GridConstraints(0, 1, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        textoUsername = new JLabel();
+        textoUsername.setBackground(new Color(-16777216));
+        Font textoUsernameFont = this.$$$getFont$$$("Enchanted Land", -1, 28, textoUsername.getFont());
+        if (textoUsernameFont != null) textoUsername.setFont(textoUsernameFont);
+        textoUsername.setForeground(new Color(-394241));
+        textoUsername.setText("Username");
+        ventana.add(textoUsername, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        textoPassword = new JLabel();
+        textoPassword.setBackground(new Color(-16777216));
+        Font textoPasswordFont = this.$$$getFont$$$("Enchanted Land", -1, 28, textoPassword.getFont());
+        if (textoPasswordFont != null) textoPassword.setFont(textoPasswordFont);
+        textoPassword.setForeground(new Color(-394241));
+        textoPassword.setText("Password");
+        ventana.add(textoPassword, new GridConstraints(3, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        textoRepeatpassword = new JLabel();
+        textoRepeatpassword.setBackground(new Color(-16777216));
+        Font textoRepeatpasswordFont = this.$$$getFont$$$("Enchanted Land", -1, 28, textoRepeatpassword.getFont());
+        if (textoRepeatpasswordFont != null) textoRepeatpassword.setFont(textoRepeatpasswordFont);
+        textoRepeatpassword.setForeground(new Color(-394241));
+        textoRepeatpassword.setText("Repeat password");
+        ventana.add(textoRepeatpassword, new GridConstraints(4, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        textoEmail = new JLabel();
+        textoEmail.setBackground(new Color(-16777216));
+        Font textoEmailFont = this.$$$getFont$$$("Enchanted Land", -1, 28, textoEmail.getFont());
+        if (textoEmailFont != null) textoEmail.setFont(textoEmailFont);
+        textoEmail.setForeground(new Color(-394241));
+        textoEmail.setText("E-mail");
+        ventana.add(textoEmail, new GridConstraints(5, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         soyAdministradorCheckBox = new JCheckBox();
         soyAdministradorCheckBox.setBackground(new Color(-16777216));
         soyAdministradorCheckBox.setFocusPainted(false);
