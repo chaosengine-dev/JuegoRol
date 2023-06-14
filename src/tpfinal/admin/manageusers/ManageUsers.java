@@ -49,7 +49,6 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         textoPassword.setFont(fuente.deriveFont(28f));
         textoRepeatpassword.setFont(fuente.deriveFont(28f));
 
-
         setTitle("ADMINISTRAR USUARIOS"); // titulo de la ventana
         GestionRepo gestion = new GestionRepo();
         usuariosRegistrados = (ArrayList<User>) gestion.listar();
