@@ -101,6 +101,7 @@ public class Registration implements VentanaJuego {
         button2 = new JButton();
         button2.setBorderPainted(false);
         button2.setContentAreaFilled(false);
+        button2.setFocusPainted(false);
         button2.setHorizontalAlignment(0);
         button2.setIcon(new ImageIcon(getClass().getResource("/tpfinal/login/imagenes/botonCancelar.png")));
         button2.setIconTextGap(4);
@@ -120,6 +121,7 @@ public class Registration implements VentanaJuego {
         button1 = new JButton();
         button1.setBorderPainted(false);
         button1.setContentAreaFilled(false);
+        button1.setFocusPainted(false);
         button1.setHorizontalAlignment(0);
         button1.setIcon(new ImageIcon(getClass().getResource("/tpfinal/login/imagenes/botonAceptar.png")));
         button1.setIconTextGap(4);
