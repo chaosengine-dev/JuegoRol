@@ -20,7 +20,6 @@ public class Jugador {
     private int centroVentanaY = alto / 2;
     private int ladoSprite = 32;
     private int ladoSpriteGrande = 64;
-
     private SpritesSheet hojaSprite;
     private BufferedImage imagen;
     private int posicionX;
@@ -66,9 +65,7 @@ public class Jugador {
     private int experienciaMaxima;
     private int fuerzaMaxima;
     private boolean enBatalla = false;
-
     private int ventanaOrigen;
-
     private Heroe heroe;
     public Jugador(){
 
@@ -479,12 +476,6 @@ public class Jugador {
             }
             Controles.teclado.setUsarPocionTres(false);
         }
-    }
-    public void setPosicionX(int posicionX) {
-        this.posicionX = posicionX;
-    }
-    public void setPosicionY(int posicionY) {
-        this.posicionY = posicionY;
     }
     public double getPosicionX() {
         return posicionX;

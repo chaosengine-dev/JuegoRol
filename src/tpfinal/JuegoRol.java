@@ -64,8 +64,7 @@ public class JuegoRol {
             }
         }
     }
-    private void dibujar() {
-        canvasVentana.dibujar();
+    private void dibujar() {canvasVentana.dibujar();
     }
     private void actualizar() {
         if (Controles.teclado.isEntrarJuego() && AdministrarVentanas.getIndice() == 0) {
