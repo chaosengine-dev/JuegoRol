@@ -25,10 +25,6 @@ Z
 *src/tpfinal/persistencia/LeerArchivos.java,0\2\02297e0071dc8189ee75e407cdc6750b616e6794
 Z
 *src/tpfinal/login/welcome/Welcomepage.java,6\3\6354775e3a4cb3b40404c1c96acedd53e374c395
-N
-src/tpfinal/control/Raton.java,b\8\b8ec4ab12886bd8a3addcf66034ec719f807b393
-Q
-!Recursos/SavedGames/cesarito.json,3\d\3db08160f3f4abd4fba14c68c5d477fe29d1af30
 P
  src/tpfinal/control/Teclado.java,e\a\ea7cd00d2217a212d603fd75a75319f3bbc210da
 M
