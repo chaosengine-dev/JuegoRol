@@ -117,6 +117,7 @@
         <properties>
           <borderPainted value="false"/>
           <contentAreaFilled value="false"/>
+          <focusPainted value="false"/>
           <icon value="Login/imagenes/botonLogin.png"/>
           <text value=""/>
         </properties>
@@ -129,6 +130,7 @@
           <actionCommand value=""/>
           <borderPainted value="false"/>
           <contentAreaFilled value="false"/>
+          <focusPainted value="false"/>
           <icon value="Login/imagenes/botonCancelar.png"/>
           <label value=""/>
           <text value=""/>

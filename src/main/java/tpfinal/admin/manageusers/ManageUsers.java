@@ -35,6 +35,7 @@ public class ManageUsers extends JFrame implements VentanaJuego {
     private JLabel textoAdministrarUsuario;
     private JButton button1;
     private final UsuarioRepositorio gestion = new UsuarioRepositorio();
+
     /**
      * El constructor le da forma a la ventana JFrame, setea los atributos de la misma.
      * Asigna la tipografia a los JLabel.
@@ -76,7 +77,8 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
-    private ActionListener cambioUsuarioComboBox(){
+
+    private ActionListener cambioUsuarioComboBox() {
         return e -> {
             String sel = (String) comboUsers.getSelectedItem();
             User userSelected = gestion.obtenerUsuario(sel);
@@ -94,6 +96,7 @@ public class ManageUsers extends JFrame implements VentanaJuego {
 
     /**
      * Crea el combobox con los usuarios que lee del ArrayList enviado por parametro
+     *
      * @param usuariosRegistrados ArrayList con todos los usuarios registrados, que lee del Json.
      */
     public void mostrarUser(ArrayList<User> usuariosRegistrados) {
@@ -190,10 +193,10 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         soyAdministradorCheckBox.setForeground(new Color(-394241));
         soyAdministradorCheckBox.setText("Soy Administrador");
         ventana.add(soyAdministradorCheckBox, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        comboUsers = new JComboBox<String>();
+        comboUsers = new JComboBox();
         comboUsers.setEditable(true);
         comboUsers.setEnabled(true);
-        final DefaultComboBoxModel<String> defaultComboBoxModel1 = new DefaultComboBoxModel<>();
+        final DefaultComboBoxModel defaultComboBoxModel1 = new DefaultComboBoxModel();
         comboUsers.setModel(defaultComboBoxModel1);
         ventana.add(comboUsers, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(200, 30), null, 0, false));
         button1 = new JButton();
@@ -232,4 +235,5 @@ public class ManageUsers extends JFrame implements VentanaJuego {
     public JComponent $$$getRootComponent$$$() {
         return ventana;
     }
+
 }
