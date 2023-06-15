@@ -1,41 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<JuegoRol:project xmlns:JuegoRol="http://maven.apache.org/POM/4.0.0"
-                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <JuegoRol:modelVersion>4.0.0</JuegoRol:modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-    <JuegoRol:groupId>JuegoRolMaven</JuegoRol:groupId>
-    <JuegoRol:artifactId>JuegoRol</JuegoRol:artifactId>
-    <JuegoRol:version>1.0-SNAPSHOT</JuegoRol:version>
+    <groupId>JuegoRolMaven</groupId>
+    <artifactId>JuegoRol</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
-    <JuegoRol:properties>
-        <JuegoRol:maven.compiler.source>17</JuegoRol:maven.compiler.source>
-        <JuegoRol:maven.compiler.target>17</JuegoRol:maven.compiler.target>
-        <JuegoRol:project.build.sourceEncoding>UTF-8</JuegoRol:project.build.sourceEncoding>
-    </JuegoRol:properties>
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
-    <JuegoRol:dependencies>
+    <dependencies>
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
-        <JuegoRol:dependency>
-            <JuegoRol:groupId>com.fasterxml.jackson.core</JuegoRol:groupId>
-            <JuegoRol:artifactId>jackson-databind</JuegoRol:artifactId>
-            <JuegoRol:version>2.15.2</JuegoRol:version>
-        </JuegoRol:dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.15.2</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
-        <JuegoRol:dependency>
-            <JuegoRol:groupId>com.fasterxml.jackson.core</JuegoRol:groupId>
-            <JuegoRol:artifactId>jackson-core</JuegoRol:artifactId>
-            <JuegoRol:version>2.15.2</JuegoRol:version>
-        </JuegoRol:dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.15.2</version>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.intellij/forms_rt -->
-        <JuegoRol:dependency>
-            <JuegoRol:groupId>com.intellij</JuegoRol:groupId>
-            <JuegoRol:artifactId>forms_rt</JuegoRol:artifactId>
-            <JuegoRol:version>7.0.3</JuegoRol:version>
-        </JuegoRol:dependency>
+        <dependency>
+            <groupId>com.intellij</groupId>
+            <artifactId>forms_rt</artifactId>
+            <version>7.0.3</version>
+        </dependency>
 
 
-    </JuegoRol:dependencies>
+    </dependencies>
     
-</JuegoRol:project>
+</project>
