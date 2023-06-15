@@ -32,7 +32,6 @@ public class User implements Serializable {
         this.secondPassword = secondPassword;
         this.email = email;
     }
-
     private int generateUniqueId() {
         return lastId++;
     }
