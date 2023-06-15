@@ -17,6 +17,7 @@
         <properties>
           <borderPainted value="false"/>
           <contentAreaFilled value="false"/>
+          <focusPainted value="false"/>
           <horizontalTextPosition value="0"/>
           <icon value="tpfinal/login/imagenes/botonRegister.png"/>
           <label value=""/>
@@ -44,6 +45,7 @@
           <borderPainted value="false"/>
           <contentAreaFilled value="false"/>
           <enabled value="true"/>
+          <focusPainted value="false"/>
           <horizontalTextPosition value="0"/>
           <icon value="tpfinal/login/imagenes/botonEnter.png"/>
           <text value=""/>
