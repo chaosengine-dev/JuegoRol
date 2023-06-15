@@ -1,0 +1,57 @@
+[ {
+  "id" : 1,
+  "username" : "ADMIN",
+  "password" : "ADMIN",
+  "secondPassword" : "ADMIN",
+  "email" : "ADMIN",
+  "isAdmin" : true
+}, {
+  "id" : 2,
+  "username" : "cesar",
+  "password" : "1234",
+  "secondPassword" : "1234",
+  "email" : "cesar@gmail.com",
+  "isAdmin" : false
+}, {
+  "id" : 3,
+  "username" : "jorgekaz",
+  "password" : "123456",
+  "secondPassword" : "123456",
+  "email" : "jorgekaz@hotmail.com",
+  "isAdmin" : false
+}, {
+  "id" : 4,
+  "username" : "cesarito",
+  "password" : "123456",
+  "secondPassword" : "123456",
+  "email" : "cesar@cesar.com",
+  "isAdmin" : false
+}, {
+  "id" : 5,
+  "username" : "cesarin",
+  "password" : "123456",
+  "secondPassword" : "123456",
+  "email" : "cesar@cesar.com",
+  "isAdmin" : false
+}, {
+  "id" : 6,
+  "username" : "chechar",
+  "password" : "123456",
+  "secondPassword" : "123456",
+  "email" : "cesar@cesar",
+  "isAdmin" : false
+}, {
+  "id" : 7,
+  "username" : "checharito",
+  "password" : "123456",
+  "secondPassword" : "123456",
+  "email" : "cesar@qqq",
+  "isAdmin" : false
+}, {
+  "id" : 8,
+  "username" : "cesarolivera",
+  "password" : "123456",
+  "secondPassword" : "123456",
+  "email" : "aaa@aaa.com",
+  "isAdmin" : false
+} ]
