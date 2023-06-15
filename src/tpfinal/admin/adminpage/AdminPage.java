@@ -2,6 +2,8 @@ package tpfinal.admin.adminpage;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
+import tpfinal.graficos.CanvasVentana;
+import tpfinal.persistencia.LeerArchivos;
 import tpfinal.vistas.AdministrarVentanas;
 import tpfinal.vistas.VentanaJuego;
 
@@ -19,13 +21,15 @@ public class AdminPage extends JFrame implements VentanaJuego {
     private JButton jugarButton;
     private JButton gestionarUsuariosButton;
     private JLabel titulo;
+    public static Font fuente = LeerArchivos.leerFuente("Recursos/Fuentes/Enchanted Land.otf");
 
     public AdminPage() {
         add(ventana);
-        setSize(800, 600); //tamaño de la ventana
+        setSize(815, 615); //tamaño de la ventana
         setLocationRelativeTo(null); // centra la ventana en la pantalla
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // cierra el programa al cerrar la ventana
         setVisible(true); // hace visible la ventana
+        titulo.setFont(fuente.deriveFont(72f)); // setear la fuente y el tamaño, porque sino en las compus que no tengan agregada la fuente a windows, no se les ve con el formato que queremos
 
         setTitle("Admin Page"); // titulo de la ventana
 
@@ -82,7 +86,9 @@ public class AdminPage extends JFrame implements VentanaJuego {
         jugarButton.setBackground(new Color(-16777216));
         jugarButton.setBorderPainted(false);
         jugarButton.setContentAreaFilled(false);
+        jugarButton.setDefaultCapable(true);
         jugarButton.setEnabled(true);
+        jugarButton.setFocusPainted(false);
         Font jugarButtonFont = this.$$$getFont$$$("Enchanted Land", -1, 24, jugarButton.getFont());
         if (jugarButtonFont != null) jugarButton.setFont(jugarButtonFont);
         jugarButton.setForeground(new Color(-1));
@@ -95,6 +101,7 @@ public class AdminPage extends JFrame implements VentanaJuego {
         gestionarUsuariosButton.setBackground(new Color(-16777216));
         gestionarUsuariosButton.setBorderPainted(false);
         gestionarUsuariosButton.setContentAreaFilled(false);
+        gestionarUsuariosButton.setFocusPainted(false);
         Font gestionarUsuariosButtonFont = this.$$$getFont$$$("Enchanted Land", -1, 24, gestionarUsuariosButton.getFont());
         if (gestionarUsuariosButtonFont != null) gestionarUsuariosButton.setFont(gestionarUsuariosButtonFont);
         gestionarUsuariosButton.setForeground(new Color(-1));

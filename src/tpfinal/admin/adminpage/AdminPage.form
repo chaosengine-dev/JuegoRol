@@ -18,7 +18,9 @@
           <background color="-16777216"/>
           <borderPainted value="false"/>
           <contentAreaFilled value="false"/>
+          <defaultCapable value="true"/>
           <enabled value="true"/>
+          <focusPainted value="false"/>
           <font name="Enchanted Land" size="24"/>
           <foreground color="-1"/>
           <hideActionText value="false"/>
@@ -35,6 +37,7 @@
           <background color="-16777216"/>
           <borderPainted value="false"/>
           <contentAreaFilled value="false"/>
+          <focusPainted value="false"/>
           <font name="Enchanted Land" size="24"/>
           <foreground color="-1"/>
           <icon value="tpfinal/admin/imagenes/Gestionar Usuarios.png"/>

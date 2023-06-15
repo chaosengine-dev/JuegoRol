@@ -4,7 +4,7 @@
   "password" : "ADMIN",
   "secondPassword" : "ADMIN",
   "email" : "ADMIN",
-    "isAdmin" : true
+  "isAdmin" : true
 }, {
   "id" : 2,
   "username" : "cesar",
@@ -24,5 +24,13 @@
   "username" : "cesarito",
   "password" : "123456",
   "secondPassword" : "123456",
-  "email" : "cesar@cesar.com"
+  "email" : "cesar@cesar.com",
+  "isAdmin" : false
+}, {
+  "id" : 5,
+  "username" : "juanglive",
+  "password" : "123456",
+  "secondPassword" : "123456",
+  "email" : "juang@live.com.ar",
+  "isAdmin" : false
 } ]
