@@ -134,6 +134,7 @@ public class Registration implements VentanaJuego {
         cancelarRegistro = new JButton();
         cancelarRegistro.setBorderPainted(false);
         cancelarRegistro.setContentAreaFilled(false);
+        cancelarRegistro.setFocusPainted(false);
         cancelarRegistro.setHorizontalAlignment(0);
         cancelarRegistro.setIcon(new ImageIcon(getClass().getResource("/Login/imagenes/botonCancelar.png")));
         cancelarRegistro.setIconTextGap(4);
@@ -153,6 +154,7 @@ public class Registration implements VentanaJuego {
         crearUusuario = new JButton();
         crearUusuario.setBorderPainted(false);
         crearUusuario.setContentAreaFilled(false);
+        crearUusuario.setFocusPainted(false);
         crearUusuario.setHorizontalAlignment(0);
         crearUusuario.setIcon(new ImageIcon(getClass().getResource("/Login/imagenes/botonAceptar.png")));
         crearUusuario.setIconTextGap(4);

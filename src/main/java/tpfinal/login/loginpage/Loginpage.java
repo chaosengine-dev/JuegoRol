@@ -64,6 +64,7 @@ public class Loginpage implements VentanaJuego {
      * Listener del boton Entrar, va a leer los textfield de user y password.
      * Verifica las credenciales, si son correctas inicia sesion en el juego.
      * En caso contrario vuelve a la ventana anterior.
+     *
      * @return ActionListener para el boton asociado.
      */
     private ActionListener clickBotonEntrar() {
@@ -87,9 +88,11 @@ public class Loginpage implements VentanaJuego {
             }
         };
     }
+
     /**
      * Listener del boton Cancelar.
      * Vuelve a la ventana anterior.
+     *
      * @return ActionListener para el boton asociado.
      */
     private ActionListener clickBotonCancelar() {
@@ -103,6 +106,7 @@ public class Loginpage implements VentanaJuego {
 
     /**
      * Verifica si el usuario y contraseña pertenecen a algún usuario del archivo json.
+     *
      * @param username Nombre de usuario
      * @param password Contraseña de usuario
      * @return True si las credenciales son correctas, false si no lo son.
@@ -133,6 +137,7 @@ public class Loginpage implements VentanaJuego {
 
     /**
      * Verifica si el usuario logueado es administrador.
+     *
      * @param username Nombre de usuario logueado.
      * @return True si es administrador, false si no lo es.
      */
@@ -216,6 +221,7 @@ public class Loginpage implements VentanaJuego {
         botonLogin = new JButton();
         botonLogin.setBorderPainted(false);
         botonLogin.setContentAreaFilled(false);
+        botonLogin.setFocusPainted(false);
         botonLogin.setIcon(new ImageIcon(getClass().getResource("/Login/imagenes/botonLogin.png")));
         botonLogin.setText("");
         panelPpal.add(botonLogin, new GridConstraints(6, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
@@ -223,6 +229,7 @@ public class Loginpage implements VentanaJuego {
         botonCancelar.setActionCommand("");
         botonCancelar.setBorderPainted(false);
         botonCancelar.setContentAreaFilled(false);
+        botonCancelar.setFocusPainted(false);
         botonCancelar.setIcon(new ImageIcon(getClass().getResource("/Login/imagenes/botonCancelar.png")));
         botonCancelar.setLabel("");
         botonCancelar.setText("");

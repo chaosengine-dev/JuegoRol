@@ -21,12 +21,6 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.15.2</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>2.15.2</version>
-        </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.intellij/forms_rt -->
         <dependency>
@@ -34,8 +28,6 @@
             <artifactId>forms_rt</artifactId>
             <version>7.0.3</version>
         </dependency>
-
-
     </dependencies>
     
 </project>

@@ -48,6 +48,7 @@ public class Welcomepage implements VentanaJuego {
 
     /**
      * Listener del boton Registrarse.
+     *
      * @return ActionListener para el boton asociado.
      */
     private ActionListener clickBotonRegistro() {
@@ -57,8 +58,10 @@ public class Welcomepage implements VentanaJuego {
             AdministrarVentanas.cambiarEstadoActual(8);
         };
     }
+
     /**
      * Listener del boton Login.
+     *
      * @return ActionListener para el boton asociado.
      */
     private ActionListener clickBotonLogin() {
@@ -68,6 +71,7 @@ public class Welcomepage implements VentanaJuego {
             AdministrarVentanas.cambiarEstadoActual(9);
         };
     }
+
     @Override
     public void actualizar() {
     }
@@ -95,6 +99,7 @@ public class Welcomepage implements VentanaJuego {
         botonLogin = new JButton();
         botonLogin.setBorderPainted(false);
         botonLogin.setContentAreaFilled(false);
+        botonLogin.setFocusPainted(false);
         botonLogin.setHorizontalTextPosition(0);
         botonLogin.setIcon(new ImageIcon(getClass().getResource("/Login/imagenes/botonRegister.png")));
         botonLogin.setLabel("");
@@ -124,6 +129,7 @@ public class Welcomepage implements VentanaJuego {
         botonRegistrarse.setBorderPainted(false);
         botonRegistrarse.setContentAreaFilled(false);
         botonRegistrarse.setEnabled(true);
+        botonRegistrarse.setFocusPainted(false);
         botonRegistrarse.setHorizontalTextPosition(0);
         botonRegistrarse.setIcon(new ImageIcon(getClass().getResource("/Login/imagenes/botonEnter.png")));
         botonRegistrarse.setText("");
