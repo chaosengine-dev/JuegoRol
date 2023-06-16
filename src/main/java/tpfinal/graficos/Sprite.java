@@ -9,17 +9,12 @@ import java.awt.image.BufferedImage;
  */
 public class Sprite {
     private final BufferedImage imagen;
-    private final int ancho;
-    private final int alto;
-
     /**
-     * Constructor de la clase Sprite, crea un Buffered image con su informacion de alto y ancho
+     * Constructor de la clase Sprite.
      * @param imagen BufferedImage para trabajar en forma individual.
      */
     public Sprite(BufferedImage imagen) {
         this.imagen = imagen;
-        ancho = imagen.getWidth();
-        alto = imagen.getHeight();
     }
 
     public BufferedImage getImagen(){

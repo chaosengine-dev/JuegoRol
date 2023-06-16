@@ -34,7 +34,7 @@ public abstract class AdministrarVentanas {
     public static void gestorVentanas(CanvasVentana canvasVentana){
         canvasVentanaGlobal = canvasVentana;
         iniciarVentanas();
-        IniciarVentanaJuego();
+        iniciarJuego();
     }
 
     /**
@@ -75,10 +75,9 @@ public abstract class AdministrarVentanas {
      * Indica que la ventana de inicio del juego es la que está en la posicion 7 del arreglo.
      * La ventana de Bienvenida, clase WelcomePage.
      */
-    private static void IniciarVentanaJuego() {
+    private static void iniciarJuego() {
         ventanaActual = ventanasJuegos[7];
     }
-
     /**
      * Crea la ventana de Presentacion posterior al logue o registro en el juego.
      */
@@ -94,14 +93,12 @@ public abstract class AdministrarVentanas {
             ventanasJuegos[1] = new IniciarJuegoNuevo();
         }
     }
-
     /**
      * Crea la ventana con un juego nuevo, luego de elegir el personaje en la ventana JuegoNuevo.
      */
     public static void iniciarVentanaNuevo(){
         ventanasJuegos[3] = new Nuevo(canvasVentanaGlobal);
     }
-
     /**
      * Crea la ventana de Batalla
      * @param heroe Datos del Heroe (jugador) para obtener su información.

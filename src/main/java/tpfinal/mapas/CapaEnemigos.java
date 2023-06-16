@@ -1,7 +1,6 @@
 package tpfinal.mapas;
 
 import tpfinal.objetos.Enemy;
-import tpfinal.objetos.Pocion;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -111,7 +110,7 @@ public class CapaEnemigos extends Capa{
      * se elimina del arraylist.
      * @param enemyCollision Enemigo vencido en batalla.
      */
-    public void actualizarObjetos(Enemy enemyCollision) {
+    public void actualizarEnemigos(Enemy enemyCollision) {
         for (Enemy enemy: enemigos
         ) {
             if (enemy.getPosicionX() == enemyCollision.getPosicionX() && enemy.getPosicionY() == enemyCollision.getPosicionY()){

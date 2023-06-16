@@ -519,7 +519,7 @@ public class Jugador {
      * Desactivamos el enemigo con el que colisionamos y vencimos.
      */
     private void desactivarEnemigo(){
-        capaEnemigos.actualizarObjetos(enemyEnColision);
+        capaEnemigos.actualizarEnemigos(enemyEnColision);
     }
     
     // En colision con los bordes del mapa
