@@ -15,7 +15,6 @@ public class Teclado implements KeyListener {
     private Tecla abajo;
     private Tecla izquierda;
     private Tecla derecha;
-    private boolean recogiendo;
     private boolean corriendo;
     private boolean pausaActiva;
     private boolean entrarJuego;
@@ -24,7 +23,6 @@ public class Teclado implements KeyListener {
     private boolean usarPocionDos;
     private boolean usarPocionTres;
     private boolean finBatalla;
-    private int tipoPersonaje;
     private boolean saveGame;
     private boolean finJuego;
 
@@ -33,7 +31,6 @@ public class Teclado implements KeyListener {
         abajo = new Tecla();
         izquierda = new Tecla();
         derecha = new Tecla();
-        recogiendo = false;
         corriendo = false;
         pausaActiva = false;
         entrarJuego = false;
@@ -59,9 +56,6 @@ public class Teclado implements KeyListener {
                 break;
             case KeyEvent.VK_D:
                 derecha.teclaPulsada();
-                break;
-            case KeyEvent.VK_E:
-                recogiendo = true;
                 break;
             case KeyEvent.VK_SHIFT:
                 corriendo = true;
@@ -109,9 +103,6 @@ public class Teclado implements KeyListener {
                 break;
             case KeyEvent.VK_D:
                 derecha.teclaLiberada();
-                break;
-            case KeyEvent.VK_E:
-                recogiendo = false;
                 break;
             case KeyEvent.VK_SHIFT:
                 corriendo = false;
@@ -166,10 +157,6 @@ public class Teclado implements KeyListener {
     public boolean isEntrarJuego() {
         return entrarJuego;
     }
-    public void setEntrarJuego(boolean entrarJuego, int tipoPersonaje) {
-        this.entrarJuego = entrarJuego;
-        this.tipoPersonaje = tipoPersonaje;
-    }
     public boolean isNuevoJuego() {
         return nuevoJuego;
     }
@@ -190,9 +177,6 @@ public class Teclado implements KeyListener {
     }
     public void setUsarPocionTres(boolean usarPocionTres) {
         this.usarPocionTres = usarPocionTres;
-    }
-    public int getTipoPersonaje() {
-        return tipoPersonaje;
     }
     public boolean isFinBatalla() {
         return finBatalla;

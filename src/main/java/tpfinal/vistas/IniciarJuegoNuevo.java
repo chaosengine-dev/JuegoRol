@@ -29,14 +29,13 @@ public class IniciarJuegoNuevo implements VentanaJuego {
      * Crea un juego nuevo, lee los archivos de texto de Mapa, Ambiente, Pociones y Enemigos.
      * Inicializa el jugador y el menu de estadísticas.
      */
-    public IniciarJuegoNuevo(){
+    public IniciarJuegoNuevo(int tipoPersonaje){
 
         capaMapa = new CapaMapa("Recursos/Mapas/mapa.txt", ladoSpriteChico);
         capaAmbiente = new CapaAmbiente("Recursos/Objetos/ambiente.txt", ladoSpriteGrande);
         capaObjetos = new CapaObjetos("Recursos/Objetos/pociones.txt", ladoSpriteChico);
         capaEnemigos = new CapaEnemigos("Recursos/Objetos/enemigos.txt", ladoSpriteGrande);
 
-        int tipoPersonaje = Controles.teclado.getTipoPersonaje();
         Heroe heroe;
 
         switch (tipoPersonaje){

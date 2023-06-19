@@ -127,12 +127,7 @@ public class JuegoRol {
         if (Controles.teclado.isNuevoJuego() && AdministrarVentanas.getIndice() == 0){
             AdministrarVentanas.cambiarEstadoActual(3);
         }
-        if (Controles.teclado.isEntrarJuego() && AdministrarVentanas.getIndice() == 3) {
-            Controles.teclado.setPausaActiva(false);
-            // Crear juego nuevo
-            AdministrarVentanas.iniciarVentanaJuego(); // inicio la ventana juego teniendo el player elegido
-            AdministrarVentanas.cambiarEstadoActual(1);
-        }
+
         AdministrarVentanas.actualizar();
 
     }
