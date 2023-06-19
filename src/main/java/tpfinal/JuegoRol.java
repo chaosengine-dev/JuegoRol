@@ -13,21 +13,37 @@ public class JuegoRol {
     private boolean enFuncionamiento = false;
     private static int ancho;
     private static int alto;
-    private String nombre;
+    private static String nombre;
     private CanvasVentana canvasVentana;
     private VentanaJFrame ventanaJFrame;
 
+    private static JuegoRol juegoRol = null;
+
     /**
-     * Constructor de la clase
+     * Constructor de la clase, se hace privado para usar el diseño Singleton
      * @param ancho int que representa el ancho de la ventana.
      * @param alto int que representa el alto de la ventana.
      * @param nombre String que le asigna el nombre a la ventana.
      */
-    public JuegoRol(int ancho, int alto, String nombre){
+    private JuegoRol(int ancho, int alto, String nombre){
         Musica.fondo();
         this.alto = alto;
         this.ancho = ancho;
         this.nombre = nombre;
+    }
+
+    /**
+     * Getter para el constructor, si existe una instancia la devuelve, sino crea una.
+     * @param ancho ancho de la ventana.
+     * @param alto alto de la ventana.
+     * @param nombre nombre de la ventana.
+     * @return instancia del objeto JuegoRol
+     */
+    public static JuegoRol getJuegoRol(int ancho, int alto, String nombre){
+        if (juegoRol == null){
+            juegoRol = new JuegoRol(ancho, alto, nombre);
+        }
+        return juegoRol;
     }
 
     /**
@@ -63,12 +79,13 @@ public class JuegoRol {
         while (enFuncionamiento){
             // Capturo el momento cuando entro a l ciclo
             final long inicioBucle = System.nanoTime();
+
             // Calculo el tiempo transcurrido entre que empieza el bucle y termina, la primera vez solo calcula con
             // el momento en el que se inicio la variabel referenciaActualizacion
             tiempoTranscurrido = (double) (inicioBucle - referenciaActualizacion);
             // volvemos a tomar un tiempo de referencia para poder comparar en el ciclo siguiente.
             referenciaActualizacion = inicioBucle;
-            // delta sumnara una numero muy chico y cuando llegue a uno o mas llama al metodo actualizar.
+            // delta sumara un numero muy chico y cuando llegue a uno o mas llama al metodo actualizar.
             // Con esta formula se logra que el juego se actualiza unas 130 veces que es el OBJETIVO.
             delta += tiempoTranscurrido / NS_POR_ACTUALIZACION;
             while (delta >= 1){

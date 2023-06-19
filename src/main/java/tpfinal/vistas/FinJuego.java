@@ -2,6 +2,7 @@ package tpfinal.vistas;
 
 import tpfinal.graficos.CanvasVentana;
 import tpfinal.graficos.SpritesSheet;
+import tpfinal.persistencia.LeerArchivosTxtPng;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -15,7 +16,7 @@ public class FinJuego implements VentanaJuego {
     private final Rectangle DETALLE;
     private SpritesSheet hojaSprite;
     private BufferedImage imagen;
-
+    private Font FUENTE_MEDIEVAL = LeerArchivosTxtPng.leerFuente("Recursos/Fuentes/SupplyCenter.ttf");
     /**
      * Dibuja la ventana de finalizacion del juego como vencedor.
      */
@@ -41,7 +42,7 @@ public class FinJuego implements VentanaJuego {
         grafico.fillRect(DETALLE.x, DETALLE.y, DETALLE.width, DETALLE.height);
         grafico.drawImage(imagen, DETALLE.x, DETALLE.y, null);
         grafico.setColor(Color.WHITE);
-        grafico.setFont(CanvasVentana.FUENTE_MEDIEVAL);
+        grafico.setFont(FUENTE_MEDIEVAL);
         grafico.drawString("Gracias por Jugar, esta historia continuará...          (ESC) para Salir.", 50, 15);
     }
 

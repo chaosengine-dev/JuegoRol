@@ -1,0 +1,10 @@
+
+w	java:S116"]Rename this field "COLOR_BARRA_ESTADO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚·µâşÿÿÿÿ
+r	java:S116"XRename this field "COLOR_DETALLE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìÅæ¶ÿÿÿÿÿ
+l	java:S116"WRename this field "BARRA_ESTADO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÌŒô„
+l	java:S116"RRename this field "DETALLE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äãÃÕûÿÿÿÿ
+{	java:S116"ZRename this field "FUENTE_MEDIEVAL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ›ÍÉùÿÿÿÿ8¤éáÚŒ1
+—
+java:S1186!"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(”´æ
+]
+java:S1128";Remove this unused import 'tpfinal.graficos.CanvasVentana'.(ÍŸ–Åıÿÿÿÿ8æ†áÚŒ1

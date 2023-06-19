@@ -16,9 +16,7 @@ public class CanvasVentana extends Canvas {
     private int ancho;
     private Mouse mouse;
     private Point posicionVentana;
-
-    // Public para poder usar la fuente en otra clase sin tener que leerla de nuevo
-    public static Font FUENTE_MEDIEVAL = LeerArchivosTxtPng.leerFuente("Recursos/Fuentes/SupplyCenter.ttf");
+    private Font FUENTE_MEDIEVAL = LeerArchivosTxtPng.leerFuente("Recursos/Fuentes/SupplyCenter.ttf");
 
     /**
      * Constructor de la clase. Crea la ventana, crea 2 listeners, uno para el teclado y otro para el mouse.     *
