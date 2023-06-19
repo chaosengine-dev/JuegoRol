@@ -6,6 +6,7 @@ import com.intellij.uiDesigner.core.Spacer;
 import tpfinal.graficos.Icono;
 import tpfinal.login.models.User;
 import tpfinal.persistencia.LeerArchivosTxtPng;
+import tpfinal.persistencia.UserExceptions;
 import tpfinal.persistencia.UsuarioRepositorio;
 import tpfinal.vistas.AdministrarVentanas;
 import tpfinal.vistas.VentanaJuego;
@@ -13,7 +14,7 @@ import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.text.StyleContext;
 import java.awt.*;
-import java.awt.event.ActionEvent;
+import java.util.List;
 import java.awt.event.ActionListener;
 import java.util.Locale;
 
@@ -71,18 +72,80 @@ public class Registration implements VentanaJuego {
      */
     private ActionListener clickBotonRegistrar() {
         return e -> {
-            boolean userAgregado = false;
             try {
                 // TODO: Se debe separar la logica de crear el usuario de la persistencia
-                userAgregado = newUser.agregar(new User(usernameTextField.getText(), passwordField1.getText(), passwordField2.getText(), emailField.getText()));
-            } catch (Exception ex) {
-                throw new RuntimeException(ex);
-            }
-            if (userAgregado) {
+                User newUser = new User(usernameTextField.getText(), passwordField1.getText(), passwordField2.getText(), emailField.getText());
+                //userAgregado = newUser.agregar(new User(usernameTextField.getText(), passwordField1.getText(), passwordField2.getText(), emailField.getText()));
+
+                //VALIDAR EL USUARIO ANTES DE AGREGARLO
+                validarUsuario(newUser);
+
+                //OBTENGO EL PROXIMO ID
+                int nextID = getNextID();
+
+                //ASIGNO EL ID AL USUARIO
+                newUser.setId(nextID);
+
+                //AGREGAR EL USUARIO AL REPOSITORIO
+                UsuarioRepositorio repositorio = new UsuarioRepositorio();
+                repositorio.agregar(newUser);
+
+                JOptionPane.showMessageDialog(null, "Usuario agregado " + newUser.getUsername() + " correctamente", "Usuario agregado", JOptionPane.INFORMATION_MESSAGE);
                 jFramePrincipal.dispose();
                 AdministrarVentanas.cambiarEstadoActual(9);
+
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         };
+    }
+
+    private boolean validarUsuario(User user) throws UserExceptions {
+        boolean existe = false;
+        //VALIDAR EXISTENCIA DEL USUARIO
+        UsuarioRepositorio repositorio = new UsuarioRepositorio();
+        List<User> userList = repositorio.listar();
+        for (User existingUser : userList) {
+            if (existingUser.getUsername().equals(user.getUsername())) {
+                existe = true;
+                break;
+            }
+        }
+        if (existe) {
+            throw new UserExceptions("El usuario " + user.getUsername() + " ya existe");
+        }
+
+        //VALIDAR DATOS DEL USUARIO
+        if (user.getUsername().length() < 6) {
+            throw new UserExceptions("El nombre de usuario debe tener al menos 6 caracteres");
+        }
+        if (!user.getUsername().matches("[a-zA-Z0-9]*")) {
+            throw new UserExceptions("El nombre de usuario solo puede contener letras y numeros");
+        }
+        if (user.getPassword().length() < 6) {
+            throw new UserExceptions("La contraseña debe tener al menos 6 caracteres");
+        }
+        if (!user.getPassword().equals(user.getSecondPassword())) {
+            throw new UserExceptions("Las contraseñas no coinciden");
+        }
+        if (!user.getEmail().contains("@")) {
+            throw new UserExceptions("El email debe contener un @");
+        }
+        return true;
+    }
+
+    /**
+     * Obtiene el siguiente id para almacenar un User nuevo.
+     * @return int con el ID siguiente.
+     */
+    private int getNextID() {
+        int nextID = 0;
+        for (User user : this.newUser.listar()) {
+            if (user.getId() > nextID) {
+                nextID = user.getId();
+            }
+        }
+        return nextID + 1;
     }
 
     /**

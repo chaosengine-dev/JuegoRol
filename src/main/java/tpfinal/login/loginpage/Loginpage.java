@@ -4,6 +4,8 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
 import tpfinal.graficos.Icono;
+import tpfinal.login.models.User;
+import tpfinal.login.registration.Registration;
 import tpfinal.persistencia.LeerArchivosTxtPng;
 import tpfinal.persistencia.UsuarioRepositorio;
 import tpfinal.vistas.AdministrarVentanas;
@@ -14,6 +16,7 @@ import javax.swing.text.StyleContext;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.Locale;
+import java.util.Objects;
 
 /**
  * Clase que crea la ventana de login.
@@ -28,6 +31,7 @@ public class Loginpage implements VentanaJuego {
     private JLabel passlogin;
     private JButton botonCancelar;
     private final JFrame jFramePpal;
+    private UsuarioRepositorio userList = new UsuarioRepositorio();
 
 
     /**
@@ -116,11 +120,11 @@ public class Loginpage implements VentanaJuego {
         newLogin.cargar();
 
         // Verificar si el username existe en el repositorio de usuarios
-        boolean usernameExists = newLogin.existeUsername(username);
+        boolean usernameExists = existeUsername(username);
 
         if (usernameExists) {
             // Verificar las credenciales para el username existente
-            boolean validCredentials = newLogin.verificarCredenciales(username, password);
+            boolean validCredentials = verificarCredenciales(username, password);
             if (validCredentials) {
                 return true; // Credenciales válidas
             } else {
@@ -131,6 +135,60 @@ public class Loginpage implements VentanaJuego {
         }
 
         return false; // Credenciales inválidas
+    }
+
+    /**
+     * Verifica si existe el nombre de usuario en el json y devuelve true en caso que exista
+     * o false en caso contrario.
+     *
+     * @param username Nombre de usuario buscado.
+     * @return true si existe el usuario, false en caso contrario.
+     */
+    public boolean existeUsername(String username) {
+        UsuarioRepositorio userRepo = new UsuarioRepositorio();
+        userRepo.cargar();
+        for (User user : this.userList.listar()) {
+            if (Objects.equals(user.getUsername(), username)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Verifica si el conjunto username y password pertenencen a un usuario del json.
+     *
+     * @param username Nombre de usuario buscado.
+     * @param password Password del usuario buscado.
+     * @return true si el conjunto es valido, false en caso contrario.
+     */
+    public boolean verificarCredenciales(String username, String password) {
+        UsuarioRepositorio userRepo = new UsuarioRepositorio();
+        userRepo.cargar();
+        for (User user : this.userList.listar()) {
+            if (Objects.equals(user.getUsername(), username) && Objects.equals(user.getPassword(), password)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Verifica si existe el usuario es administrador y devuelve true en caso que lo sea
+     * o false en caso contrario.
+     *
+     * @param username Nombre de usuario buscado.
+     * @return true si el usuario es administrador, false en caso contrario.
+     */
+    public boolean isAdmin(String username) {
+        UsuarioRepositorio userRepo = new UsuarioRepositorio();
+        userRepo.cargar();
+        for (User user : this.userList.listar()) {
+            if (Objects.equals(user.getUsername(), username)) {
+                return user.getisAdmin();
+            }
+        }
+        return false;
     }
 
     // FUNCION PARA COMPROBAR SI EL USUARIO ES ADMIN
@@ -144,7 +202,7 @@ public class Loginpage implements VentanaJuego {
     private boolean checkAdmin(String username) {
         UsuarioRepositorio newLogin = new UsuarioRepositorio();
         newLogin.cargar();
-        if (newLogin.isAdmin(username)) {
+        if (isAdmin(username)) {
             return true;//es admin
         }
         return false;//no es admin

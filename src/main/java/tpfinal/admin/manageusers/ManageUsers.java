@@ -9,6 +9,7 @@ import com.intellij.uiDesigner.core.Spacer;
 import tpfinal.graficos.Icono;
 import tpfinal.login.models.User;
 import tpfinal.persistencia.LeerArchivosTxtPng;
+import tpfinal.persistencia.UserExceptions;
 import tpfinal.persistencia.UsuarioRepositorio;
 import tpfinal.vistas.VentanaJuego;
 
@@ -81,7 +82,7 @@ public class ManageUsers extends JFrame implements VentanaJuego {
     private ActionListener cambioUsuarioComboBox() {
         return e -> {
             String sel = (String) comboUsers.getSelectedItem();
-            User userSelected = gestion.obtenerUsuario(sel);
+            User userSelected = obtenerUsuario(sel);
             usuario.setText(userSelected.getUsername());
             password1.setText(userSelected.getPassword());
             password2.setText(userSelected.getSecondPassword());
@@ -92,6 +93,22 @@ public class ManageUsers extends JFrame implements VentanaJuego {
                 soyAdministradorCheckBox.setSelected(false);
             }
         };
+    }
+
+    /**
+     * Busca en la lista de User, el usuario que coincida con el nombre enviado por parametro.
+     *
+     * @param nombre Nombre de usuario buscado
+     * @return Objeto del tipo User encontrado, null en caso contrario.
+     */
+    public User obtenerUsuario(String nombre) {
+        UsuarioRepositorio gestion = new UsuarioRepositorio();
+        for (User user : gestion.listar()) {
+            if (user.getUsername().equals(nombre)) {
+                return user;
+            }
+        }
+        return null;
     }
 
     /**

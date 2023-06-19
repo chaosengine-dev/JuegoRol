@@ -4,11 +4,14 @@ import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.Spacer;
 import tpfinal.graficos.Icono;
+import tpfinal.login.models.User;
+import tpfinal.persistencia.UsuarioRepositorio;
 import tpfinal.vistas.AdministrarVentanas;
 import tpfinal.vistas.VentanaJuego;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 /**
  * Clase que crea la ventana de Bienvenida al juego.
@@ -19,6 +22,7 @@ public class Welcomepage implements VentanaJuego {
     private JButton botonLogin;
     private JLabel imagenFondo;
     private JFrame jFramePpal;
+    private UsuarioRepositorio userList = new UsuarioRepositorio();
 
     /**
      * El constructor le da forma a la ventana JFrame, setea los atributos de la misma.
