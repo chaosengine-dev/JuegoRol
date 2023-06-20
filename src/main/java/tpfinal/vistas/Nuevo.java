@@ -93,7 +93,9 @@ public class Nuevo implements VentanaJuego {
                 }
             }
             if (mouseRelativo.intersects(botonJugar)) {
-                Controles.teclado.setEntrarJuego(true, playerSelected);
+                AdministrarVentanas.iniciarVentanaJuego(playerSelected); // inicio la ventana juego teniendo el player elegido
+                AdministrarVentanas.cambiarEstadoActual(1);
+
             }
             cambiarPersonaje(playerSelected);
             Musica.clickBoton();

@@ -55,7 +55,7 @@ public abstract class AdministrarVentanas {
      *             11 - Ventana Admin
      *             12 - Gestionar Usuarios
      */
-    public static void iniciarVentanas() {
+    private static void iniciarVentanas() {
         indice = 0;
         ventanasJuegos = new VentanaJuego[13];
         ventanasJuegos[0] = null;
@@ -84,13 +84,12 @@ public abstract class AdministrarVentanas {
     public static void iniciarVentanaBienvenida(){
         ventanasJuegos[0] = new Presentacion(canvasVentanaGlobal);
     }
-
     /**
      * Crea la ventana para iniciar un juego nuevo, donde se elige el personaje.
      */
-    public static void iniciarVentanaJuego(){
+    public static void iniciarVentanaJuego(int playerSelected){
         if (ventanasJuegos[1] == null){
-            ventanasJuegos[1] = new IniciarJuegoNuevo();
+            ventanasJuegos[1] = new IniciarJuegoNuevo(playerSelected);
         }
     }
     /**
@@ -108,38 +107,32 @@ public abstract class AdministrarVentanas {
     public static void iniciarVentanaBatalla(Heroe heroe, Enemy enemigo, int ventanaOrigen){
         ventanasJuegos[4] = new Batalla(heroe, enemigo, ventanaOrigen);
     }
-
     /**
      * Crea la ventana de Registro de usuario
      */
     public static void iniciarVentanaRegistro(){
         ventanasJuegos[8] = new Registration();
     }
-
     /**
      * Crea la ventana para iniciar con cuenta de usuario
      */
     public static void iniciarVentanaLogin(){
         ventanasJuegos[9] = new Loginpage();
     }
-
     /**
      * Inicia la ventana de una partida guardada.
      */
     public static void iniciarVentanaJuegoSalvado(){
         ventanasJuegos[10] = new IniciarJuegoSalvado();
     }
-
     /**
      * Inicia la ventana de Administrador, donde se puede elegir Jugar o Administrar Usuarios
      */
     public static void iniciarVentanaAdmin(){ventanasJuegos[11] = new AdminPage();}
-
     /**
      * Crea la ventana de administrador de usuarios.
      */
     public static void iniciarVentanaGestionUsuarios(){ventanasJuegos[12] = new ManageUsers();}
-
     /**
      * Si no hay ventana actual, es decir no se creó el arreglo de ventanas y se asignó una ventana
      * se crea el arreglo llamando al gestorVentanas.
@@ -151,7 +144,6 @@ public abstract class AdministrarVentanas {
         }
         ventanaActual.actualizar();
     }
-
     /**
      * Si no hay ventana actual, es decir no se creó el arreglo de ventanas y se asignó una ventana
      * se crea el arreglo llamando al gestorVentanas.
@@ -165,7 +157,6 @@ public abstract class AdministrarVentanas {
         ventanaActual.dibujar(grafico);
 
     }
-
     /**
      * Se encarga de intercambiar el estado de la ventana.
      * Recibe el índice del arreglo que debe estar activa.

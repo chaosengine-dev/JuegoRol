@@ -1,0 +1,28 @@
+
+f	java:S1176"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äúçİ
+˜
+java:S1186Ô"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(”´æ
+
+java:S1186Ø"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(…ú´­ÿÿÿÿÿ
+d
+java:S3252-"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(¾ÇØìÿÿÿÿÿ
+J
+java:S1874M"/Remove this use of "getText"; it is deprecated.(˜Ÿ–¹ûÿÿÿÿ
+W
+java:S1126Í"AReplace this if-then-else statement by a single return statement.(İ÷_
+e
+java:S1128"IRemove this unused import 'com.intellij.uiDesigner.core.GridConstraints'.(ş·ô(8º«ôÅ1
+h
+java:S1128"KRemove this unused import 'com.intellij.uiDesigner.core.GridLayoutManager'.(‡ĞºÁ8º«ôÅ1
+]
+java:S1128"@Remove this unused import 'com.intellij.uiDesigner.core.Spacer'.(­ åÀ8»«ôÅ1
+_
+java:S1128"DRemove this unused import 'tpfinal.login.registration.Registration'.(À¾õØûÿÿÿÿ
+^
+java:S1128"<Remove this unused import 'javax.swing.plaf.FontUIResource'.(áï¨Ûøÿÿÿÿ8½«ôÅ1
+W
+java:S1128":Remove this unused import 'javax.swing.text.StyleContext'.(åÇ’8¾«ôÅ1
+O
+java:S1128"-Remove this unused import 'java.util.Locale'.(åğ×±ûÿÿÿÿ8¿«ôÅ1
+Q
+java:S1068"/Remove this unused "imagenFondo" private field.(Î¹Œùûÿÿÿÿ8À«ôÅ1

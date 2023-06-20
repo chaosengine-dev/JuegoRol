@@ -32,7 +32,6 @@ public class PersistenciaJson {
         try {
             objeto = mapper.readValue(file, clase);
         } catch (IOException e) {
-            System.out.println(e);
             throw new RuntimeException(e);
         }finally {
             return objeto;

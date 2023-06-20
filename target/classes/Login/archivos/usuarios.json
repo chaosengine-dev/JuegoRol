@@ -54,4 +54,11 @@
   "secondPassword" : "123456",
   "email" : "aaa@aaa.com",
   "isAdmin" : false
-}]
+}, {
+  "id" : 9,
+  "username" : "cintia",
+  "password" : "123456",
+  "secondPassword" : "123456",
+  "email" : "aaa@aaa.com",
+  "isAdmin" : false
+} ]
