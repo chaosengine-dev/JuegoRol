@@ -22,6 +22,7 @@ public class Welcomepage implements VentanaJuego {
     private JButton botonLogin;
     private JLabel imagenFondo;
     private JFrame jFramePpal;
+    private UsuarioRepositorio userList = new UsuarioRepositorio();
 
     /**
      * El constructor le da forma a la ventana JFrame, setea los atributos de la misma.

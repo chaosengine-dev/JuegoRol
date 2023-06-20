@@ -8,5 +8,5 @@ public interface IRepository<T> {
     List<T> listar();
     void agregar(T... objecto) throws Exception;
     void eliminar(String userName);
-    void modificar(T dato);
+    void modificar(String userName);
 }

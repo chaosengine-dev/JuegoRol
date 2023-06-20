@@ -27,10 +27,38 @@
   "email" : "cesar@cesar.com",
   "isAdmin" : false
 }, {
+  "id" : 5,
+  "username" : "cesarin",
+  "password" : "123456",
+  "secondPassword" : "123456",
+  "email" : "cesar@cesar.com",
+  "isAdmin" : false
+}, {
   "id" : 6,
   "username" : "chechar",
   "password" : "123456",
   "secondPassword" : "123456",
   "email" : "cesar@cesar",
+  "isAdmin" : false
+}, {
+  "id" : 7,
+  "username" : "checharito",
+  "password" : "123456",
+  "secondPassword" : "123456",
+  "email" : "cesar@qqq",
+  "isAdmin" : false
+}, {
+  "id" : 8,
+  "username" : "cesarolivera",
+  "password" : "123456",
+  "secondPassword" : "123456",
+  "email" : "aaa@aaa.com",
+  "isAdmin" : false
+}, {
+  "id" : 9,
+  "username" : "cintia",
+  "password" : "123456",
+  "secondPassword" : "123456",
+  "email" : "aaa@aaa.com",
   "isAdmin" : false
 } ]
