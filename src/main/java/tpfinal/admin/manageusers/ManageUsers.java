@@ -9,7 +9,6 @@ import com.intellij.uiDesigner.core.Spacer;
 import tpfinal.graficos.Icono;
 import tpfinal.login.models.User;
 import tpfinal.persistencia.LeerArchivosTxtPng;
-import tpfinal.persistencia.UserExceptions;
 import tpfinal.persistencia.UsuarioRepositorio;
 import tpfinal.vistas.VentanaJuego;
 
@@ -35,6 +34,8 @@ public class ManageUsers extends JFrame implements VentanaJuego {
     private JLabel textoEmail;
     private JLabel textoAdministrarUsuario;
     private JButton button1;
+    private JButton ButtonDelete;
+    private JButton ButtonSave;
     private final UsuarioRepositorio gestion = new UsuarioRepositorio();
 
     /**
@@ -173,7 +174,7 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         if (textoAdministrarUsuarioFont != null) textoAdministrarUsuario.setFont(textoAdministrarUsuarioFont);
         textoAdministrarUsuario.setForeground(new Color(-394241));
         textoAdministrarUsuario.setText("Administrar usuarios");
-        ventana.add(textoAdministrarUsuario, new GridConstraints(0, 1, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        ventana.add(textoAdministrarUsuario, new GridConstraints(0, 1, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 1, false));
         textoUsername = new JLabel();
         textoUsername.setBackground(new Color(-16777216));
         Font textoUsernameFont = this.$$$getFont$$$("Enchanted Land", -1, 28, textoUsername.getFont());
@@ -218,10 +219,35 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         ventana.add(comboUsers, new GridConstraints(1, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(200, 30), null, 0, false));
         button1 = new JButton();
         button1.setBackground(new Color(-16777216));
+        button1.setBorderPainted(false);
+        button1.setContentAreaFilled(false);
+        button1.setDefaultCapable(true);
         button1.setFocusPainted(false);
-        button1.setForeground(new Color(-394241));
-        button1.setText("Button");
-        ventana.add(button1, new GridConstraints(6, 1, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(200, -1), null, 0, false));
+        button1.setForeground(new Color(-1));
+        button1.setIcon(new ImageIcon(getClass().getResource("/Login/imagenes/Boton Cancelar.png")));
+        button1.setText("");
+        ventana.add(button1, new GridConstraints(6, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 1, false));
+        ButtonDelete = new JButton();
+        ButtonDelete.setBackground(new Color(-16777216));
+        ButtonDelete.setBorderPainted(false);
+        ButtonDelete.setContentAreaFilled(false);
+        ButtonDelete.setEnabled(true);
+        ButtonDelete.setFocusPainted(false);
+        ButtonDelete.setFocusable(true);
+        ButtonDelete.setForeground(new Color(-1));
+        ButtonDelete.setIcon(new ImageIcon(getClass().getResource("/Login/imagenes/Boton Borrar.png")));
+        ButtonDelete.setText("");
+        ventana.add(ButtonDelete, new GridConstraints(6, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 1, false));
+        ButtonSave = new JButton();
+        ButtonSave.setBackground(new Color(-16777216));
+        ButtonSave.setBorderPainted(false);
+        ButtonSave.setContentAreaFilled(false);
+        ButtonSave.setEnabled(true);
+        ButtonSave.setFocusPainted(false);
+        ButtonSave.setForeground(new Color(-1));
+        ButtonSave.setIcon(new ImageIcon(getClass().getResource("/Login/imagenes/Boton Guardar.png")));
+        ButtonSave.setText("");
+        ventana.add(ButtonSave, new GridConstraints(6, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 1, false));
     }
 
     /**
