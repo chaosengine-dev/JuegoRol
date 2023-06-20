@@ -75,7 +75,7 @@ public class Registration implements VentanaJuego {
             try {
                 // TODO: Se debe separar la logica de crear el usuario de la persistencia
                 User newUser = new User(usernameTextField.getText(), passwordField1.getText(), passwordField2.getText(), emailField.getText());
-                //userAgregado = newUser.agregar(new User(usernameTextField.getText(), passwordField1.getText(), passwordField2.getText(), emailField.getText()));
+
 
                 //VALIDAR EL USUARIO ANTES DE AGREGARLO
                 validarUsuario(newUser);

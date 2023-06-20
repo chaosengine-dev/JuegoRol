@@ -95,24 +95,15 @@ public class UsuarioRepositorio implements IRepository<User> {
 
     /**
      * Modifica los datos de un usuario en el caso de existir.
-     * Carga todos los usuarios al List, busca el que coincida
-     * Pide los datos para modificar y lo guarda al finalizar.
-     * @param userName nombre de usuario que deseamos modificar.
+     * @param usuario Objeto del tipo User que deseamos modificar.
      */
     @Override
-    public void modificar(String userName){
+    public void modificar(User usuario){
         cargar();
-        Scanner scanner = new Scanner(System.in);
         for(User user : this.users){
-            if(Objects.equals(user.getUsername(), userName)){
-                System.out.println("Ingrese el nuevo nombre de usuario: ");
-                user.setUsername(scanner.nextLine());
-                System.out.println("Ingrese la nueva contraseña: ");
-                user.setPassword(scanner.nextLine());
-                System.out.println("Ingrese la nueva contraseña nuevamente: ");
-                user.setSecondPassword(scanner.nextLine());
-                System.out.println("Ingrese el nuevo email: ");
-                user.setEmail(scanner.nextLine());
+            if(user.getId() == usuario.getId()){
+                users.remove(user);
+                users.add(usuario);
                 break;
             }
         }
