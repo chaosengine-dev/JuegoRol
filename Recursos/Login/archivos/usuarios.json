@@ -13,18 +13,18 @@
   "email" : "cesar@gmail.com",
   "isAdmin" : false
 }, {
+  "id" : 3,
+  "username" : "jorgekaz",
+  "password" : "543211",
+  "secondPassword" : "543211",
+  "email" : "jorgekaz@hotmail.com",
+  "isAdmin" : false
+}, {
   "id" : 4,
   "username" : "cesarito",
   "password" : "123456",
   "secondPassword" : "123456",
   "email" : "cesar@cesar.com",
-  "isAdmin" : false
-}, {
-  "id" : 6,
-  "username" : "chechar",
-  "password" : "123456",
-  "secondPassword" : "123456",
-  "email" : "cesar@cesar",
   "isAdmin" : false
 }, {
   "id" : 7,
@@ -46,12 +46,5 @@
   "password" : "123456",
   "secondPassword" : "123456",
   "email" : "aaa@aaa.com",
-  "isAdmin" : false
-}, {
-  "id" : 10,
-  "username" : "jorgekaz",
-  "password" : "123456",
-  "secondPassword" : "123456",
-  "email" : "jorgekaz@hotmail.com",
   "isAdmin" : false
 } ]
