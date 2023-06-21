@@ -13,13 +13,6 @@
   "email" : "cesar@gmail.com",
   "isAdmin" : false
 }, {
-  "id" : 3,
-  "username" : "jorgekaz",
-  "password" : "123456",
-  "secondPassword" : "123456",
-  "email" : "jorgekaz@hotmail.com",
-  "isAdmin" : false
-}, {
   "id" : 4,
   "username" : "cesarito",
   "password" : "123456",
@@ -53,5 +46,12 @@
   "password" : "123456",
   "secondPassword" : "123456",
   "email" : "aaa@aaa.com",
+  "isAdmin" : false
+}, {
+  "id" : 10,
+  "username" : "jorgekaz",
+  "password" : "123456",
+  "secondPassword" : "123456",
+  "email" : "jorgekaz@hotmail.com",
   "isAdmin" : false
 } ]
