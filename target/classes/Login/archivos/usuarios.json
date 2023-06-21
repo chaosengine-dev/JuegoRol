@@ -27,13 +27,6 @@
   "email" : "cesar@cesar.com",
   "isAdmin" : false
 }, {
-  "id" : 5,
-  "username" : "cesarin",
-  "password" : "123456",
-  "secondPassword" : "123456",
-  "email" : "cesar@cesar.com",
-  "isAdmin" : false
-}, {
   "id" : 6,
   "username" : "chechar",
   "password" : "123456",

@@ -7,6 +7,8 @@
     </constraints>
     <properties>
       <background color="-16777216"/>
+      <enabled value="true"/>
+      <foreground color="-16777216"/>
     </properties>
     <border type="none"/>
     <children>
@@ -26,7 +28,9 @@
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <text value=""/>
+        </properties>
       </component>
       <component id="820cc" class="javax.swing.JPasswordField" binding="password1">
         <constraints>
@@ -132,7 +136,7 @@
           <model/>
         </properties>
       </component>
-      <component id="b246c" class="javax.swing.JButton" binding="button1" default-binding="true">
+      <component id="b246c" class="javax.swing.JButton" binding="ButtonCancel">
         <constraints>
           <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="1" use-parent-layout="false"/>
         </constraints>
@@ -176,6 +180,25 @@
           <foreground color="-1"/>
           <icon value="Login/imagenes/Boton Guardar.png"/>
           <text value=""/>
+        </properties>
+      </component>
+      <component id="381f1" class="javax.swing.JTextField" binding="IdUsuario">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-16777216"/>
+          <editable value="false"/>
+          <enabled value="true"/>
+          <focusCycleRoot value="false"/>
+          <focusTraversalPolicyProvider value="false"/>
+          <focusable value="false"/>
+          <foreground color="-16777216"/>
+          <requestFocusEnabled value="true"/>
+          <selectedTextColor color="-16777216"/>
+          <text value=""/>
+          <verifyInputWhenFocusTarget value="true"/>
+          <visible value="false"/>
         </properties>
       </component>
     </children>
