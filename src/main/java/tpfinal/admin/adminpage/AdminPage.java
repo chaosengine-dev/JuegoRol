@@ -143,7 +143,7 @@ public class AdminPage extends JFrame implements VentanaJuego {
         ventana.add(spacer4, new GridConstraints(3, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         titulo = new JLabel();
         titulo.setEnabled(true);
-        Font tituloFont = this.$$$getFont$$$("Enchanted Land", -1, 72, titulo.getFont());
+        Font tituloFont = this.$$$getFont$$$(null, -1, 72, titulo.getFont());
         if (tituloFont != null) titulo.setFont(tituloFont);
         titulo.setForeground(new Color(-1));
         titulo.setText("¿Qué desea hacer?");

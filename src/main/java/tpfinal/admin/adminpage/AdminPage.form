@@ -69,7 +69,7 @@
         </constraints>
         <properties>
           <enabled value="true"/>
-          <font name="Enchanted Land" size="72"/>
+          <font size="72"/>
           <foreground color="-1"/>
           <text value="¿Qué desea hacer?"/>
         </properties>
