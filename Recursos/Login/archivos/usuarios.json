@@ -15,8 +15,8 @@
 }, {
   "id" : 3,
   "username" : "jorgekaz",
-  "password" : "123456",
-  "secondPassword" : "123456",
+  "password" : "543211",
+  "secondPassword" : "543211",
   "email" : "jorgekaz@hotmail.com",
   "isAdmin" : false
 }, {
@@ -25,13 +25,6 @@
   "password" : "123456",
   "secondPassword" : "123456",
   "email" : "cesar@cesar.com",
-  "isAdmin" : false
-}, {
-  "id" : 6,
-  "username" : "chechar",
-  "password" : "123456",
-  "secondPassword" : "123456",
-  "email" : "cesar@cesar",
   "isAdmin" : false
 }, {
   "id" : 7,

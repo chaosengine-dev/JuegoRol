@@ -10,6 +10,7 @@ import tpfinal.persistencia.LeerArchivosTxtPng;
 import tpfinal.persistencia.UsuarioRepositorio;
 import tpfinal.vistas.AdministrarVentanas;
 import tpfinal.vistas.VentanaJuego;
+
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
 import javax.swing.text.StyleContext;
@@ -203,9 +204,9 @@ public class Loginpage implements VentanaJuego {
         UsuarioRepositorio newLogin = new UsuarioRepositorio();
         newLogin.cargar();
         if (isAdmin(username)) {
-            return true;//es admin
+            return true; //es admin
         }
-        return false;//no es admin
+        return false; //no es admin
     }
 
     @Override

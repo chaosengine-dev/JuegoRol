@@ -56,7 +56,7 @@ public class ManageUsers extends JFrame implements VentanaJuego {
 
         jFramePrincipal = new JFrame("ADMINISTRAR USUARIOS");
         jFramePrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        jFramePrincipal.setPreferredSize(new Dimension(850, 720));
+        jFramePrincipal.setPreferredSize(new Dimension(950, 720));
         jFramePrincipal.setResizable(true);
         jFramePrincipal.pack();
         jFramePrincipal.setLocationRelativeTo(null);
@@ -109,7 +109,7 @@ public class ManageUsers extends JFrame implements VentanaJuego {
                     newUser.setAdmin(true);
                 }
                 //MODIFICAR USUARIO
-                gestion.modificar(String.valueOf(newUser));
+                gestion.modificar(newUser);
 
                 JOptionPane.showMessageDialog(null, "USUARIO MODIFICADO " + newUser.getUsername() + ".", "Usuario modificado", JOptionPane.INFORMATION_MESSAGE);
                 jFramePrincipal.dispose();
@@ -254,17 +254,8 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         ventana.add(spacer1, new GridConstraints(0, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         final Spacer spacer2 = new Spacer();
         ventana.add(spacer2, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
-        usuario = new JTextField();
-        usuario.setText("");
-        ventana.add(usuario, new GridConstraints(3, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
-        password1 = new JPasswordField();
-        ventana.add(password1, new GridConstraints(4, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         email = new JTextField();
         ventana.add(email, new GridConstraints(5, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
-        password2 = new JPasswordField();
-        password2.setEnabled(true);
-        password2.setText("");
-        ventana.add(password2, new GridConstraints(2, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         textoAdministrarUsuario = new JLabel();
         textoAdministrarUsuario.setBackground(new Color(-16777216));
         Font textoAdministrarUsuarioFont = this.$$$getFont$$$("Enchanted Land", -1, 48, textoAdministrarUsuario.getFont());
@@ -272,30 +263,9 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         textoAdministrarUsuario.setForeground(new Color(-394241));
         textoAdministrarUsuario.setText("Administrar usuarios");
         ventana.add(textoAdministrarUsuario, new GridConstraints(0, 1, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 1, false));
-        textoUsername = new JLabel();
-        textoUsername.setBackground(new Color(-16777216));
-        Font textoUsernameFont = this.$$$getFont$$$("Enchanted Land", -1, 28, textoUsername.getFont());
-        if (textoUsernameFont != null) textoUsername.setFont(textoUsernameFont);
-        textoUsername.setForeground(new Color(-394241));
-        textoUsername.setText("Username");
-        ventana.add(textoUsername, new GridConstraints(3, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        textoPassword = new JLabel();
-        textoPassword.setBackground(new Color(-16777216));
-        Font textoPasswordFont = this.$$$getFont$$$("Enchanted Land", -1, 28, textoPassword.getFont());
-        if (textoPasswordFont != null) textoPassword.setFont(textoPasswordFont);
-        textoPassword.setForeground(new Color(-394241));
-        textoPassword.setText("Password");
-        ventana.add(textoPassword, new GridConstraints(4, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        textoRepeatpassword = new JLabel();
-        textoRepeatpassword.setBackground(new Color(-16777216));
-        Font textoRepeatpasswordFont = this.$$$getFont$$$("Enchanted Land", -1, 28, textoRepeatpassword.getFont());
-        if (textoRepeatpasswordFont != null) textoRepeatpassword.setFont(textoRepeatpasswordFont);
-        textoRepeatpassword.setForeground(new Color(-394241));
-        textoRepeatpassword.setText("Repeat password");
-        ventana.add(textoRepeatpassword, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         textoEmail = new JLabel();
         textoEmail.setBackground(new Color(-16777216));
-        Font textoEmailFont = this.$$$getFont$$$("Enchanted Land", -1, 28, textoEmail.getFont());
+        Font textoEmailFont = this.$$$getFont$$$(null, -1, -1, textoEmail.getFont());
         if (textoEmailFont != null) textoEmail.setFont(textoEmailFont);
         textoEmail.setForeground(new Color(-394241));
         textoEmail.setText("E-mail");
@@ -334,7 +304,7 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         ButtonDelete.setForeground(new Color(-1));
         ButtonDelete.setIcon(new ImageIcon(getClass().getResource("/Login/imagenes/Boton Borrar.png")));
         ButtonDelete.setText("");
-        ventana.add(ButtonDelete, new GridConstraints(6, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 1, false));
+        ventana.add(ButtonDelete, new GridConstraints(6, 1, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 1, false));
         ButtonSave = new JButton();
         ButtonSave.setBackground(new Color(-16777216));
         ButtonSave.setBorderPainted(false);
@@ -344,7 +314,7 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         ButtonSave.setForeground(new Color(-1));
         ButtonSave.setIcon(new ImageIcon(getClass().getResource("/Login/imagenes/Boton Guardar.png")));
         ButtonSave.setText("");
-        ventana.add(ButtonSave, new GridConstraints(6, 0, 1, 2, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 1, false));
+        ventana.add(ButtonSave, new GridConstraints(6, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 1, false));
         IdUsuario = new JTextField();
         IdUsuario.setBackground(new Color(-16777216));
         IdUsuario.setEditable(false);
@@ -359,6 +329,36 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         IdUsuario.setVerifyInputWhenFocusTarget(true);
         IdUsuario.setVisible(false);
         ventana.add(IdUsuario, new GridConstraints(2, 3, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        usuario = new JTextField();
+        usuario.setText("");
+        ventana.add(usuario, new GridConstraints(2, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        textoUsername = new JLabel();
+        textoUsername.setBackground(new Color(-16777216));
+        Font textoUsernameFont = this.$$$getFont$$$(null, -1, -1, textoUsername.getFont());
+        if (textoUsernameFont != null) textoUsername.setFont(textoUsernameFont);
+        textoUsername.setForeground(new Color(-394241));
+        textoUsername.setText("Username");
+        ventana.add(textoUsername, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        textoPassword = new JLabel();
+        textoPassword.setBackground(new Color(-16777216));
+        Font textoPasswordFont = this.$$$getFont$$$(null, -1, -1, textoPassword.getFont());
+        if (textoPasswordFont != null) textoPassword.setFont(textoPasswordFont);
+        textoPassword.setForeground(new Color(-394241));
+        textoPassword.setText("Password");
+        ventana.add(textoPassword, new GridConstraints(3, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        textoRepeatpassword = new JLabel();
+        textoRepeatpassword.setBackground(new Color(-16777216));
+        Font textoRepeatpasswordFont = this.$$$getFont$$$(null, -1, -1, textoRepeatpassword.getFont());
+        if (textoRepeatpasswordFont != null) textoRepeatpassword.setFont(textoRepeatpasswordFont);
+        textoRepeatpassword.setForeground(new Color(-394241));
+        textoRepeatpassword.setText("Repeat password");
+        ventana.add(textoRepeatpassword, new GridConstraints(4, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        password1 = new JPasswordField();
+        ventana.add(password1, new GridConstraints(3, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        password2 = new JPasswordField();
+        password2.setEnabled(true);
+        password2.setText("");
+        ventana.add(password2, new GridConstraints(4, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
     /**
