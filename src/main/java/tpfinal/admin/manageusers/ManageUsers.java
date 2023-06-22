@@ -127,7 +127,6 @@ public class ManageUsers extends JFrame implements VentanaJuego {
             if (comboUsers.getSelectedItem() != null && comboUsers.getSelectedIndex() != 0) {
                 String sel = (String) comboUsers.getSelectedItem();
                 int option = JOptionPane.showOptionDialog(null, "Seguro desea eliminar el usuario " + sel + "?", "Eliminar usuario", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{"Si", "No"}, "Si");
-                //int option = JOptionPane.showConfirmDialog(null, "Seguro desea eliminar el usuario " + sel + "?");
                 if (option == 0) {
                     gestion.eliminar(sel);
                     jFramePrincipal.dispose();
