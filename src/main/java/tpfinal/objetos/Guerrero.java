@@ -14,6 +14,9 @@ public class Guerrero implements Heroe{
     private int resistenciaInicial = 700;
     private int experienciaInicial = 50;
 
+    public Guerrero(){
+
+    }
     @Override
     public int getFuerzaMaxima() {
         return fuerzaMaxima;

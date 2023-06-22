@@ -87,8 +87,7 @@ public class Registration implements VentanaJuego {
                 newUser.setId(nextID);
 
                 //AGREGAR EL USUARIO AL REPOSITORIO
-                UsuarioRepositorio repositorio = new UsuarioRepositorio();
-                repositorio.agregar(newUser);
+                this.newUser.agregar(newUser);
 
                 JOptionPane.showMessageDialog(null, "Usuario agregado " + newUser.getUsername() + " correctamente", "Usuario agregado", JOptionPane.INFORMATION_MESSAGE);
                 jFramePrincipal.dispose();
@@ -103,8 +102,7 @@ public class Registration implements VentanaJuego {
     private boolean validarUsuario(User user) throws UserExceptions {
         boolean existe = false;
         //VALIDAR EXISTENCIA DEL USUARIO
-        UsuarioRepositorio repositorio = new UsuarioRepositorio();
-        List<User> userList = repositorio.listar();
+        List<User> userList = newUser.listar();
         for (User existingUser : userList) {
             if (existingUser.getUsername().equals(user.getUsername())) {
                 existe = true;

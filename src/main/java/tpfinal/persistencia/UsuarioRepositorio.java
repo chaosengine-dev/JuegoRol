@@ -3,7 +3,7 @@ package tpfinal.persistencia;
 import tpfinal.login.models.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
-import tpfinal.login.registration.Registration;
+
 
 import javax.swing.*;
 import java.io.File;
@@ -19,8 +19,6 @@ public class UsuarioRepositorio implements IRepository<User> {
     private final File archivo = new File("Recursos/login/archivos/usuarios.json");
     private final ObjectMapper mapper = new ObjectMapper();
     private List<User> users;
-
-
     public UsuarioRepositorio() {
         cargar();
     }
@@ -50,7 +48,7 @@ public class UsuarioRepositorio implements IRepository<User> {
         try {
             mapper.writerWithDefaultPrettyPrinter().writeValue(new FileOutputStream(archivo), this.users);
         } catch (IOException e) {
-            System.out.println("Error al guardar el archivo: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al guardar el archivo: " + e.getMessage());
         }
     }
 
@@ -107,12 +105,8 @@ public class UsuarioRepositorio implements IRepository<User> {
     public void modificar(User userModificado) {
         cargar();
         for(User user : users){
-            if(user.equals(userModificado)){
-                user.setUsername(userModificado.getUsername());
-                user.setPassword(userModificado.getPassword());
-                user.setSecondPassword(userModificado.getSecondPassword());
-                user.setEmail(userModificado.getEmail());
-                user.setAdmin(userModificado.getisAdmin());
+            if(user.getId() == userModificado.getId()){
+                users.set(users.indexOf(user), userModificado);
                 break;
             }
         }

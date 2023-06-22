@@ -78,7 +78,7 @@ public class Loginpage implements VentanaJuego {
             boolean validCredentials = checkCredentials(user, pass);
             if (validCredentials) {
                 jFramePpal.dispose();
-                if (checkAdmin(user)) {
+                if (isAdmin(user)) {
                     AdministrarVentanas.iniciarVentanaAdmin();
                     AdministrarVentanas.setUserRegistered(user);
                     AdministrarVentanas.cambiarEstadoActual(11);
@@ -116,22 +116,13 @@ public class Loginpage implements VentanaJuego {
      * @return True si las credenciales son correctas, false si no lo son.
      */
     private boolean checkCredentials(String username, String password) {
-        UsuarioRepositorio newLogin = new UsuarioRepositorio();
-        newLogin.cargar();
-
         // Verificar si el username existe en el repositorio de usuarios
         boolean usernameExists = existeUsername(username);
 
         if (usernameExists) {
             // Verificar las credenciales para el username existente
             boolean validCredentials = verificarCredenciales(username, password);
-            if (validCredentials) {
-                return true; // Credenciales válidas
-            } else {
-                System.out.println("Credenciales incorrectas para el usuario: " + username);
-            }
-        } else {
-            System.out.println("El usuario no existe: " + username);
+            return validCredentials; // Si las credenciales son válidas retorna true, sino, retorna false
         }
 
         return false; // Credenciales inválidas
@@ -145,9 +136,7 @@ public class Loginpage implements VentanaJuego {
      * @return true si existe el usuario, false en caso contrario.
      */
     public boolean existeUsername(String username) {
-        UsuarioRepositorio userRepo = new UsuarioRepositorio();
-        userRepo.cargar();
-        for (User user : this.userList.listar()) {
+        for (User user : userList.listar()) {
             if (Objects.equals(user.getUsername(), username)) {
                 return true;
             }
@@ -163,9 +152,7 @@ public class Loginpage implements VentanaJuego {
      * @return true si el conjunto es valido, false en caso contrario.
      */
     public boolean verificarCredenciales(String username, String password) {
-        UsuarioRepositorio userRepo = new UsuarioRepositorio();
-        userRepo.cargar();
-        for (User user : this.userList.listar()) {
+        for (User user : userList.listar()) {
             if (Objects.equals(user.getUsername(), username) && Objects.equals(user.getPassword(), password)) {
                 return true;
             }
@@ -174,38 +161,19 @@ public class Loginpage implements VentanaJuego {
     }
 
     /**
-     * Verifica si existe el usuario es administrador y devuelve true en caso que lo sea
+     * Verifica si existe el usuario, y si es administrador y devuelve true en caso que lo sea
      * o false en caso contrario.
      *
      * @param username Nombre de usuario buscado.
      * @return true si el usuario es administrador, false en caso contrario.
      */
     public boolean isAdmin(String username) {
-        UsuarioRepositorio userRepo = new UsuarioRepositorio();
-        userRepo.cargar();
-        for (User user : this.userList.listar()) {
+        for (User user : userList.listar()) {
             if (Objects.equals(user.getUsername(), username)) {
                 return user.getisAdmin();
             }
         }
         return false;
-    }
-
-    // FUNCION PARA COMPROBAR SI EL USUARIO ES ADMIN
-
-    /**
-     * Verifica si el usuario logueado es administrador.
-     *
-     * @param username Nombre de usuario logueado.
-     * @return True si es administrador, false si no lo es.
-     */
-    private boolean checkAdmin(String username) {
-        UsuarioRepositorio newLogin = new UsuarioRepositorio();
-        newLogin.cargar();
-        if (isAdmin(username)) {
-            return true;//es admin
-        }
-        return false;//no es admin
     }
 
     @Override

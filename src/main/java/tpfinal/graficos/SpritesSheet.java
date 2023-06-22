@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 
 /**
  * Clase que lee una hoja de Sprites y la convierte en un arreglo de sprite.
- * Puede leer hojas traslucidas como hojas opacas, la diferencia es en el tipo de fondo de la imagen.
+ * Puede leer hojas traslúcidas como hojas opacas, la diferencia es en el tipo de fondo de la imagen.
  * Tiene 2 constructores, uno para sprites cuadrados y otro para sprites rectangulares.
  */
 public class SpritesSheet {

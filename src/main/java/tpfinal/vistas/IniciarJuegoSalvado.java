@@ -103,7 +103,7 @@ public class IniciarJuegoSalvado implements VentanaJuego {
         inventario[5] = partida.isKey3()? 1 : 0;
         jugador.setInventario(inventario);
 
-        menuEstadistica = new MenuEstadistica(jugador);
+        menuEstadistica = new MenuEstadistica();
     }
 
     /**
@@ -123,12 +123,12 @@ public class IniciarJuegoSalvado implements VentanaJuego {
      */
     @Override
     public void dibujar(Graphics grafico) {
-        capaMapa.dibujar(grafico, (int) jugador.getPosicionX(), (int) jugador.getPosicionY());
+        capaMapa.dibujar(grafico, (int) jugador.getPosicionX(), (int) jugador.getPosicionY(), ladoSpriteChico);
         capaObjetos.dibujar(grafico, (int) jugador.getPosicionX(), (int) jugador.getPosicionY(), ladoSpriteChico);
         capaEnemigos.dibujar(grafico, (int) jugador.getPosicionX(), (int) jugador.getPosicionY(), ladoSpriteChico);
+        jugador.dibujar(grafico);
         capaAmbiente.dibujar(grafico, (int) jugador.getPosicionX(), (int) jugador.getPosicionY(), ladoSpriteGrande);
         menuEstadistica.dibujar(grafico, jugador);
-        jugador.dibujar(grafico);
     }
 
 

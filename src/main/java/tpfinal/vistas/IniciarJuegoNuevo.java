@@ -50,7 +50,7 @@ public class IniciarJuegoNuevo implements VentanaJuego {
                 break;
         }
         jugador = new Jugador(capaMapa.getPosicionJugador().x, capaMapa.getPosicionJugador().y, capaMapa, capaObjetos, capaEnemigos,  heroe, 1);
-        menuEstadistica = new MenuEstadistica(jugador);
+        menuEstadistica = new MenuEstadistica();
 
     }
 
@@ -72,12 +72,12 @@ public class IniciarJuegoNuevo implements VentanaJuego {
      */
     @Override
     public void dibujar(Graphics grafico) {
-        capaMapa.dibujar(grafico, (int) jugador.getPosicionX(), (int) jugador.getPosicionY());
+        capaMapa.dibujar(grafico, (int) jugador.getPosicionX(), (int) jugador.getPosicionY(), ladoSpriteChico);
         capaObjetos.dibujar(grafico, (int) jugador.getPosicionX(), (int) jugador.getPosicionY(), ladoSpriteChico);
         capaEnemigos.dibujar(grafico, (int) jugador.getPosicionX(), (int) jugador.getPosicionY(), ladoSpriteChico);
+        jugador.dibujar(grafico);
         capaAmbiente.dibujar(grafico, (int) jugador.getPosicionX(), (int) jugador.getPosicionY(), ladoSpriteGrande);
         menuEstadistica.dibujar(grafico, jugador);
-        jugador.dibujar(grafico);
     }
 
 

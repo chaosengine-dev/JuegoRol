@@ -1,7 +1,6 @@
 package tpfinal.mapas;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 /**
@@ -65,34 +64,13 @@ public class CapaMapa extends Capa {
             }
         }
     }
-
-    /**
-     * Recorre el arreglo de sprites y los dibuja en pantalla.
-     * Siempre dibuja el mapa en relacion a la ubicacion del jugador.
-     * @param grafico Objeto graphics donde se dibuja nuestra imagen.
-     * @param posicionXJugador posicion del jugador sobre el eje X
-     * @param posicionYJugador posicion del jugador sobre el eje Y
-     */
-    public void dibujar(Graphics grafico, int posicionXJugador, int posicionYJugador){
-        for (int y = 0; y < alto; y++){
-            for (int x = 0; x < ancho; x++){
-                int indice = sprites[x + y * ancho];
-                BufferedImage imagen = paletas[indice].getImagen();
-                int puntoX = x * LADO_SPRITE - posicionXJugador + MARGEN_X;
-                int puntoY = y * LADO_SPRITE - posicionYJugador + MARGEN_Y;
-                grafico.drawImage(imagen, puntoX, puntoY, null);
-            }
-        }
-
-    }
-
     /**
      * Obtiene el ancho del mapa a mostrar a partir de la ubicacion del jugador y su tamaño
      * @param posicionX posicion del jugador sobre el eje X
      * @param posicionY posicion del jugador sobre el eje Y
      * @param anchoJugador tamaño en pixels del ancho del jugador, pero solo la mitad ya que no todo el jugador colisiona
      * @param altoJugador tamaño en pixels del alto del jugador, pero solo la mitad ya que no todo el jugador colisiona
-     * @return Rectangulo con limites del mapa.
+     * @return Rectangulo con límites del mapa.
      */
     public Rectangle obtenerBordes(final int posicionX, final int posicionY, final int anchoJugador, final int altoJugador){
         int x = MARGEN_X - posicionX + anchoJugador;

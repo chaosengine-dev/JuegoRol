@@ -1,6 +1,5 @@
 package tpfinal.vistas;
 
-import tpfinal.control.Controles;
 import tpfinal.control.Musica;
 import tpfinal.graficos.CanvasVentana;
 import tpfinal.graficos.SpritesSheet;

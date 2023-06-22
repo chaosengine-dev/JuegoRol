@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="ventana" layout-manager="GridLayoutManager" row-count="7" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="956" height="599"/>
+      <xy x="20" y="20" width="1003" height="599"/>
     </constraints>
     <properties>
       <background color="-16777216"/>
@@ -36,7 +36,7 @@
         </constraints>
         <properties>
           <background color="-16777216"/>
-          <font name="Enchanted Land" size="48"/>
+          <font/>
           <foreground color="-394241"/>
           <text value="Administrar usuarios"/>
         </properties>
@@ -59,7 +59,7 @@
         <properties>
           <background color="-16777216"/>
           <focusPainted value="false"/>
-          <font name="Enchanted Land" size="16"/>
+          <font/>
           <foreground color="-394241"/>
           <text value="Soy Administrador"/>
         </properties>

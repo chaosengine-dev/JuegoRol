@@ -114,7 +114,7 @@ public class AdminPage extends JFrame implements VentanaJuego {
         jugarButton.setContentAreaFilled(false);
         jugarButton.setEnabled(true);
         jugarButton.setFocusPainted(false);
-        Font jugarButtonFont = this.$$$getFont$$$("Enchanted Land", -1, 24, jugarButton.getFont());
+        Font jugarButtonFont = this.$$$getFont$$$(null, -1, -1, jugarButton.getFont());
         if (jugarButtonFont != null) jugarButton.setFont(jugarButtonFont);
         jugarButton.setForeground(new Color(-1));
         jugarButton.setHideActionText(false);
@@ -127,7 +127,7 @@ public class AdminPage extends JFrame implements VentanaJuego {
         gestionarUsuariosButton.setBorderPainted(false);
         gestionarUsuariosButton.setContentAreaFilled(false);
         gestionarUsuariosButton.setFocusPainted(false);
-        Font gestionarUsuariosButtonFont = this.$$$getFont$$$("Enchanted Land", -1, 24, gestionarUsuariosButton.getFont());
+        Font gestionarUsuariosButtonFont = this.$$$getFont$$$(null, -1, -1, gestionarUsuariosButton.getFont());
         if (gestionarUsuariosButtonFont != null) gestionarUsuariosButton.setFont(gestionarUsuariosButtonFont);
         gestionarUsuariosButton.setForeground(new Color(-1));
         gestionarUsuariosButton.setIcon(new ImageIcon(getClass().getResource("/Login/imagenes/Gestionar Usuarios.png")));
@@ -143,7 +143,7 @@ public class AdminPage extends JFrame implements VentanaJuego {
         ventana.add(spacer4, new GridConstraints(3, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
         titulo = new JLabel();
         titulo.setEnabled(true);
-        Font tituloFont = this.$$$getFont$$$(null, -1, 72, titulo.getFont());
+        Font tituloFont = this.$$$getFont$$$(null, -1, -1, titulo.getFont());
         if (tituloFont != null) titulo.setFont(tituloFont);
         titulo.setForeground(new Color(-1));
         titulo.setText("¿Qué desea hacer?");

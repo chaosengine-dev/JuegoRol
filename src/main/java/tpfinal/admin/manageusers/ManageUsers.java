@@ -39,7 +39,7 @@ public class ManageUsers extends JFrame implements VentanaJuego {
     private JButton ButtonDelete;
     private JButton ButtonSave;
     private JButton ButtonCancel;
-    private final UsuarioRepositorio gestion = new UsuarioRepositorio();
+    private UsuarioRepositorio gestion = new UsuarioRepositorio();
     private JTextField IdUsuario;
     private JFrame jFramePrincipal;
     private ArrayList<User> usuariosRegistrados;
@@ -51,8 +51,9 @@ public class ManageUsers extends JFrame implements VentanaJuego {
      * los metodos correspondientes.
      */
     public ManageUsers() {
-        JFrame frame;
+
         Font FUENTE_MEDIEVAL = LeerArchivosTxtPng.leerFuente("Recursos/Fuentes/eland.ttf");
+        ImageIcon icon = Icono.crearIcono();
 
         jFramePrincipal = new JFrame("ADMINISTRAR USUARIOS");
         jFramePrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -61,9 +62,8 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         jFramePrincipal.pack();
         jFramePrincipal.setLocationRelativeTo(null);
         jFramePrincipal.setVisible(true);
-        frame = new JFrame("ADMINISTRAR USUARIOS");
-        ImageIcon icon = Icono.crearIcono();
         jFramePrincipal.setIconImage(icon.getImage());
+
         // Setear tipografia
         textoAdministrarUsuario.setFont(FUENTE_MEDIEVAL.deriveFont(Font.BOLD, 46));
         textoUsername.setFont(FUENTE_MEDIEVAL.deriveFont(Font.BOLD, 26));
@@ -125,9 +125,9 @@ public class ManageUsers extends JFrame implements VentanaJuego {
     private ActionListener clickEliminarUsuario() {
         return e -> {
             if (comboUsers.getSelectedItem() != null && comboUsers.getSelectedIndex() != 0) {
-                System.out.println(comboUsers.getSelectedIndex());
                 String sel = (String) comboUsers.getSelectedItem();
-                int option = JOptionPane.showConfirmDialog(null, "Seguro desea eliminar el usuario " + sel + "?");
+                int option = JOptionPane.showOptionDialog(null, "Seguro desea eliminar el usuario " + sel + "?", "Eliminar usuario", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, null, new Object[]{"Si", "No"}, "Si");
+                //int option = JOptionPane.showConfirmDialog(null, "Seguro desea eliminar el usuario " + sel + "?");
                 if (option == 0) {
                     gestion.eliminar(sel);
                     jFramePrincipal.dispose();
@@ -197,7 +197,6 @@ public class ManageUsers extends JFrame implements VentanaJuego {
      * @return Objeto del tipo User encontrado, null en caso contrario.
      */
     public User obtenerUsuario(String nombre) {
-        UsuarioRepositorio gestion = new UsuarioRepositorio();
         for (User user : gestion.listar()) {
             if (user.getUsername().equals(nombre)) {
                 return user;
@@ -213,8 +212,7 @@ public class ManageUsers extends JFrame implements VentanaJuego {
      */
     public void mostrarUser(ArrayList<User> usuariosRegistrados) {
         comboUsers.addItem("Elija usuario...");
-        for (User user : usuariosRegistrados
-        ) {
+        for (User user : usuariosRegistrados) {
             comboUsers.addItem(user.getUsername());
         }
 
@@ -258,7 +256,7 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         ventana.add(email, new GridConstraints(5, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         textoAdministrarUsuario = new JLabel();
         textoAdministrarUsuario.setBackground(new Color(-16777216));
-        Font textoAdministrarUsuarioFont = this.$$$getFont$$$("Enchanted Land", -1, 48, textoAdministrarUsuario.getFont());
+        Font textoAdministrarUsuarioFont = this.$$$getFont$$$(null, -1, -1, textoAdministrarUsuario.getFont());
         if (textoAdministrarUsuarioFont != null) textoAdministrarUsuario.setFont(textoAdministrarUsuarioFont);
         textoAdministrarUsuario.setForeground(new Color(-394241));
         textoAdministrarUsuario.setText("Administrar usuarios");
@@ -273,7 +271,7 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         soyAdministradorCheckBox = new JCheckBox();
         soyAdministradorCheckBox.setBackground(new Color(-16777216));
         soyAdministradorCheckBox.setFocusPainted(false);
-        Font soyAdministradorCheckBoxFont = this.$$$getFont$$$("Enchanted Land", -1, 16, soyAdministradorCheckBox.getFont());
+        Font soyAdministradorCheckBoxFont = this.$$$getFont$$$(null, -1, -1, soyAdministradorCheckBox.getFont());
         if (soyAdministradorCheckBoxFont != null) soyAdministradorCheckBox.setFont(soyAdministradorCheckBoxFont);
         soyAdministradorCheckBox.setForeground(new Color(-394241));
         soyAdministradorCheckBox.setText("Soy Administrador");
