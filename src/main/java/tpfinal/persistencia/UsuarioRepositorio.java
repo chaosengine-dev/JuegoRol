@@ -3,7 +3,7 @@ package tpfinal.persistencia;
 import tpfinal.login.models.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
-import tpfinal.login.registration.Registration;
+
 
 import javax.swing.*;
 import java.io.File;
@@ -19,8 +19,6 @@ public class UsuarioRepositorio implements IRepository<User> {
     private final File archivo = new File("Recursos/login/archivos/usuarios.json");
     private final ObjectMapper mapper = new ObjectMapper();
     private List<User> users;
-
-
     public UsuarioRepositorio() {
         cargar();
     }

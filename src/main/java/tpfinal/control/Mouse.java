@@ -15,11 +15,7 @@ import java.awt.image.BufferedImage;
  */
 public class Mouse extends MouseAdapter {
     private Cursor cursor;
-    private Point posicionCursor;
     private boolean click;
-    public Mouse(){
-
-    }
 
     /**
      * Constructor de la clase Mouse.
@@ -33,7 +29,6 @@ public class Mouse extends MouseAdapter {
         Point punto = new Point(0,0);
         click = false;
         cursor = configuracion.createCustomCursor(iconoCursor, punto, "cursor");
-        posicionCursor = new Point();
         actualizar(canvasVentana);
     }
 

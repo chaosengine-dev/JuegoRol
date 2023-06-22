@@ -12,6 +12,10 @@ public class Elfo implements Heroe{
     private int fuerzaInicial = 350;
     private int resistenciaInicial = 1000;
     private int experienciaInicial = 100;
+
+    public Elfo(){
+
+    }
     public int getFuerzaMaxima() {
         return fuerzaMaxima;
     }

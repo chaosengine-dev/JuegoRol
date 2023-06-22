@@ -20,7 +20,7 @@
           <contentAreaFilled value="false"/>
           <enabled value="true"/>
           <focusPainted value="false"/>
-          <font name="Enchanted Land" size="24"/>
+          <font/>
           <foreground color="-1"/>
           <hideActionText value="false"/>
           <icon value="Login/imagenes/Jugar.png"/>
@@ -37,7 +37,7 @@
           <borderPainted value="false"/>
           <contentAreaFilled value="false"/>
           <focusPainted value="false"/>
-          <font name="Enchanted Land" size="24"/>
+          <font/>
           <foreground color="-1"/>
           <icon value="Login/imagenes/Gestionar Usuarios.png"/>
           <text value=""/>
@@ -69,7 +69,7 @@
         </constraints>
         <properties>
           <enabled value="true"/>
-          <font size="72"/>
+          <font/>
           <foreground color="-1"/>
           <text value="¿Qué desea hacer?"/>
         </properties>

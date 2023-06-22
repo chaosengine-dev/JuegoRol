@@ -16,7 +16,7 @@ public class FinJuego implements VentanaJuego {
     private final Rectangle DETALLE;
     private SpritesSheet hojaSprite;
     private BufferedImage imagen;
-    private Font FUENTE_MEDIEVAL = LeerArchivosTxtPng.leerFuente("Recursos/Fuentes/SupplyCenter.ttf");
+    private final Font FUENTE_MEDIEVAL = LeerArchivosTxtPng.leerFuente("Recursos/Fuentes/SupplyCenter.ttf");
     /**
      * Dibuja la ventana de finalizacion del juego como vencedor.
      */

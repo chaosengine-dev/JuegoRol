@@ -51,8 +51,9 @@ public class ManageUsers extends JFrame implements VentanaJuego {
      * los metodos correspondientes.
      */
     public ManageUsers() {
-        JFrame frame;
+
         Font FUENTE_MEDIEVAL = LeerArchivosTxtPng.leerFuente("Recursos/Fuentes/eland.ttf");
+        ImageIcon icon = Icono.crearIcono();
 
         jFramePrincipal = new JFrame("ADMINISTRAR USUARIOS");
         jFramePrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -61,9 +62,8 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         jFramePrincipal.pack();
         jFramePrincipal.setLocationRelativeTo(null);
         jFramePrincipal.setVisible(true);
-        frame = new JFrame("ADMINISTRAR USUARIOS");
-        ImageIcon icon = Icono.crearIcono();
         jFramePrincipal.setIconImage(icon.getImage());
+
         // Setear tipografia
         textoAdministrarUsuario.setFont(FUENTE_MEDIEVAL.deriveFont(Font.BOLD, 46));
         textoUsername.setFont(FUENTE_MEDIEVAL.deriveFont(Font.BOLD, 26));
@@ -143,7 +143,7 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         boolean existe = false;
         //VALIDAR EXISTENCIA DEL USUARIO
         for (User existingUser : usuariosRegistrados) {
-            if (existingUser.getUsername().equals(user.getUsername()) && existingUser.getId() == user.getId()) {
+            if (existingUser.getUsername().equals(user.getUsername()) && existingUser.getId() != user.getId()) {
                 existe = true;
                 break;
             }
@@ -256,7 +256,7 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         ventana.add(email, new GridConstraints(5, 2, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         textoAdministrarUsuario = new JLabel();
         textoAdministrarUsuario.setBackground(new Color(-16777216));
-        Font textoAdministrarUsuarioFont = this.$$$getFont$$$("Enchanted Land", -1, 48, textoAdministrarUsuario.getFont());
+        Font textoAdministrarUsuarioFont = this.$$$getFont$$$(null, -1, -1, textoAdministrarUsuario.getFont());
         if (textoAdministrarUsuarioFont != null) textoAdministrarUsuario.setFont(textoAdministrarUsuarioFont);
         textoAdministrarUsuario.setForeground(new Color(-394241));
         textoAdministrarUsuario.setText("Administrar usuarios");
@@ -271,7 +271,7 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         soyAdministradorCheckBox = new JCheckBox();
         soyAdministradorCheckBox.setBackground(new Color(-16777216));
         soyAdministradorCheckBox.setFocusPainted(false);
-        Font soyAdministradorCheckBoxFont = this.$$$getFont$$$("Enchanted Land", -1, 16, soyAdministradorCheckBox.getFont());
+        Font soyAdministradorCheckBoxFont = this.$$$getFont$$$(null, -1, -1, soyAdministradorCheckBox.getFont());
         if (soyAdministradorCheckBoxFont != null) soyAdministradorCheckBox.setFont(soyAdministradorCheckBoxFont);
         soyAdministradorCheckBox.setForeground(new Color(-394241));
         soyAdministradorCheckBox.setText("Soy Administrador");

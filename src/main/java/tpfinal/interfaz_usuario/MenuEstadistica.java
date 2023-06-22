@@ -32,9 +32,8 @@ public class MenuEstadistica {
     /**
      * Constructor de la clase.
      * Arma los rectangulos del area de menu, el principal y los de las pociones.
-     * @param jugador Objeto jugador que contiene toda la info del personaje.
      */
-    public MenuEstadistica(Jugador jugador) {
+    public MenuEstadistica() {
         int altoMenu = 64;
         int ladoBoxInventario = 40;
         areaMenu = new Rectangle(0, altoJuego - altoMenu, anchoJuego, altoMenu);

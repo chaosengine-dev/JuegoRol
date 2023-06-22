@@ -15,8 +15,6 @@ public class JuegoRol {
     private static int alto;
     private static String nombre;
     private CanvasVentana canvasVentana;
-    private VentanaJFrame ventanaJFrame;
-
     private static JuegoRol juegoRol = null;
 
     /**
@@ -52,7 +50,7 @@ public class JuegoRol {
     public void iniciarJuego() {
         enFuncionamiento = true;
         canvasVentana = new CanvasVentana(ancho, alto);
-        ventanaJFrame = new VentanaJFrame(nombre, canvasVentana);
+        new VentanaJFrame(nombre, canvasVentana);
         AdministrarVentanas.gestorVentanas(canvasVentana);
     }
 

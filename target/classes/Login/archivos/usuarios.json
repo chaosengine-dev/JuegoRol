@@ -1,8 +1,8 @@
 [ {
   "id" : 1,
-  "username" : "HGFCJJ",
-  "password" : "123456",
-  "secondPassword" : "123456",
+  "username" : "ADMIN",
+  "password" : "ADMIN",
+  "secondPassword" : "ADMIN",
   "email" : "FGVUJIKG@",
   "isAdmin" : true
 }, {
@@ -38,6 +38,6 @@
   "username" : "cintia",
   "password" : "123456",
   "secondPassword" : "123456",
-  "email" : "aaa@aaa.com",
+  "email" : "aaa@aaa.com2",
   "isAdmin" : false
 } ]

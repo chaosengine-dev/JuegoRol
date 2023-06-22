@@ -107,8 +107,8 @@ public class Jugador {
 
     /**
      * Este metodo es llamado en la iteracion del juego y dibuja el mapa en relacion al jugador.
-     * Si no esta en batalla dibuja el mapa
-     * Si esta en batalla crea la ventana batalla y comienza la misma.
+     * Si no está en batalla dibuja el mapa
+     * Si está en batalla crea la ventana batalla y comienza la misma.
      * @param grafico es la imagen que se obtiene del Buffered Image del canvas y nos permite dibujar sobre
      *                el canvas creado en la clase JuegoRol.
      */
@@ -604,7 +604,6 @@ public class Jugador {
     public double getPosicionY() {
         return posicionY;
     }
-
     public int getResistencia() {
         return heroe.getResistencia();
     }
@@ -617,23 +616,15 @@ public class Jugador {
     public int[] getInventario() {
         return inventario;
     }
-
     public void setInventario(int[] inventario) {
         this.inventario = inventario;
     }
-
-    public int getRecuperacionMaxima() {
-        return recuperacionMaxima;
-    }
-
     public int getResistenciaMaxima() {
         return resistenciaMaxima;
     }
-
     public int getExperienciaMaxima() {
         return experienciaMaxima;
     }
-
     public int getFuerzaMaxima() {
         return fuerzaMaxima;
     }

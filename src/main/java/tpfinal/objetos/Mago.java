@@ -14,6 +14,9 @@ public class Mago implements Heroe{
     private int resistenciaInicial = 800;
     private int experienciaInicial = 300;
 
+    public Mago(){
+
+    }
     @Override
     public int getFuerzaMaxima() {
         return fuerzaMaxima;

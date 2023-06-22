@@ -27,14 +27,13 @@ public class PersistenciaJson {
 
         File file = new File(pathJson);
         ObjectMapper mapper = new ObjectMapper();
-        T objeto = null;
+        T objeto;
 
         try {
             objeto = mapper.readValue(file, clase);
+            return objeto;
         } catch (IOException e) {
             throw new RuntimeException(e);
-        }finally {
-            return objeto;
         }
     }
 }

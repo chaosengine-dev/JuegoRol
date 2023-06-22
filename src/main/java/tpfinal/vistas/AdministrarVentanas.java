@@ -18,7 +18,6 @@ import java.awt.*;
  * distintos tipos de ventanas en el mismo arreglo.
  */
 public abstract class AdministrarVentanas {
-
     private static VentanaJuego[] ventanasJuegos;
     private static VentanaJuego ventanaActual;
     private static CanvasVentana canvasVentanaGlobal;
@@ -58,17 +57,13 @@ public abstract class AdministrarVentanas {
     private static void iniciarVentanas() {
         indice = 0;
         ventanasJuegos = new VentanaJuego[13];
-        ventanasJuegos[0] = null;
-        ventanasJuegos[1] = null;
+
+        // Solo se instancian las ventanas que no dependen de otras. El resto sé instancia en tiempo de ejecucion.
         ventanasJuegos[2] = new Pausa();
         ventanasJuegos[5] = new GameOver();
         ventanasJuegos[6] = new FinJuego();
         ventanasJuegos[7] = new Welcomepage();
-        ventanasJuegos[8] = null;
-        ventanasJuegos[9] = null;
-        ventanasJuegos[10] = null;
-        ventanasJuegos[11] = null;
-        ventanasJuegos[12] = null;
+
     }
 
     /**

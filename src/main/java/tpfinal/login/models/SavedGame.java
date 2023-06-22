@@ -1,6 +1,5 @@
 package tpfinal.login.models;
 
-import tpfinal.login.models.User;
 import tpfinal.objetos.Enemy;
 import tpfinal.objetos.Pocion;
 

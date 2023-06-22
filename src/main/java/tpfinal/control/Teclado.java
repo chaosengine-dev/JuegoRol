@@ -125,6 +125,9 @@ public class Teclado implements KeyListener {
             case KeyEvent.VK_F2:
                 saveGame = false;
                 break;
+            case KeyEvent.VK_F1:
+                finBatalla = false;
+                break;
         }
     }
 

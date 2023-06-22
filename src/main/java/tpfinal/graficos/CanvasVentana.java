@@ -16,10 +16,10 @@ public class CanvasVentana extends Canvas {
     private int ancho;
     private Mouse mouse;
     private Point posicionVentana;
-    private Font FUENTE_MEDIEVAL = LeerArchivosTxtPng.leerFuente("Recursos/Fuentes/SupplyCenter.ttf");
+    private final Font FUENTE_MEDIEVAL = LeerArchivosTxtPng.leerFuente("Recursos/Fuentes/SupplyCenter.ttf");
 
     /**
-     * Constructor de la clase. Crea la ventana, crea 2 listeners, uno para el teclado y otro para el mouse.     *
+     * Constructor de la clase. Crea la ventana, crea 2 listeners, uno para el teclado y otro para el mouse.
      * @param ancho int con el ancho de la ventana
      * @param alto int con el alto de la ventana
      */
