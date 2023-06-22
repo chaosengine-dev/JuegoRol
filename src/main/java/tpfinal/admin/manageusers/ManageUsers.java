@@ -197,7 +197,6 @@ public class ManageUsers extends JFrame implements VentanaJuego {
      * @return Objeto del tipo User encontrado, null en caso contrario.
      */
     public User obtenerUsuario(String nombre) {
-        UsuarioRepositorio gestion = new UsuarioRepositorio();
         for (User user : gestion.listar()) {
             if (user.getUsername().equals(nombre)) {
                 return user;
@@ -213,8 +212,7 @@ public class ManageUsers extends JFrame implements VentanaJuego {
      */
     public void mostrarUser(ArrayList<User> usuariosRegistrados) {
         comboUsers.addItem("Elija usuario...");
-        for (User user : usuariosRegistrados
-        ) {
+        for (User user : usuariosRegistrados) {
             comboUsers.addItem(user.getUsername());
         }
 
