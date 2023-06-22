@@ -15,7 +15,7 @@ public class Enemy extends Objeto {
     private int fuerza;
     private int resistencia;
 
-    public Enemy(){
+    public Enemy() {
 
     }
 
@@ -23,7 +23,7 @@ public class Enemy extends Objeto {
         super(id, posicionX, posicionY);
         this.tipo = tipo;
         this.activa = true;
-        switch (tipo){
+        switch (tipo) {
             case 1:
                 salud = 200;
                 fuerza = 400;
@@ -44,24 +44,31 @@ public class Enemy extends Objeto {
     public boolean isActiva() {
         return activa;
     }
+
     public int getTipo() {
         return tipo;
     }
+
     public int getSalud() {
         return salud;
     }
+
     public void setSalud(int salud) {
         this.salud = salud;
     }
+
     public int getFuerza() {
         return fuerza;
     }
+
     public void setFuerza(int fuerza) {
         this.fuerza = fuerza;
     }
+
     public int getResistencia() {
         return resistencia;
     }
+
     public void setResistencia(int resistencia) {
         this.resistencia = resistencia;
     }

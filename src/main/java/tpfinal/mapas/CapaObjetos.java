@@ -158,5 +158,4 @@ public class CapaObjetos extends Capa{
     public void setPociones(ArrayList<Pocion> pociones) {
         this.pociones = pociones;
     }
-
 }

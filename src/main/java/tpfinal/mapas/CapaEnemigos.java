@@ -106,7 +106,7 @@ public class CapaEnemigos extends Capa{
     }
 
     /**
-     * Compara el enemigo que se envia por parametro (enemigo vencido) con todos los enenigos, si coincide
+     * Compara el enemigo que se envia por parametro (enemigo vencido) con todos los enemigos, si coincide
      * se elimina del arraylist.
      * @param enemyCollision Enemigo vencido en batalla.
      */

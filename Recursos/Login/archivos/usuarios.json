@@ -32,7 +32,7 @@
   "password" : "123456",
   "secondPassword" : "123456",
   "email" : "cesar@qqq",
-  "isAdmin" : false
+  "isAdmin" : true
 }, {
   "id" : 8,
   "username" : "cesarolivera",

@@ -175,5 +175,4 @@ public abstract class AdministrarVentanas {
     public static String getUserRegistered() {
         return userRegistered;
     }
-
 }

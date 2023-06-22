@@ -39,7 +39,7 @@ public class Batalla implements VentanaJuego {
      * @param heroe Instancia del tipo de Heroe, puede ser un Guerrero, un Mago o un Elfo.
      * @param enemigo Objeto del tipo Enemy.
      * @param ventanaOrigen Ventana que llama a la Batalla, puede ser desde un juego nuevo o desde una
-     *                      parte guardad.
+     *                      parte guardada.
      */
     public Batalla(Heroe heroe, Enemy enemigo, int ventanaOrigen){
         this.heroe = heroe;
