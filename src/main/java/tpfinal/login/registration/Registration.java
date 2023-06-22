@@ -87,8 +87,7 @@ public class Registration implements VentanaJuego {
                 newUser.setId(nextID);
 
                 //AGREGAR EL USUARIO AL REPOSITORIO
-                UsuarioRepositorio repositorio = new UsuarioRepositorio();
-                repositorio.agregar(newUser);
+                this.newUser.agregar(newUser);
 
                 JOptionPane.showMessageDialog(null, "Usuario agregado " + newUser.getUsername() + " correctamente", "Usuario agregado", JOptionPane.INFORMATION_MESSAGE);
                 jFramePrincipal.dispose();
@@ -103,8 +102,7 @@ public class Registration implements VentanaJuego {
     private boolean validarUsuario(User user) throws UserExceptions {
         boolean existe = false;
         //VALIDAR EXISTENCIA DEL USUARIO
-        UsuarioRepositorio repositorio = new UsuarioRepositorio();
-        List<User> userList = repositorio.listar();
+        List<User> userList = newUser.listar();
         for (User existingUser : userList) {
             if (existingUser.getUsername().equals(user.getUsername())) {
                 existe = true;
@@ -136,6 +134,7 @@ public class Registration implements VentanaJuego {
 
     /**
      * Obtiene el siguiente id para almacenar un User nuevo.
+     *
      * @return int con el ID siguiente.
      */
     private int getNextID() {
@@ -225,26 +224,26 @@ public class Registration implements VentanaJuego {
         crearUusuario.setVerticalAlignment(0);
         jPanelPrincipal.add(crearUusuario, new GridConstraints(11, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
         registEmail = new JLabel();
-        Font registEmailFont = this.$$$getFont$$$("Enchanted Land", -1, 28, registEmail.getFont());
+        Font registEmailFont = this.$$$getFont$$$(null, -1, -1, registEmail.getFont());
         if (registEmailFont != null) registEmail.setFont(registEmailFont);
         registEmail.setForeground(new Color(-1));
         registEmail.setText("Email");
         jPanelPrincipal.add(registEmail, new GridConstraints(9, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         registPasswordTwo = new JLabel();
-        Font registPasswordTwoFont = this.$$$getFont$$$("Enchanted Land", -1, 28, registPasswordTwo.getFont());
+        Font registPasswordTwoFont = this.$$$getFont$$$(null, -1, -1, registPasswordTwo.getFont());
         if (registPasswordTwoFont != null) registPasswordTwo.setFont(registPasswordTwoFont);
         registPasswordTwo.setForeground(new Color(-1));
         registPasswordTwo.setText("Repeat Password");
         jPanelPrincipal.add(registPasswordTwo, new GridConstraints(7, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         registPassword = new JLabel();
-        Font registPasswordFont = this.$$$getFont$$$("Enchanted Land", -1, 28, registPassword.getFont());
+        Font registPasswordFont = this.$$$getFont$$$(null, -1, -1, registPassword.getFont());
         if (registPasswordFont != null) registPassword.setFont(registPasswordFont);
         registPassword.setForeground(new Color(-1));
         registPassword.setText("Password");
         jPanelPrincipal.add(registPassword, new GridConstraints(5, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         registUser = new JLabel();
         registUser.setEnabled(true);
-        Font registUserFont = this.$$$getFont$$$("Fira Code", -1, -1, registUser.getFont());
+        Font registUserFont = this.$$$getFont$$$(null, -1, -1, registUser.getFont());
         if (registUserFont != null) registUser.setFont(registUserFont);
         registUser.setForeground(new Color(-1));
         registUser.setText("Username");

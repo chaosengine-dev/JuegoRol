@@ -78,7 +78,7 @@ public class Loginpage implements VentanaJuego {
             boolean validCredentials = checkCredentials(user, pass);
             if (validCredentials) {
                 jFramePpal.dispose();
-                if (checkAdmin(user)) {
+                if (isAdmin(user)) {
                     AdministrarVentanas.iniciarVentanaAdmin();
                     AdministrarVentanas.setUserRegistered(user);
                     AdministrarVentanas.cambiarEstadoActual(11);
@@ -116,22 +116,13 @@ public class Loginpage implements VentanaJuego {
      * @return True si las credenciales son correctas, false si no lo son.
      */
     private boolean checkCredentials(String username, String password) {
-        UsuarioRepositorio newLogin = new UsuarioRepositorio();
-        newLogin.cargar();
-
         // Verificar si el username existe en el repositorio de usuarios
         boolean usernameExists = existeUsername(username);
 
         if (usernameExists) {
             // Verificar las credenciales para el username existente
             boolean validCredentials = verificarCredenciales(username, password);
-            if (validCredentials) {
-                return true; // Credenciales válidas
-            } else {
-                System.out.println("Credenciales incorrectas para el usuario: " + username);
-            }
-        } else {
-            System.out.println("El usuario no existe: " + username);
+            return validCredentials; // Si las credenciales son válidas retorna true, sino, retorna false
         }
 
         return false; // Credenciales inválidas
@@ -145,9 +136,7 @@ public class Loginpage implements VentanaJuego {
      * @return true si existe el usuario, false en caso contrario.
      */
     public boolean existeUsername(String username) {
-        UsuarioRepositorio userRepo = new UsuarioRepositorio();
-        userRepo.cargar();
-        for (User user : this.userList.listar()) {
+        for (User user : userList.listar()) {
             if (Objects.equals(user.getUsername(), username)) {
                 return true;
             }
@@ -163,9 +152,7 @@ public class Loginpage implements VentanaJuego {
      * @return true si el conjunto es valido, false en caso contrario.
      */
     public boolean verificarCredenciales(String username, String password) {
-        UsuarioRepositorio userRepo = new UsuarioRepositorio();
-        userRepo.cargar();
-        for (User user : this.userList.listar()) {
+        for (User user : userList.listar()) {
             if (Objects.equals(user.getUsername(), username) && Objects.equals(user.getPassword(), password)) {
                 return true;
             }
@@ -174,38 +161,19 @@ public class Loginpage implements VentanaJuego {
     }
 
     /**
-     * Verifica si existe el usuario es administrador y devuelve true en caso que lo sea
+     * Verifica si existe el usuario, y si es administrador y devuelve true en caso que lo sea
      * o false en caso contrario.
      *
      * @param username Nombre de usuario buscado.
      * @return true si el usuario es administrador, false en caso contrario.
      */
     public boolean isAdmin(String username) {
-        UsuarioRepositorio userRepo = new UsuarioRepositorio();
-        userRepo.cargar();
-        for (User user : this.userList.listar()) {
+        for (User user : userList.listar()) {
             if (Objects.equals(user.getUsername(), username)) {
                 return user.getisAdmin();
             }
         }
         return false;
-    }
-
-    // FUNCION PARA COMPROBAR SI EL USUARIO ES ADMIN
-
-    /**
-     * Verifica si el usuario logueado es administrador.
-     *
-     * @param username Nombre de usuario logueado.
-     * @return True si es administrador, false si no lo es.
-     */
-    private boolean checkAdmin(String username) {
-        UsuarioRepositorio newLogin = new UsuarioRepositorio();
-        newLogin.cargar();
-        if (isAdmin(username)) {
-            return true;//es admin
-        }
-        return false;//no es admin
     }
 
     @Override
@@ -232,57 +200,57 @@ public class Loginpage implements VentanaJuego {
      */
     private void $$$setupUI$$$() {
         panelPpal = new JPanel();
-        panelPpal.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(8, 9, new Insets(0, 0, 0, 0), -1, -1));
+        panelPpal.setLayout(new GridLayoutManager(8, 9, new Insets(0, 0, 0, 0), -1, -1));
         panelPpal.setBackground(new Color(-16777216));
         userlogin = new JLabel();
         Font userloginFont = this.$$$getFont$$$(null, -1, -1, userlogin.getFont());
         if (userloginFont != null) userlogin.setFont(userloginFont);
         userlogin.setForeground(new Color(-1));
         userlogin.setText("USUARIO");
-        panelPpal.add(userlogin, new com.intellij.uiDesigner.core.GridConstraints(3, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panelPpal.add(userlogin, new GridConstraints(3, 3, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         passwordUsuario = new JPasswordField();
-        panelPpal.add(passwordUsuario, new com.intellij.uiDesigner.core.GridConstraints(5, 5, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        panelPpal.add(passwordUsuario, new GridConstraints(5, 5, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
         nombreUsuario = new JTextField();
-        panelPpal.add(nombreUsuario, new com.intellij.uiDesigner.core.GridConstraints(3, 5, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
-        final com.intellij.uiDesigner.core.Spacer spacer1 = new com.intellij.uiDesigner.core.Spacer();
-        panelPpal.add(spacer1, new com.intellij.uiDesigner.core.GridConstraints(4, 6, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
-        final com.intellij.uiDesigner.core.Spacer spacer2 = new com.intellij.uiDesigner.core.Spacer();
-        panelPpal.add(spacer2, new com.intellij.uiDesigner.core.GridConstraints(4, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
-        final com.intellij.uiDesigner.core.Spacer spacer3 = new com.intellij.uiDesigner.core.Spacer();
-        panelPpal.add(spacer3, new com.intellij.uiDesigner.core.GridConstraints(1, 7, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
-        final com.intellij.uiDesigner.core.Spacer spacer4 = new com.intellij.uiDesigner.core.Spacer();
-        panelPpal.add(spacer4, new com.intellij.uiDesigner.core.GridConstraints(1, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
-        final com.intellij.uiDesigner.core.Spacer spacer5 = new com.intellij.uiDesigner.core.Spacer();
-        panelPpal.add(spacer5, new com.intellij.uiDesigner.core.GridConstraints(2, 7, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
-        final com.intellij.uiDesigner.core.Spacer spacer6 = new com.intellij.uiDesigner.core.Spacer();
-        panelPpal.add(spacer6, new com.intellij.uiDesigner.core.GridConstraints(2, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        panelPpal.add(nombreUsuario, new GridConstraints(3, 5, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, GridConstraints.SIZEPOLICY_FIXED, null, new Dimension(150, -1), null, 0, false));
+        final Spacer spacer1 = new Spacer();
+        panelPpal.add(spacer1, new GridConstraints(4, 6, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+        final Spacer spacer2 = new Spacer();
+        panelPpal.add(spacer2, new GridConstraints(4, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+        final Spacer spacer3 = new Spacer();
+        panelPpal.add(spacer3, new GridConstraints(1, 7, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+        final Spacer spacer4 = new Spacer();
+        panelPpal.add(spacer4, new GridConstraints(1, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+        final Spacer spacer5 = new Spacer();
+        panelPpal.add(spacer5, new GridConstraints(2, 7, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        final Spacer spacer6 = new Spacer();
+        panelPpal.add(spacer6, new GridConstraints(2, 1, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         imagenFondo = new JLabel();
         imagenFondo.setIcon(new ImageIcon(getClass().getResource("/Login/imagenes/portada.png")));
         imagenFondo.setText("");
-        panelPpal.add(imagenFondo, new com.intellij.uiDesigner.core.GridConstraints(1, 2, 1, 5, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 1, false));
-        final com.intellij.uiDesigner.core.Spacer spacer7 = new com.intellij.uiDesigner.core.Spacer();
-        panelPpal.add(spacer7, new com.intellij.uiDesigner.core.GridConstraints(1, 8, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
-        final com.intellij.uiDesigner.core.Spacer spacer8 = new com.intellij.uiDesigner.core.Spacer();
-        panelPpal.add(spacer8, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
-        final com.intellij.uiDesigner.core.Spacer spacer9 = new com.intellij.uiDesigner.core.Spacer();
-        panelPpal.add(spacer9, new com.intellij.uiDesigner.core.GridConstraints(7, 5, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
-        final com.intellij.uiDesigner.core.Spacer spacer10 = new com.intellij.uiDesigner.core.Spacer();
-        panelPpal.add(spacer10, new com.intellij.uiDesigner.core.GridConstraints(0, 5, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        panelPpal.add(imagenFondo, new GridConstraints(1, 2, 1, 5, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 1, false));
+        final Spacer spacer7 = new Spacer();
+        panelPpal.add(spacer7, new GridConstraints(1, 8, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+        final Spacer spacer8 = new Spacer();
+        panelPpal.add(spacer8, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_WANT_GROW, 1, null, null, null, 0, false));
+        final Spacer spacer9 = new Spacer();
+        panelPpal.add(spacer9, new GridConstraints(7, 5, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        final Spacer spacer10 = new Spacer();
+        panelPpal.add(spacer10, new GridConstraints(0, 5, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         passlogin = new JLabel();
         Font passloginFont = this.$$$getFont$$$(null, -1, -1, passlogin.getFont());
         if (passloginFont != null) passlogin.setFont(passloginFont);
         passlogin.setForeground(new Color(-1));
         passlogin.setText("CONTRASEÑA");
-        panelPpal.add(passlogin, new com.intellij.uiDesigner.core.GridConstraints(5, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-        final com.intellij.uiDesigner.core.Spacer spacer11 = new com.intellij.uiDesigner.core.Spacer();
-        panelPpal.add(spacer11, new com.intellij.uiDesigner.core.GridConstraints(6, 2, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
+        panelPpal.add(passlogin, new GridConstraints(5, 3, 1, 1, GridConstraints.ANCHOR_WEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        final Spacer spacer11 = new Spacer();
+        panelPpal.add(spacer11, new GridConstraints(6, 2, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_VERTICAL, 1, GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         botonLogin = new JButton();
         botonLogin.setBorderPainted(false);
         botonLogin.setContentAreaFilled(false);
         botonLogin.setFocusPainted(false);
         botonLogin.setIcon(new ImageIcon(getClass().getResource("/Login/imagenes/botonLogin.png")));
         botonLogin.setText("");
-        panelPpal.add(botonLogin, new com.intellij.uiDesigner.core.GridConstraints(6, 3, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+        panelPpal.add(botonLogin, new GridConstraints(6, 3, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         botonCancelar = new JButton();
         botonCancelar.setActionCommand("");
         botonCancelar.setBorderPainted(false);
@@ -291,7 +259,7 @@ public class Loginpage implements VentanaJuego {
         botonCancelar.setIcon(new ImageIcon(getClass().getResource("/Login/imagenes/botonCancelar.png")));
         botonCancelar.setLabel("");
         botonCancelar.setText("");
-        panelPpal.add(botonCancelar, new com.intellij.uiDesigner.core.GridConstraints(6, 5, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 2, false));
+        panelPpal.add(botonCancelar, new GridConstraints(6, 5, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 2, false));
     }
 
     /**

@@ -47,4 +47,11 @@
   "secondPassword" : "123456",
   "email" : "aaa@aaa.com",
   "isAdmin" : false
+}, {
+  "id" : 10,
+  "username" : "German",
+  "password" : "123456",
+  "secondPassword" : "123456",
+  "email" : "asd@asd.com",
+  "isAdmin" : false
 } ]
