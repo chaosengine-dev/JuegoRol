@@ -39,7 +39,7 @@ public class ManageUsers extends JFrame implements VentanaJuego {
     private JButton ButtonDelete;
     private JButton ButtonSave;
     private JButton ButtonCancel;
-    private final UsuarioRepositorio gestion = new UsuarioRepositorio();
+    private UsuarioRepositorio gestion = new UsuarioRepositorio();
     private JTextField IdUsuario;
     private JFrame jFramePrincipal;
     private ArrayList<User> usuariosRegistrados;
@@ -143,7 +143,7 @@ public class ManageUsers extends JFrame implements VentanaJuego {
         boolean existe = false;
         //VALIDAR EXISTENCIA DEL USUARIO
         for (User existingUser : usuariosRegistrados) {
-            if (existingUser.getUsername().equals(user.getUsername()) && existingUser.getId() != user.getId()) {
+            if (existingUser.getUsername().equals(user.getUsername()) && existingUser.getId() == user.getId()) {
                 existe = true;
                 break;
             }
