@@ -323,7 +323,6 @@ public class Jugador {
             }
             if (enColisionPocion()){
                 if (pocionEnColision.getTipo() == 7){
-                    System.out.println("choque con caja");
                     // Cobre pueden pasar 2 cosas que tenga las tres llaves o que me falte alguna y no pase nada.
                     if (inventario[3] == 1 && inventario[4] == 1 && inventario[5] == 1){
                         AdministrarVentanas.cambiarEstadoActual(6);
